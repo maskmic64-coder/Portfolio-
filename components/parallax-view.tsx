@@ -396,7 +396,7 @@ export default function ParallaxView() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Achievements</h2>
             <ul className="space-y-6 text-lg text-slate-700 dark:text-slate-300 list-disc list-inside">
               <li>
-                🥈 Secured 2nd place in the Odoo Hackathon 2025 among 150+ teams for building an AI-driven Carbon
+                 Secured 2nd place in the Odoo Hackathon 2025 among 150+ teams for building an AI-driven Carbon
                 Footprint Tracker.
               </li>
               <li>
