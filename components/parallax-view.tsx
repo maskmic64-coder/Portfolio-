@@ -152,39 +152,37 @@ export default function ParallaxView() {
 
       {/* About Section */}
       <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
-  <div className="max-w-5xl mx-auto">
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
-      <div className="grid md:grid-cols-2 gap-8 items-center">
-        <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden">
-          <Image
-            src="https://media.licdn.com/dms/image/v2/D5603AQHCXyQXCG-Ywg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1685962289730?e=1750291200&v=beta&t=XnZEmIvbG_3YWYVA7hk0QuXiI3XHY0tJsC5T_vv5NS8"
-            alt="Het Mehta Profile Picture"
-            width={400}
-            height={400}
-            className="w-full h-full object-cover"
-          />
+        <div className="max-w-5xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden">
+                <img
+                  src="/placeholder.svg?height=400&width=400&text=Profile"
+                  alt="Het Mehta Profile Picture"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-lg mb-4">
+                  I'm a passionate Full Stack Developer and AIML Engineer with 3+ years of experience building web
+                  applications that solve real-world problems.
+                </p>
+                <p className="text-lg mb-4">
+                  My journey in tech began with a curiosity about how websites work and models work, which led me to
+                  dive deep into both fullstack and AIML technologies.
+                </p>
+                <p className="text-lg">When I'm not coding, you can find me sleeping, eating, or writing poetry.</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-        <div>
-          <p className="text-lg mb-4">
-            I'm a passionate Full Stack Developer and AIML Engineer with 3+ years of experience building web
-            applications that solve real-world problems.
-          </p>
-          <p className="text-lg mb-4">
-            My journey in tech began with a curiosity about how websites work and models work, which led me to
-            dive deep into both fullstack and AIML technologies.
-          </p>
-          <p className="text-lg">When I'm not coding, you can find me sleeping, eating, or writing poetry.</p>
-        </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+      </section>
       {/* Skills Section */}
       <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
         <div className="max-w-5xl mx-auto">
