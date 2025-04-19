@@ -99,7 +99,7 @@ export default function ParallaxView() {
             />
             <div className="flex justify-center space-x-4">
               <motion.a
-                href="#"
+                href="mailto:mehtahet619@gmail.com"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 p-3 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors"
@@ -107,7 +107,7 @@ export default function ParallaxView() {
                 <Github className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://github.com/mehtahet619"
+                href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 p-3 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors"
@@ -115,7 +115,7 @@ export default function ParallaxView() {
                 <Linkedin className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+                href="https://github.com/mehtahet619"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 p-3 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors"
