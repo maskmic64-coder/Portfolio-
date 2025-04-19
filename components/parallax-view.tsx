@@ -508,25 +508,25 @@ export default function ParallaxView() {
               <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <a
-                    href="#"
+                    href="mehtahet619@gmail.com"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Mail className="h-6 w-6 mb-2" />
-                    <span>mehtahet619@gmail.com</span>
+                    <span>Mail</span>
                   </a>
                   <a
-                    href="#"
+                    href="github.com/mehtahet619"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Github className="h-6 w-6 mb-2" />
-                    <span>github.com/mehtahet619</span>
+                    <span>Github</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Linkedin className="h-6 w-6 mb-2" />
-                    <span>https://www.linkedin.com/in/het-mehta-5b9a47236/</span>
+                    <span>Linkedin</span>
                   </a>
                 </div>
               </div>
