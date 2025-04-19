@@ -322,7 +322,7 @@ export default function ParallaxView() {
                   tags: ["React", "Gemini API", "RandomForest"],
                   demo: "#",
                   github: "https://github.com/mehtahet619/ResumeAndLinkedInAnalyzer.git",
-                  image: "https://www.jobscan.co/resume-score",
+                  image: "https://imgs.search.brave.com/nbTnsIDwSg4rJqnFFqw5AaoucHKlrkwSb0FHct1jB2Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXRzZnJpZW5kbHku/Y29tL19uZXh0L2lt/YWdlP3VybD0vX25l/eHQvc3RhdGljL21l/ZGlhL2FpLXJlc3Vt/ZS1idWlsZGVyLmUy/ZDJiMDhlLnBuZyZ3/PTEwODAmcT03NQ.jpeg",
                 },
                 {
                   title: "Carbon Footprint Tracker",
@@ -342,7 +342,7 @@ export default function ParallaxView() {
                   tags: ["NSL-KDD", "ML", "Cybersecurity"],
                   demo: "#",
                   github: "#",
-                  image: "/nids.png",
+                  image: "/https://imgs.search.brave.com/HKi4py6FlFAM9xUyLf-xWPXROIXozXd96ZTfY87L5xU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzExLzk2LzMyLzQy/LzM2MF9GXzExOTYz/MjQyMjBfUWJIUUph/R3laVG5yOTg2YWhL/ZVNzWFhhN3Q1SGxr/QU8uanBn",
                 },
               ].map((project, index) => (
                 <motion.div
