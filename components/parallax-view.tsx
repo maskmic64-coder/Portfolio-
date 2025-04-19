@@ -342,7 +342,7 @@ export default function ParallaxView() {
                   tags: ["NSL-KDD", "ML", "Cybersecurity"],
                   demo: "#",
                   github: "#",
-                  image: "/https://imgs.search.brave.com/HKi4py6FlFAM9xUyLf-xWPXROIXozXd96ZTfY87L5xU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzExLzk2LzMyLzQy/LzM2MF9GXzExOTYz/MjQyMjBfUWJIUUph/R3laVG5yOTg2YWhL/ZVNzWFhhN3Q1SGxr/QU8uanBn",
+                  image: "https://imgs.search.brave.com/qjm2DI3fkPMipHktBq0gwa9wnb_FqnhMFLdzLRy5jhs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9yZXBv/c2l0b3J5LWltYWdl/cy5naXRodWJ1c2Vy/Y29udGVudC5jb20v/MzExMzUzNzI2LzQz/OWMyMjAwLTIzMjUt/MTFlYi04ZmEyLTIw/MWM1ZmU0ZTQ4YQ.jpeg",
                 },
               ].map((project, index) => (
                 <motion.div
