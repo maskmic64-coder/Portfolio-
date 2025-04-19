@@ -270,27 +270,52 @@ export default function TerminalView() {
   break
 
 
-      case "contact":
-        output = (
-          <div>
-            <p className="font-bold text-yellow-400 mb-2">Contact Information:</p>
-            <div className="ml-4">
-              <p>
-                <span className="text-green-400">Email:</span> mehtahet619@gmail.com
-              </p>
-              <p>
-                <span className="text-green-400">GitHub:</span> github.com/mehtahet619
-              </p>
-              <p>
-                <span className="text-green-400">LinkedIn:</span> https://www.linkedin.com/in/het-mehta-5b9a47236/
-              </p>
-              <p>
-                <span className="text-green-400">Leetcode:</span> https://leetcode.com/u/mehtahet619/
-              </p>
-            </div>
-          </div>
-        )
-        break
+     case "contact":
+  output = (
+    <div>
+      <p className="font-bold text-yellow-400 mb-2">Contact Information:</p>
+      <div className="ml-4">
+        <p>
+          <span className="text-green-400">Email:</span> mehtahet619@gmail.com
+        </p>
+        <p>
+          <span className="text-green-400">GitHub:</span>{" "}
+          <a
+            href="https://github.com/mehtahet619"
+            className="text-blue-400 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            github.com/mehtahet619
+          </a>
+        </p>
+        <p>
+          <span className="text-green-400">LinkedIn:</span>{" "}
+          <a
+            href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+            className="text-blue-400 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/in/het-mehta-5b9a47236
+          </a>
+        </p>
+        <p>
+          <span className="text-green-400">Leetcode:</span>{" "}
+          <a
+            href="https://leetcode.com/u/mehtahet619/"
+            className="text-blue-400 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            leetcode.com/u/mehtahet619
+          </a>
+        </p>
+      </div>
+    </div>
+  )
+  break
+
 
       case "clear":
         setCommandHistory([])
