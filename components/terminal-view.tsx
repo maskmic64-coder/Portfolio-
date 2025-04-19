@@ -126,8 +126,7 @@ export default function TerminalView() {
               and ML Engineering.
             </p>
             <p>
-              With 2+ years of experience in web development, I specialize in React, Node.js, and modern JavaScript
-              frameworks.
+              With 2+ years of experience in web development and Machine Learning.
             </p>
           </div>
         )
@@ -159,13 +158,7 @@ export default function TerminalView() {
                   Boosted legal research speed and decision-making accuracy by 15%.
                 </p>
               </div>
-              <div>
-                <p className="font-bold text-green-400">ISRO IRoC-U '25</p>
-                <p>
-                  Got shortlisted in 170 teams amongst 1,600 participating colleges for the ISRO Robotics Challenge 2025
-                  for making an Autonomous Navigation System for Martian Terrain. Raised Rs. 70,000.
-                </p>
-              </div>
+         
             </div>
           </div>
         )
