@@ -162,7 +162,7 @@ export default function ParallaxView() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden">
-                <img src="components/WhatsApp Image 2025-04-19 at 14.56.28_73989aa5.jpg?height=400&width=400" alt="Profile" className="w-full h-full object-cover" />
+                <img src="https://github.com/mehtahet619/PortfolioHet/blob/5922321631a0ff06d09a0cafe36f834cd472ada7/components/WhatsApp%20Image%202025-04-19%20at%2014.56.28_73989aa5.jpg?height=400&width=400" alt="Profile" className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-lg mb-4">
