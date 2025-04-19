@@ -512,17 +512,17 @@ export default function ParallaxView() {
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Mail className="h-6 w-6 mb-2" />
-                    <span>Mail</span>
+                    <span>Gmail</span>
                   </a>
                   <a
                     href="github.com/mehtahet619"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Github className="h-6 w-6 mb-2" />
-                    <span>Github</span>
+                    <span>GitHub</span>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+                    href="https://www.linkedin.com/in/het-mehta-5b9a47236"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Linkedin className="h-6 w-6 mb-2" />
