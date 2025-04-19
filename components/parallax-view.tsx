@@ -162,7 +162,7 @@ export default function ParallaxView() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">About Me</h2>
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="aspect-square max-w-md mx-auto rounded-full overflow-hidden">
-                <img src="/WhatsApp Image 2025-04-19 at 14.56.28_3a5b0efe.jpg?height=400&width=400" alt="Profile" className="w-full h-full object-cover" />
+                <img src="/placeholder.svg?height=400&width=400" alt="Profile" className="w-full h-full object-cover" />
               </div>
               <div>
                 <p className="text-lg mb-4">
@@ -274,7 +274,7 @@ export default function ParallaxView() {
             </div>
           </motion.div>
 
-          <motion.div whileHover={{ y: -10 }} className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg">
+          <motion.div whileHover={{ y: -10 }} className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg mt-8">
             <div className="flex justify-center mb-4">
               <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
                 <Server className="h-8 w-8 text-blue-600 dark:text-blue-400" />
@@ -322,7 +322,8 @@ export default function ParallaxView() {
                   tags: ["React", "Gemini API", "RandomForest"],
                   demo: "#",
                   github: "https://github.com/mehtahet619/ResumeAndLinkedInAnalyzer.git",
-                  image: "https://imgs.search.brave.com/nbTnsIDwSg4rJqnFFqw5AaoucHKlrkwSb0FHct1jB2Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXRzZnJpZW5kbHku/Y29tL19uZXh0L2lt/YWdlP3VybD0vX25l/eHQvc3RhdGljL21l/ZGlhL2FpLXJlc3Vt/ZS1idWlsZGVyLmUy/ZDJiMDhlLnBuZyZ3/PTEwODAmcT03NQ.jpeg",
+                  image:
+                    "https://imgs.search.brave.com/nbTnsIDwSg4rJqnFFqw5AaoucHKlrkwSb0FHct1jB2Y/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly93d3cu/YXRzZnJpZW5kbHku/Y29tL19uZXh0L2lt/YWdlP3VybD0vX25l/eHQvc3RhdGljL21l/ZGlhL2FpLXJlc3Vt/ZS1idWlsZGVyLmUy/ZDJiMDhlLnBuZyZ3/PTEwODAmcT03NQ.jpeg",
                 },
                 {
                   title: "Carbon Footprint Tracker",
@@ -342,7 +343,8 @@ export default function ParallaxView() {
                   tags: ["NSL-KDD", "ML", "Cybersecurity"],
                   demo: "#",
                   github: "#",
-                  image: "https://imgs.search.brave.com/qjm2DI3fkPMipHktBq0gwa9wnb_FqnhMFLdzLRy5jhs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9yZXBv/c2l0b3J5LWltYWdl/cy5naXRodWJ1c2Vy/Y29udGVudC5jb20v/MzExMzUzNzI2LzQz/OWMyMjAwLTIzMjUt/MTFlYi04ZmEyLTIw/MWM1ZmU0ZTQ4YQ.jpeg",
+                  image:
+                    "https://imgs.search.brave.com/qjm2DI3fkPMipHktBq0gwa9wnb_FqnhMFLdzLRy5jhs/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9yZXBv/c2l0b3J5LWltYWdl/cy5naXRodWJ1c2Vy/Y29udGVudC5jb20v/MzExMzUzNzI2LzQz/OWMyMjAwLTIzMjUt/MTFlYi04ZmEyLTIw/MWM1ZmU0ZTQ4YQ.jpeg",
                 },
               ].map((project, index) => (
                 <motion.div
@@ -396,8 +398,8 @@ export default function ParallaxView() {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Achievements</h2>
             <ul className="space-y-6 text-lg text-slate-700 dark:text-slate-300 list-disc list-inside">
               <li>
-                 Secured 2nd place in the Odoo Hackathon 2025 among 150+ teams for building an AI-driven Carbon
-                Footprint Tracker.
+                Secured 2nd place in the Odoo Hackathon 2025 among 150+ teams for building an AI-driven Carbon Footprint
+                Tracker.
               </li>
               <li>
                 <b> ISRO IRoC-U '25 (Rs. 70,000 Raised, In Progress)</b>
@@ -409,49 +411,48 @@ export default function ParallaxView() {
           </motion.div>
         </div>
       </section>
-      
-<section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-900">
-  <div className="max-w-3xl mx-auto">
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, margin: "-100px" }}
-    >
-      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">CP Profiles</h2>
-      <div className="bg-slate-100 dark:bg-slate-800 p-8 rounded-lg shadow-lg">
-        <p className="text-center mb-6 text-lg text-slate-700 dark:text-slate-300">
-          I enjoy solving problems and participating in contests across various platforms.
-        </p>
 
-        <div className="grid md:grid-cols-3 gap-6 text-center">
-
-          <a
-            href="https://leetcode.com/mehtahet619"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
+      <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-900">
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
           >
-            <img src="/leetcode.png" alt="LeetCode" className="h-10 mb-2" />
-            <span className="font-medium">LeetCode</span>
-            <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
-          </a>
+            <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">CP Profiles</h2>
+            <div className="bg-slate-100 dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+              <p className="text-center mb-6 text-lg text-slate-700 dark:text-slate-300">
+                I enjoy solving problems and participating in contests across various platforms.
+              </p>
 
-          <a
-            href="https://auth.geeksforgeeks.org/user/mehtahet619"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
-          >
-            <img src="/gfg.png" alt="GeeksforGeeks" className="h-10 mb-2" />
-            <span className="font-medium">GFG</span>
-            <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
-          </a>
+              <div className="grid md:grid-cols-3 gap-6 text-center">
+                <a
+                  href="https://leetcode.com/mehtahet619"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
+                >
+                  <img src="/placeholder.svg?height=40&width=40&text=LeetCode" alt="LeetCode" className="h-10 mb-2" />
+                  <span className="font-medium">LeetCode</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
+                </a>
+
+                <a
+                  href="https://auth.geeksforgeeks.org/user/mehtahet619"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
+                >
+                  <img src="/placeholder.svg?height=40&width=40&text=GFG" alt="GeeksforGeeks" className="h-10 mb-2" />
+                  <span className="font-medium">GFG</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+      </section>
 
       {/* Contact Section */}
       <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
@@ -508,14 +509,14 @@ export default function ParallaxView() {
               <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
                 <div className="grid md:grid-cols-3 gap-4 text-center">
                   <a
-                    href="mehtahet619@gmail.com"
+                    href="mailto:mehtahet619@gmail.com"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Mail className="h-6 w-6 mb-2" />
                     <span>Gmail</span>
                   </a>
                   <a
-                    href="github.com/mehtahet619"
+                    href="https://github.com/mehtahet619"
                     className="flex flex-col items-center p-4 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors"
                   >
                     <Github className="h-6 w-6 mb-2" />
@@ -535,7 +536,6 @@ export default function ParallaxView() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-8 px-4 bg-slate-800 dark:bg-slate-950 text-white text-center">
         <p>© {new Date().getFullYear()} Het Mehta. All rights reserved.</p>
       </footer>
