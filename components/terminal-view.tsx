@@ -24,7 +24,7 @@ export default function TerminalView() {
         command: "",
         output: (
           <div className="text-green-500">
-            <p className="text-xl font-bold mb-2">Welcome to Terminal Portfolio v1.0.0</p>
+            <p className="text-xl font-bold mb-2">Welcome to Het's Terminal Portfolio v1.0.0</p>
             <p>
               Type <span className="text-yellow-400">help</span> to see available commands
             </p>
@@ -99,6 +99,9 @@ export default function TerminalView() {
               </li>
               <li>
                 <span className="text-green-400">achievements</span> - View my achievements
+              </li>
+              <li>
+                <span className="text-green-400">Competitive Coding</span> - View my CP Skills Type competitive
               </li>
               <li>
                 <span className="text-green-400">contact</span> - Get my contact information
@@ -209,43 +212,44 @@ export default function TerminalView() {
         )
         break
 
-      case "achievements":
-        output = (
-          <div>
-            <p className="font-bold text-yellow-400 mb-2">My Achievements:</p>
-            <div className="ml-4 space-y-4">
-              <div>
-                <p className="font-bold text-green-400">Odoo Hackathon 2025 - 1st Runners Up</p>
-                <p>
-                  Won 1st Runner-Up for the Carbon Footprint Tracker project, focusing on reducing industrial carbon
-                  emissions using IoT sensors and AI.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">ISRO Robotics Challenge 2025 - Shortlisted</p>
-                <p>
-                  Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
-                  Autonomous Navigation System for Martian Terrain.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">Smart India Hackathon 2024</p>
-                <p>
-                  Participated in SIH 2024, developing an AI-Driven Research Engine for Commercial Courts with a focus
-                  on NLP and text processing.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">Ongoing Startups</p>
-                <p>
-                  Building a Carbon Footprint Tracker, Network Intrusion Detection System, and AI-driven projects to
-                  help industries reduce their environmental impact.
-                </p>
-              </div>
-            </div>
-          </div>
-        )
-        break
+ case "competitive":
+  output = (
+    <div>
+      <p className="font-bold text-yellow-400 mb-2">My CP:</p>
+      <div className="ml-4 space-y-4">
+        <div>
+          <p className="font-bold text-green-400">LeetCode</p>
+          <p>
+            Solved 340+ questions and still going:&nbsp;
+            <a
+              href="https://leetcode.com/u/mehtahet619/"
+              className="text-blue-400 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              leetcode.com/u/mehtahet619
+            </a>
+          </p>
+        </div>
+        <div>
+          <p className="font-bold text-green-400">GeeksforGeeks</p>
+          <p>
+            Solved 130+ problems:&nbsp;
+            <a
+              href="https://www.geeksforgeeks.org/user/mehtahet619/"
+              className="text-blue-400 underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              geeksforgeeks.org/user/mehtahet619
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+  break
+
 
       case "contact":
         output = (

@@ -409,6 +409,49 @@ export default function ParallaxView() {
           </motion.div>
         </div>
       </section>
+      
+<section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-900">
+  <div className="max-w-3xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">CP Profiles</h2>
+      <div className="bg-slate-100 dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+        <p className="text-center mb-6 text-lg text-slate-700 dark:text-slate-300">
+          I enjoy solving problems and participating in contests across various platforms.
+        </p>
+
+        <div className="grid md:grid-cols-3 gap-6 text-center">
+
+          <a
+            href="https://leetcode.com/mehtahet619"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
+          >
+            <img src="/leetcode.png" alt="LeetCode" className="h-10 mb-2" />
+            <span className="font-medium">LeetCode</span>
+            <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
+          </a>
+
+          <a
+            href="https://auth.geeksforgeeks.org/user/mehtahet619"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
+          >
+            <img src="/gfg.png" alt="GeeksforGeeks" className="h-10 mb-2" />
+            <span className="font-medium">GFG</span>
+            <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
