@@ -150,14 +150,14 @@ export default function TerminalView() {
               </div>
               <div>
                 <p className="font-bold text-green-400">Ongoing Startups</p>
-                <p>Building a Carbon Footprint Tracker, Network Intrusion Detection System, and AI-driven projects to help industries reduce their environmental impact.</p>
+                <p>Building a production grade AI Systems.</p>
               </div>
             </div>
           </div>
         )
         break
 
-        
+
       case "projects":
         output = (
           <div>
