@@ -166,7 +166,7 @@ export default function ParallaxView() {
               </div>
               <div>
                 <p className="text-lg mb-4">
-                  I'm a passionate Full Stack Developer and AIML Engineer with 2+ years of experience building web
+                  I'm a passionate Full Stack Developer and AIML Engineer with 3+ years of experience building web
                   applications that solve real-world problems.
                 </p>
                 <p className="text-lg mb-4">

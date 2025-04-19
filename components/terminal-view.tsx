@@ -131,7 +131,33 @@ export default function TerminalView() {
           </div>
         )
         break
+       case "achievements":
+        output = (
+          <div>
+            <p className="font-bold text-yellow-400 mb-2">My Achievements:</p>
+            <div className="ml-4 space-y-4">
+              <div>
+                <p className="font-bold text-green-400">Odoo Hackathon 2025 - 1st Runners Up</p>
+                <p>Won 1st Runner-Up for the Carbon Footprint Tracker project, focusing on reducing industrial carbon emissions using IoT sensors and AI.</p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">ISRO Robotics Challenge 2025 - Shortlisted</p>
+                <p>Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an Autonomous Navigation System for Martian Terrain.</p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">Smart India Hackathon 2024</p>
+                <p>Participated in SIH 2024, developing an AI-Driven Research Engine for Commercial Courts with a focus on NLP and text processing.</p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">Ongoing Startups</p>
+                <p>Building a Carbon Footprint Tracker, Network Intrusion Detection System, and AI-driven projects to help industries reduce their environmental impact.</p>
+              </div>
+            </div>
+          </div>
+        )
+        break
 
+        
       case "projects":
         output = (
           <div>
