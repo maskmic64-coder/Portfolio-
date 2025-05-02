@@ -3,6 +3,8 @@
 import { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Moon, Sun } from "lucide-react"
+import { MouseParallax } from "@/components/mouse-parallax"
+import { Clouds } from "@/components/cloud"
 
 export default function ParallaxLandscape() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -60,68 +62,83 @@ export default function ParallaxLandscape() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
         >
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `radial-gradient(2px 2px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0)),
-                              radial-gradient(1px 1px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0)),
-                              radial-gradient(2px 2px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0)),
-                              radial-gradient(1px 1px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0))`,
-              backgroundSize: "550px 550px, 350px 350px, 250px 250px, 150px 150px",
-              opacity: 0.6,
-            }}
-          ></div>
+          <MouseParallax strength={5}>
+            <div
+              className="absolute inset-0"
+              style={{
+                backgroundImage: `radial-gradient(2px 2px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0)),
+                                radial-gradient(1px 1px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0)),
+                                radial-gradient(2px 2px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0)),
+                                radial-gradient(1px 1px at ${Math.floor(Math.random() * 100)}% ${Math.floor(Math.random() * 100)}%, white, rgba(0,0,0,0))`,
+                backgroundSize: "550px 550px, 350px 350px, 250px 250px, 150px 150px",
+                opacity: 0.6,
+              }}
+            ></div>
+          </MouseParallax>
         </motion.div>
       )}
 
+      {/* Clouds (visible in light mode) */}
+      <Clouds isDarkMode={isDarkMode} />
+
       {/* Sun/Moon */}
       <motion.div className="fixed top-[10%] right-[10%] z-10" style={{ y: starsY }}>
-        <div
-          className={`w-16 h-16 rounded-full ${isDarkMode ? "bg-gray-300 shadow-[0_0_20px_10px_rgba(255,255,255,0.3)]" : "bg-yellow-300 shadow-[0_0_40px_20px_rgba(255,255,0,0.4)]"}`}
-        ></div>
+        <MouseParallax strength={15}>
+          <div
+            className={`w-16 h-16 rounded-full ${isDarkMode ? "bg-gray-300 shadow-[0_0_20px_10px_rgba(255,255,255,0.3)]" : "bg-yellow-300 shadow-[0_0_40px_20px_rgba(255,255,0,0.4)]"}`}
+          ></div>
+        </MouseParallax>
       </motion.div>
 
       {/* Far mountains */}
       <motion.div className="fixed bottom-0 left-0 right-0 w-full h-[30vh] z-10" style={{ y: mountainFarY }}>
-        <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-          <path
-            fill={isDarkMode ? "#312e81" : "#818cf8"}
-            fillOpacity={isDarkMode ? "0.7" : "0.9"}
-            d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
+        <MouseParallax strength={10}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill={isDarkMode ? "#312e81" : "#818cf8"}
+              fillOpacity={isDarkMode ? "0.7" : "0.9"}
+              d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </MouseParallax>
       </motion.div>
 
       {/* Middle mountains */}
       <motion.div className="fixed bottom-0 left-0 right-0 w-full h-[35vh] z-20" style={{ y: mountainMiddleY }}>
-        <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-          <path
-            fill={isDarkMode ? "#1e1b4b" : "#6366f1"}
-            fillOpacity={isDarkMode ? "0.8" : "0.9"}
-            d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
+        <MouseParallax strength={20}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill={isDarkMode ? "#1e1b4b" : "#6366f1"}
+              fillOpacity={isDarkMode ? "0.8" : "0.9"}
+              d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </MouseParallax>
       </motion.div>
 
       {/* Close mountains */}
       <motion.div className="fixed bottom-0 left-0 right-0 w-full h-[40vh] z-30" style={{ y: mountainCloseY }}>
-        <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-          <path
-            fill={isDarkMode ? "#0f172a" : "#4f46e5"}
-            fillOpacity={isDarkMode ? "0.9" : "0.9"}
-            d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,176C672,160,768,128,864,128C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
+        <MouseParallax strength={30}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill={isDarkMode ? "#0f172a" : "#4f46e5"}
+              fillOpacity={isDarkMode ? "0.9" : "0.9"}
+              d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,176C672,160,768,128,864,128C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </MouseParallax>
       </motion.div>
 
       {/* Foreground silhouette */}
       <motion.div className="fixed bottom-0 left-0 right-0 w-full h-[20vh] z-40" style={{ y: foregroundY }}>
-        <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-          <path
-            fill={isDarkMode ? "#020617" : "#3730a3"}
-            d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-          ></path>
-        </svg>
+        <MouseParallax strength={40}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill={isDarkMode ? "#020617" : "#3730a3"}
+              d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </MouseParallax>
       </motion.div>
 
       {/* Content */}

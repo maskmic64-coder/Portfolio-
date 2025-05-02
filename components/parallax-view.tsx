@@ -59,6 +59,11 @@ export default function ParallaxView() {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
 
+  // Mountain parallax effects with different speeds
+  const mountainFarY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
+  const mountainMiddleY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
+  const mountainCloseY = useTransform(scrollYProgress, [0, 1], ["0%", "70%"])
+
   return (
     <div ref={ref} className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white">
       <div className="absolute top-4 left-4 z-50">
@@ -67,19 +72,74 @@ export default function ParallaxView() {
 
       {/* Hero Section with Parallax */}
       <div className="relative h-screen overflow-hidden">
+        {/* Sky background */}
         <motion.div
           className="absolute inset-0 bg-gradient-to-b from-purple-500 to-blue-600 dark:from-purple-900 dark:to-blue-950"
           style={{ y: backgroundY }}
         />
 
+        {/* Stars for night sky (visible in dark mode) */}
         <motion.div
-          className="absolute inset-0 bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-20"
-          style={{ y: backgroundY }}
-        />
+          className="absolute inset-0 hidden dark:block"
+          style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "20%"]) }}
+        >
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "radial-gradient(white, rgba(255, 255, 255, 0) 2px)",
+              backgroundSize: "50px 50px",
+              opacity: 0.3,
+            }}
+          ></div>
+        </motion.div>
 
-        <div className="absolute inset-0 bg-black/30" />
+        {/* Far mountains */}
+        <motion.div className="absolute bottom-0 left-0 right-0 w-full h-[30vh] z-10" style={{ y: mountainFarY }}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill="#6B46C1"
+              fillOpacity="0.6"
+              d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </motion.div>
 
-        <div className="relative h-full flex flex-col items-center justify-center px-4 text-white">
+        {/* Middle mountains */}
+        <motion.div className="absolute bottom-0 left-0 right-0 w-full h-[35vh] z-20" style={{ y: mountainMiddleY }}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill="#4C1D95"
+              fillOpacity="0.7"
+              d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </motion.div>
+
+        {/* Close mountains */}
+        <motion.div className="absolute bottom-0 left-0 right-0 w-full h-[40vh] z-30" style={{ y: mountainCloseY }}>
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill="#2E1065"
+              fillOpacity="0.9"
+              d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,176C672,160,768,128,864,128C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </motion.div>
+
+        {/* Foreground silhouette */}
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[15vh] z-40">
+          <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill="#1E1B4B"
+              d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,90.7C672,85,768,107,864,128C960,149,1056,171,1152,165.3C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+            ></path>
+          </svg>
+        </div>
+
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/20 z-40" />
+
+        <div className="relative h-full flex flex-col items-center justify-center px-4 text-white z-50">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -99,7 +159,7 @@ export default function ParallaxView() {
             />
             <div className="flex justify-center space-x-4">
               <motion.a
-                href="https://github.com/mehtahet619"
+                href="#"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 p-3 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors"
@@ -107,7 +167,7 @@ export default function ParallaxView() {
                 <Github className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+                href="https://github.com/mehtahet619"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 p-3 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors"
@@ -115,7 +175,7 @@ export default function ParallaxView() {
                 <Linkedin className="h-6 w-6" />
               </motion.a>
               <motion.a
-                href="mailto:mehtahet619@gmail.com"
+                href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/20 p-3 rounded-full backdrop-blur-sm hover:bg-white/30 transition-colors"
@@ -165,6 +225,8 @@ export default function ParallaxView() {
                 <img
                   src="/placeholder.svg?height=400&width=400&text=Profile"
                   alt="Het Mehta Profile Picture"
+                  width={400}
+                  height={400}
                   className="w-full h-full object-cover"
                 />
               </div>

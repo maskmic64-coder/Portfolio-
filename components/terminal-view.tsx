@@ -125,28 +125,35 @@ export default function TerminalView() {
               A passionate Full-stack Developer and AI/ML Engineer creating beautiful and interactive web experiences
               and ML Engineering.
             </p>
-            <p>
-              With 2+ years of experience in web development and Machine Learning.
-            </p>
+            <p>With 2+ years of experience in web development and Machine Learning.</p>
           </div>
         )
         break
-       case "achievements":
+      case "achievements":
         output = (
           <div>
             <p className="font-bold text-yellow-400 mb-2">My Achievements:</p>
             <div className="ml-4 space-y-4">
               <div>
                 <p className="font-bold text-green-400">Odoo Hackathon 2025 - 1st Runners Up</p>
-                <p>Won 1st Runner-Up for the Carbon Footprint Tracker project, focusing on reducing industrial carbon emissions using IoT sensors and AI.</p>
+                <p>
+                  Won 1st Runner-Up for the Carbon Footprint Tracker project, focusing on reducing industrial carbon
+                  emissions using IoT sensors and AI.
+                </p>
               </div>
               <div>
                 <p className="font-bold text-green-400">ISRO Robotics Challenge 2025 - Shortlisted</p>
-                <p>Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an Autonomous Navigation System for Martian Terrain.</p>
+                <p>
+                  Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
+                  Autonomous Navigation System for Martian Terrain.
+                </p>
               </div>
               <div>
                 <p className="font-bold text-green-400">Smart India Hackathon 2024</p>
-                <p>Participated in SIH 2024, developing an AI-Driven Research Engine for Commercial Courts with a focus on NLP and text processing.</p>
+                <p>
+                  Participated in SIH 2024, developing an AI-Driven Research Engine for Commercial Courts with a focus
+                  on NLP and text processing.
+                </p>
               </div>
               <div>
                 <p className="font-bold text-green-400">Ongoing Startups</p>
@@ -156,7 +163,6 @@ export default function TerminalView() {
           </div>
         )
         break
-
 
       case "projects":
         output = (
@@ -184,7 +190,6 @@ export default function TerminalView() {
                   Boosted legal research speed and decision-making accuracy by 15%.
                 </p>
               </div>
-         
             </div>
           </div>
         )
@@ -231,91 +236,89 @@ export default function TerminalView() {
         )
         break
 
- case "competitive":
-  output = (
-    <div>
-      <p className="font-bold text-yellow-400 mb-2">My CP:</p>
-      <div className="ml-4 space-y-4">
-        <div>
-          <p className="font-bold text-green-400">LeetCode</p>
-          <p>
-            Solved 340+ questions and still going:&nbsp;
-            <a
-              href="https://leetcode.com/u/mehtahet619/"
-              className="text-blue-400 underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              leetcode.com/u/mehtahet619
-            </a>
-          </p>
-        </div>
-        <div>
-          <p className="font-bold text-green-400">GeeksforGeeks</p>
-          <p>
-            Solved 130+ problems:&nbsp;
-            <a
-              href="https://www.geeksforgeeks.org/user/mehtahet619/"
-              className="text-blue-400 underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              geeksforgeeks.org/user/mehtahet619
-            </a>
-          </p>
-        </div>
-      </div>
-    </div>
-  )
-  break
+      case "competitive":
+        output = (
+          <div>
+            <p className="font-bold text-yellow-400 mb-2">My CP:</p>
+            <div className="ml-4 space-y-4">
+              <div>
+                <p className="font-bold text-green-400">LeetCode</p>
+                <p>
+                  Solved 340+ questions and still going:&nbsp;
+                  <a
+                    href="https://leetcode.com/u/mehtahet619/"
+                    className="text-blue-400 underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    leetcode.com/u/mehtahet619
+                  </a>
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">GeeksforGeeks</p>
+                <p>
+                  Solved 130+ problems:&nbsp;
+                  <a
+                    href="https://www.geeksforgeeks.org/user/mehtahet619/"
+                    className="text-blue-400 underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    geeksforgeeks.org/user/mehtahet619
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        )
+        break
 
-
-     case "contact":
-  output = (
-    <div>
-      <p className="font-bold text-yellow-400 mb-2">Contact Information:</p>
-      <div className="ml-4">
-        <p>
-          <span className="text-green-400">Email:</span> mehtahet619@gmail.com
-        </p>
-        <p>
-          <span className="text-green-400">GitHub:</span>{" "}
-          <a
-            href="https://github.com/mehtahet619"
-            className="text-blue-400 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            github.com/mehtahet619
-          </a>
-        </p>
-        <p>
-          <span className="text-green-400">LinkedIn:</span>{" "}
-          <a
-            href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
-            className="text-blue-400 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            linkedin.com/in/het-mehta-5b9a47236
-          </a>
-        </p>
-        <p>
-          <span className="text-green-400">Leetcode:</span>{" "}
-          <a
-            href="https://leetcode.com/u/mehtahet619/"
-            className="text-blue-400 underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            leetcode.com/u/mehtahet619
-          </a>
-        </p>
-      </div>
-    </div>
-  )
-  break
-
+      case "contact":
+        output = (
+          <div>
+            <p className="font-bold text-yellow-400 mb-2">Contact Information:</p>
+            <div className="ml-4">
+              <p>
+                <span className="text-green-400">Email:</span> mehtahet619@gmail.com
+              </p>
+              <p>
+                <span className="text-green-400">GitHub:</span>{" "}
+                <a
+                  href="https://github.com/mehtahet619"
+                  className="text-blue-400 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/mehtahet619
+                </a>
+              </p>
+              <p>
+                <span className="text-green-400">LinkedIn:</span>{" "}
+                <a
+                  href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+                  className="text-blue-400 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  linkedin.com/in/het-mehta-5b9a47236
+                </a>
+              </p>
+              <p>
+                <span className="text-green-400">Leetcode:</span>{" "}
+                <a
+                  href="https://leetcode.com/u/mehtahet619/"
+                  className="text-blue-400 underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  leetcode.com/u/mehtahet619
+                </a>
+              </p>
+            </div>
+          </div>
+        )
+        break
 
       case "clear":
         setCommandHistory([])
