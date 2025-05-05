@@ -256,8 +256,7 @@ export default function ParallaxView() {
                 <div className="glitch-container">
                   <TypewriterEffectWithGlitch
                     phrases={[
-                      "I'm as constant",
-                      "Het Mehta, AI Engineer",
+                      "AI Engineer",
                       "ML Engineer",
                       "Cyber Enthusiast",
                       "Full Stack Developer",
