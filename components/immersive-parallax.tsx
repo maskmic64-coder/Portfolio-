@@ -222,7 +222,8 @@ export default function ImmersiveParallax() {
             damping: 15,
           }}
         >
-          <h1 className="text-xl font-bold mb-4">Hi I'm</h1>
+          <h1 className="text-xl font-bold mb-4 text-sky-500 dark:text-amber-400">Hi I'm</h1>
+
           <div className="glitch-container">
             <TypewriterEffectWithGlitch
               phrases={[
