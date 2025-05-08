@@ -124,8 +124,8 @@ export default function ImmersiveParallax() {
           willChange: "transform, background-color, box-shadow, top, left, width, height",
         }}
         animate={{
-          x: mousePosition.x * 20,
-          y: mousePosition.y * 20,
+          x: mousePosition.x * 50,
+          y: mousePosition.y * 50,
         }}
         transition={{
           type: "spring",
