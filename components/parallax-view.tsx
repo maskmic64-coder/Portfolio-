@@ -106,7 +106,7 @@ export default function ParallaxView() {
               viewport={{ once: true, margin: "-100px" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Skills</h2>
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-4 gap-8">
                 {/* Frontend */}
                 <motion.div whileHover={{ y: -10 }} className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg">
                   <div className="flex justify-center mb-4">
@@ -190,6 +190,46 @@ export default function ParallaxView() {
                     </li>
                   </ul>
                 </motion.div>
+
+                {/* AI/ML */}
+                <motion.div whileHover={{ y: -10 }} className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg">
+                  <div className="flex justify-center mb-4">
+                    <div className="p-3 bg-pink-100 dark:bg-pink-900/30 rounded-full">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-8 w-8 text-pink-600 dark:text-pink-400"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M12 2a4 4 0 0 1 4 4M5 10a7 7 0 0 1 7-7M2 18a10 10 0 0 1 10-10M12 22a10 10 0 0 1-10-10"></path>
+                        <path d="M16 6a4 4 0 0 1-4 4M10 10a7 7 0 0 1-5 0M8 18a10 10 0 0 1 0-8M19 22a10 10 0 0 1-7-10"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-center">AI/ML</h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-center">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
+                      TensorFlow & PyTorch
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
+                      Scikit-learn & NLTK
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
+                      Computer Vision & NLP
+                    </li>
+                    <li className="flex items-center">
+                      <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
+                      LLMs & Transformers
+                    </li>
+                  </ul>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -247,6 +287,129 @@ export default function ParallaxView() {
             </motion.div>
           </div>
         </section>
+
+        {/* Projects Section */}
+        <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Projects</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Project 1 */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg overflow-hidden"
+                >
+                  <div className="h-48 bg-gradient-to-r from-purple-400 to-indigo-500 rounded-lg mb-6 flex items-center justify-center">
+                    <h3 className="text-2xl font-bold text-white">Carbon Footprint Tracker</h3>
+                  </div>
+                  <div>
+                    <p className="text-slate-700 dark:text-slate-300 mb-4">
+                      AI-powered system to monitor and reduce industrial emissions in red-zone sectors. Achieved a 20%
+                      emission reduction via real-time IoT sensor integration.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm">
+                        IoT
+                      </span>
+                      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm">
+                        AI
+                      </span>
+                      <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm">
+                        Sustainability
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Project 2 */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg overflow-hidden"
+                >
+                  <div className="h-48 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-lg mb-6 flex items-center justify-center">
+                    <h3 className="text-2xl font-bold text-white">Network Intrusion Detection</h3>
+                  </div>
+                  <div>
+                    <p className="text-slate-700 dark:text-slate-300 mb-4">
+                      AI-enhanced NIDS for real-time detection of anomalous and signature-based threats. Designed a
+                      CNN-LSTM-based time-series module to catch evolving attack patterns.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full text-sm">
+                        Cybersecurity
+                      </span>
+                      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm">
+                        Deep Learning
+                      </span>
+                      <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full text-sm">
+                        CNN-LSTM
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Project 3 */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg overflow-hidden"
+                >
+                  <div className="h-48 bg-gradient-to-r from-amber-400 to-orange-500 rounded-lg mb-6 flex items-center justify-center">
+                    <h3 className="text-2xl font-bold text-white">AI-Driven Research Engine</h3>
+                  </div>
+                  <div>
+                    <p className="text-slate-700 dark:text-slate-300 mb-4">
+                      NLP-based legal research assistant using LegalBERT and T5 for smart document search. Boosted legal
+                      research speed and decision-making accuracy by 15%.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300 rounded-full text-sm">
+                        NLP
+                      </span>
+                      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm">
+                        BERT
+                      </span>
+                      <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm">
+                        Legal Tech
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Project 4 */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg overflow-hidden"
+                >
+                  <div className="h-48 bg-gradient-to-r from-green-400 to-teal-500 rounded-lg mb-6 flex items-center justify-center">
+                    <h3 className="text-2xl font-bold text-white">Autonomous Navigation System</h3>
+                  </div>
+                  <div>
+                    <p className="text-slate-700 dark:text-slate-300 mb-4">
+                      Developed for the ISRO IRoC-U challenge, creating an autonomous navigation system for Martian
+                      terrain using computer vision and reinforcement learning.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-sm">
+                        Robotics
+                      </span>
+                      <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-sm">
+                        Computer Vision
+                      </span>
+                      <span className="px-3 py-1 bg-pink-100 dark:bg-pink-900/30 text-pink-800 dark:text-pink-300 rounded-full text-sm">
+                        RL
+                      </span>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
         {/* Footer */}
         <footer className="py-12 px-4 bg-slate-800 dark:bg-slate-950 text-white">
           <div className="max-w-5xl mx-auto">
@@ -255,13 +418,7 @@ export default function ParallaxView() {
                 <h3 className="text-xl font-bold mb-4">Het Mehta</h3>
                 <div className="glitch-container">
                   <TypewriterEffectWithGlitch
-                    phrases={[
-                      "AI Engineer",
-                      "ML Engineer",
-                      "Cyber Enthusiast",
-                      "Full Stack Developer",
-                      "Youtuber",
-                    ]}
+                    phrases={["AI Engineer", "ML Engineer", "Cyber Enthusiast", "Full Stack Developer", "Youtuber"]}
                   />
                 </div>
               </div>
