@@ -125,7 +125,7 @@ export default function TerminalView() {
               A passionate Full-stack Developer and AI/ML Engineer creating beautiful and interactive web experiences
               and ML Engineering.
             </p>
-            <p>With 2+ years of experience in web development and Machine Learning.</p>
+            <p>With 3+ years of experience in web development and Machine Learning.</p>
           </div>
         )
         break
