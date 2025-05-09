@@ -2,10 +2,9 @@
 
 import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { Github, Linkedin, Mail, Code, Server, Database } from "lucide-react"
+import { Code, Server, Database } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
-import { TypewriterEffectWithGlitch } from "./typewriter-effects"
 
 export default function ParallaxView() {
   const ref = useRef(null)
@@ -296,6 +295,15 @@ export default function ParallaxView() {
                       <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-full text-sm">
                         CNN-LSTM
                       </span>
+                      <span className="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-full text-sm">
+                        <a
+                          href="https://github.com/mehtahet619/NIDS_using_RandomForest"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Github{" "}
+                        </a>
+                      </span>
                     </div>
                   </div>
                 </motion.div>
@@ -322,6 +330,15 @@ export default function ParallaxView() {
                       </span>
                       <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm">
                         Legal Tech
+                      </span>
+                      <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm">
+                        <a
+                          href="https://github.com/mehtahet619/AI-Driven-Research-Engine-for-Commercial-Courts"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Github
+                        </a>
                       </span>
                     </div>
                   </div>
@@ -383,7 +400,7 @@ export default function ParallaxView() {
                   >
                     <div className="w-16 h-16 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-full mb-3">
                       <svg viewBox="0 0 24 24" className="w-10 h-10 text-orange-500" fill="currentColor">
-                        <path d="https://imgs.search.brave.com/sTMGxSIjcVpkwdFzPo78OgHzwDDQCi5V-SBQNC6I_10/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9wcmV2/aWV3LnJlZGQuaXQv/aS1oYXZlLWJlZW4t/bGVldGNvZGluZy1m/b3ItYS13aGlsZS1i/dXQtd2hhdC1kb2Vz/LXRoZS12MC11Y3k5/cTd3NDB3dGMxLmpw/Zz93aWR0aD03MjAm/Zm9ybWF0PXBqcGcm/YXV0bz13ZWJwJnM9/NDFlMTFhNTVmYWY4/NmUwYjdiYmJkZGY5/MzRiOTA2MjEyY2Fh/MGZhOQ" />
+                        <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.111.744 1.715.744 1.144 0 2.392-.926 2.392-2.341 0-.639-.244-1.111-.721-1.587l-2.684-2.607c-1.541-1.541-3.67-2.459-5.994-2.459-2.325 0-4.453.918-5.994 2.459l-4.34 4.38c-1.541 1.541-2.459 3.67-2.459 5.994s.918 4.453 2.459 5.994l4.34 4.38c1.541 1.541 3.67 2.459 5.994 2.459s4.453-.918 5.994-2.459l2.684-2.607c.514-.514.722-1.111.722-1.716 0-1.367-1.144-2.342-2.392-2.342-.571 0-1.144.244-1.716.744z" />
                       </svg>
                     </div>
                     <span className="font-medium text-lg">LeetCode</span>
@@ -399,7 +416,7 @@ export default function ParallaxView() {
                   >
                     <div className="w-16 h-16 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full mb-3">
                       <svg viewBox="0 0 24 24" className="w-10 h-10 text-green-600" fill="currentColor">
-                        <path d="data:image/jpeg;base64,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" />
+                        <path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.299 3.299 0 0 1-1.647.745 3.293 3.293 0 0 1-1.738-.168 3.316 3.316 0 0 1-1.884-1.613 3.332 3.332 0 0 1-.335-1.368 3.318 3.318 0 0 1 2.77-3.264 3.3 3.3 0 0 1 3.484 1.183c.565.745.848 1.683.792 2.622a3.32 3.32 0 0 1-.877 2.118zm-1.939-.112a1.66 1.66 0 0 0 1.475-1.651 1.664 1.664 0 0 0-1.474-1.652 1.66 1.66 0 0 0-1.475 1.652 1.664 1.664 0 0 0 1.474 1.651zm-6.838-6.39a3.332 3.332 0 0 1 1.738.168 3.32 3.32 0 0 1 1.884 1.613c.242.429.363.913.335 1.4a3.316 3.316 0 0 1-2.77 3.231 3.3 3.3 0 0 1-3.484-1.183 3.325 3.325 0 0 1-.792-2.622 3.32 3.32 0 0 1 .877-2.118c.143-.28.334-.532.565-.745a3.3 3.3 0 0 1 1.647-.744zm.464 4.427a1.66 1.66 0 0 0 1.475-1.651 1.664 1.664 0 0 0-1.475-1.652 1.66 1.66 0 0 0-1.474 1.652 1.664 1.664 0 0 0 1.474 1.651zM4.55 14.315a3.299 3.299 0 0 0 2.212 1.49 3.293 3.293 0 0 0 1.738-.168 3.316 3.316 0 0 0 1.884-1.613 3.332 3.332 0 0 0 .335-1.368 3.318 3.318 0 0 0-2.77-3.264 3.3 3.3 0 0 0-3.484 1.183 3.325 3.325 0 0 0-.792 2.622 3.32 3.32 0 0 0 .877 2.118zm1.939-.112a1.66 1.66 0 0 1-1.475-1.651 1.664 1.664 0 0 1 1.475-1.652 1.66 1.66 0 0 1 1.474 1.652 1.664 1.664 0 0 1-1.474 1.651z" />
                       </svg>
                     </div>
                     <span className="font-medium text-lg">GeeksforGeeks</span>
@@ -410,88 +427,6 @@ export default function ParallaxView() {
             </motion.div>
           </div>
         </section>
-        {/* Footer */}
-        <footer className="py-12 px-4 bg-slate-800 dark:bg-slate-950 text-white">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4">Het Mehta</h3>
-                <div className="glitch-container">
-                  <TypewriterEffectWithGlitch
-                    phrases={["AI Engineer", "ML Engineer", "Cyber Enthusiast", "Full Stack Developer", "Youtuber"]}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold mb-4">Connect</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
-                      className="flex items-center text-slate-300 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Linkedin className="h-5 w-5 mr-2" />
-                      LinkedIn
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="mailto:mehtahet619@gmail.com"
-                      className="flex items-center text-slate-300 hover:text-white transition-colors"
-                    >
-                      <Mail className="h-5 w-5 mr-2" />
-                      mehtahet619@gmail.com
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://github.com/mehtahet619"
-                      className="flex items-center text-slate-300 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-5 w-5 mr-2" />
-                      GitHub
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-bold mb-4">CP Profiles</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="https://leetcode.com/mehtahet619"
-                      className="text-slate-300 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      LeetCode
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://auth.geeksforgeeks.org/user/mehtahet619"
-                      className="text-slate-300 hover:text-white transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GeeksforGeeks
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-8 border-t border-slate-700 text-center text-slate-400">
-              <p>© {new Date().getFullYear()} Het Mehta. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
       </div>
     </>
   )
