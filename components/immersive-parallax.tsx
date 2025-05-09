@@ -11,7 +11,7 @@ export default function ImmersiveParallax() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isMounted, setIsMounted] = useState(false)
 
-  // Set up parallax scrolling with smoother spring physics
+  // Set up parallax scrolling
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -24,45 +24,69 @@ export default function ImmersiveParallax() {
     restDelta: 0.001,
   })
 
-  // Sky gradient transitions based on scroll
+  // Sky gradient transitions based on scroll and theme
   const skyTopColor = useTransform(
     smoothScrollProgress,
-    [0, 1],
-    theme === "dark" ? ["#0f172a", "#020617"] : ["#7dd3fc", "#bae6fd"],
+    [0, 0.5, 1],
+    theme === "dark" ? ["#0f172a", "#1e1b4b", "#020617"] : ["#7dd3fc", "#93c5fd", "#bae6fd"],
   )
 
   const skyBottomColor = useTransform(
     smoothScrollProgress,
-    [0, 1],
-    theme === "dark" ? ["#1e293b", "#0f172a"] : ["#e0f2fe", "#93c5fd"],
+    [0, 0.5, 1],
+    theme === "dark" ? ["#1e293b", "#312e81", "#0f172a"] : ["#e0f2fe", "#c7d2fe", "#93c5fd"],
   )
 
-  // Sun/Moon position based on scroll
-  const celestialY = useTransform(smoothScrollProgress, [0, 1], ["15%", "60%"])
-  const celestialX = useTransform(smoothScrollProgress, [0, 1], ["75%", "50%"])
+  // Sun/Moon position and properties based on scroll
+  const celestialY = useTransform(smoothScrollProgress, [0, 0.5, 1], ["15%", "30%", "60%"])
+  const celestialX = useTransform(smoothScrollProgress, [0, 0.5, 1], ["75%", "60%", "50%"])
   const celestialSize = useTransform(
     smoothScrollProgress,
-    [0, 1],
-    theme === "dark" ? ["5rem", "7rem"] : ["8rem", "10rem"],
+    [0, 0.5, 1],
+    theme === "dark" ? ["5rem", "6rem", "7rem"] : ["8rem", "9rem", "10rem"],
   )
   const celestialGlow = useTransform(
     smoothScrollProgress,
-    [0, 1],
+    [0, 0.5, 1],
     theme === "dark"
-      ? ["0 0 30px 10px rgba(241, 245, 249, 0.3)", "0 0 50px 20px rgba(241, 245, 249, 0.4)"]
-      : ["0 0 60px 30px rgba(251, 191, 36, 0.7)", "0 0 80px 40px rgba(251, 191, 36, 0.8)"],
+      ? [
+          "0 0 30px 10px rgba(241, 245, 249, 0.3)",
+          "0 0 40px 15px rgba(241, 245, 249, 0.35)",
+          "0 0 50px 20px rgba(241, 245, 249, 0.4)",
+        ]
+      : [
+          "0 0 60px 30px rgba(251, 191, 36, 0.7)",
+          "0 0 70px 35px rgba(251, 191, 36, 0.75)",
+          "0 0 80px 40px rgba(251, 191, 36, 0.8)",
+        ],
   )
 
-  // Star opacity (only visible in dark mode)
+  // Star opacity and scale (only visible in dark mode)
   const starsOpacity = useTransform(smoothScrollProgress, [0, 0.5, 1], [0.3, 0.6, 1])
+  const starsScale = useTransform(smoothScrollProgress, [0, 1], [1, 1.2])
 
-  // Cloud opacity (only visible in light mode)
+  // Cloud opacity and scale (only visible in light mode)
   const cloudsOpacity = useTransform(smoothScrollProgress, [0, 0.5, 1], [1, 0.7, 0.4])
+  const cloudsScale = useTransform(smoothScrollProgress, [0, 1], [1, 1.1])
 
-  // Mountain layers with different parallax speeds
-  const mountainLayer1Y = useTransform(smoothScrollProgress, [0, 1], ["0%", "20%"])
-  const mountainLayer2Y = useTransform(smoothScrollProgress, [0, 1], ["0%", "15%"])
+  // Mountain layers with different parallax speeds - ENHANCED for more dramatic effect
+  const mountainLayer1Y = useTransform(smoothScrollProgress, [0, 1], ["0%", "30%"])
+  const mountainLayer2Y = useTransform(smoothScrollProgress, [0, 1], ["0%", "20%"])
   const mountainLayer3Y = useTransform(smoothScrollProgress, [0, 1], ["0%", "10%"])
+
+  // Mountain rotation based on scroll - NEW
+  const mountainLayer1RotateX = useTransform(smoothScrollProgress, [0, 1], [0, 10])
+  const mountainLayer2RotateX = useTransform(smoothScrollProgress, [0, 1], [0, 5])
+  const mountainLayer3RotateX = useTransform(smoothScrollProgress, [0, 1], [0, 2])
+
+  // Perspective changes based on scroll - NEW
+  const perspective = useTransform(smoothScrollProgress, [0, 1], ["1000px", "2000px"])
+  const containerScale = useTransform(smoothScrollProgress, [0, 1], [1, 0.95])
+
+  // Content parallax
+  const contentY = useTransform(smoothScrollProgress, [0, 1], ["0%", "50%"])
+  const contentOpacity = useTransform(smoothScrollProgress, [0, 0.7, 1], [1, 0.8, 0])
+  const contentScale = useTransform(smoothScrollProgress, [0, 1], [1, 0.9])
 
   // Mouse parallax effect
   useEffect(() => {
@@ -89,17 +113,18 @@ export default function ImmersiveParallax() {
   const isDarkMode = theme === "dark"
 
   return (
-    <div
+    <motion.div
       ref={containerRef}
       className="relative h-[100vh] overflow-hidden"
       style={{
-        perspective: "1000px",
+        perspective,
         transformStyle: "preserve-3d",
+        scale: containerScale,
       }}
     >
       {/* Sky background with gradient that changes based on scroll */}
       <motion.div
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-0 transition-colors duration-500"
         style={{
           background: `linear-gradient(to bottom, ${skyTopColor}, ${skyBottomColor})`,
           willChange: "background",
@@ -107,11 +132,15 @@ export default function ImmersiveParallax() {
       />
 
       {/* Stars (visible only in dark mode) */}
-      {isDarkMode && <StarField mousePosition={mousePosition} opacity={starsOpacity} />}
+      {isDarkMode && (
+        <motion.div style={{ scale: starsScale }}>
+          <StarField mousePosition={mousePosition} opacity={starsOpacity} scrollProgress={smoothScrollProgress} />
+        </motion.div>
+      )}
 
       {/* Sun/Moon with parallax effect */}
       <motion.div
-        className="absolute z-20"
+        className="absolute z-20 transition-all duration-500"
         style={{
           top: celestialY,
           left: celestialX,
@@ -137,37 +166,43 @@ export default function ImmersiveParallax() {
         {isDarkMode && (
           <>
             <div
-              className="absolute rounded-full bg-slate-300 opacity-70"
+              className="absolute rounded-full bg-slate-300 opacity-70 transition-all duration-500"
               style={{ width: "1.2rem", height: "1.2rem", top: "25%", left: "25%" }}
             />
             <div
-              className="absolute rounded-full bg-slate-300 opacity-70"
+              className="absolute rounded-full bg-slate-300 opacity-70 transition-all duration-500"
               style={{ width: "0.8rem", height: "0.8rem", top: "60%", left: "40%" }}
             />
             <div
-              className="absolute rounded-full bg-slate-300 opacity-70"
+              className="absolute rounded-full bg-slate-300 opacity-70 transition-all duration-500"
               style={{ width: "1rem", height: "1rem", top: "30%", left: "65%" }}
             />
           </>
         )}
+
       </motion.div>
 
       {/* Clouds (only visible in light mode) */}
-      {!isDarkMode && <CloudLayer mousePosition={mousePosition} opacity={cloudsOpacity} />}
+      {!isDarkMode && (
+        <motion.div style={{ scale: cloudsScale }}>
+          <CloudLayer mousePosition={mousePosition} opacity={cloudsOpacity} scrollProgress={smoothScrollProgress} />
+        </motion.div>
+      )}
 
       {/* Mountain layers with different parallax speeds */}
       <motion.div
         className="absolute bottom-0 left-0 right-0 w-full"
         style={{
           y: mountainLayer1Y,
+          rotateX: mountainLayer1RotateX,
           height: "25vh",
           zIndex: 40,
+          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
         animate={{
-          x: mousePosition.x * 10,
-          rotateX: mousePosition.y * 2,
-          rotateY: -mousePosition.x * 2,
+          x: mousePosition.x * 30,
+          rotateY: mousePosition.x * -10,
         }}
         transition={{
           type: "spring",
@@ -188,14 +223,15 @@ export default function ImmersiveParallax() {
         className="absolute bottom-0 left-0 right-0 w-full"
         style={{
           y: mountainLayer2Y,
+          rotateX: mountainLayer2RotateX,
           height: "30vh",
           zIndex: 50,
+          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
         animate={{
-          x: mousePosition.x * 7,
-          rotateX: mousePosition.y * 1.5,
-          rotateY: -mousePosition.x * 1.5,
+          x: mousePosition.x * 20,
+          rotateY: mousePosition.x * -5,
         }}
         transition={{
           type: "spring",
@@ -216,14 +252,15 @@ export default function ImmersiveParallax() {
         className="absolute bottom-0 left-0 right-0 w-full"
         style={{
           y: mountainLayer3Y,
+          rotateX: mountainLayer3RotateX,
           height: "35vh",
           zIndex: 60,
+          transformStyle: "preserve-3d",
           willChange: "transform",
         }}
         animate={{
-          x: mousePosition.x * 4,
-          rotateX: mousePosition.y * 1,
-          rotateY: -mousePosition.x * 1,
+          x: mousePosition.x * 10,
+          rotateY: mousePosition.x * -2,
         }}
         transition={{
           type: "spring",
@@ -241,12 +278,21 @@ export default function ImmersiveParallax() {
       </motion.div>
 
       {/* Content overlay */}
-      <div className="absolute inset-0 flex items-center justify-center z-70">
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center z-70"
+        style={{
+          y: contentY,
+          opacity: contentOpacity,
+          scale: contentScale,
+          transformStyle: "preserve-3d",
+        }}
+      >
         <motion.div
           className="text-center px-4 text-white"
           animate={{
             y: mousePosition.y * -20,
             x: mousePosition.x * -20,
+            z: 50,
           }}
           transition={{
             type: "spring",
@@ -269,7 +315,7 @@ export default function ImmersiveParallax() {
             />
           </div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-70">
@@ -303,7 +349,26 @@ export default function ImmersiveParallax() {
           </motion.div>
         </motion.div>
       </div>
-    </div>
+
+      {/* Add CSS animations */}
+      <style jsx global>{`
+        @keyframes pulse {
+          0%, 100% { opacity: 0.7; }
+          50% { opacity: 0.3; }
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+        }
+        
+        @media (max-width: 768px) {
+          .celestial-body {
+            transform: scale(0.7);
+          }
+        }
+      `}</style>
+    </motion.div>
   )
 }
 
@@ -311,9 +376,11 @@ export default function ImmersiveParallax() {
 function StarField({
   mousePosition,
   opacity,
+  scrollProgress,
 }: {
   mousePosition: { x: number; y: number }
   opacity: any
+  scrollProgress: any
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
@@ -326,83 +393,127 @@ function StarField({
 
     // Set canvas dimensions
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
+      const dpr = window.devicePixelRatio || 1
+      canvas.width = window.innerWidth * dpr
+      canvas.height = window.innerHeight * dpr
+      ctx.scale(dpr, dpr)
+
+      // Reset canvas style dimensions
+      canvas.style.width = `${window.innerWidth}px`
+      canvas.style.height = `${window.innerHeight}px`
     }
 
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
     // Create stars with varying depths
-    const stars: { x: number; y: number; size: number; brightness: number; speed: number; depth: number }[] = []
-    const starCount = Math.floor((canvas.width * canvas.height) / 800)
+    const stars: {
+      x: number
+      y: number
+      size: number
+      brightness: number
+      speed: number
+      depth: number
+      twinkleSpeed: number
+    }[] = []
+    const starCount = Math.min(Math.floor((canvas.width * canvas.height) / 800), 300) // Cap at 300 stars for performance
 
     for (let i = 0; i < starCount; i++) {
-  stars.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    size: Math.random() * 1.5 + 0.5,
-    brightness: Math.random(),
-    speed: Math.random() * 0.2 + 0.05,
-    depth: Math.random(),
-  })
-}
-
+      stars.push({
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        size: Math.random() * 1.5 + 0.5,
+        brightness: Math.random() * 0.5 + 0.5,
+        speed: Math.random() * 0.2 + 0.05,
+        depth: Math.random() * 3 + 1,
+        twinkleSpeed: Math.random() * 0.01 + 0.003,
+      })
+    }
 
     // Animation loop
-   let animationFrameId: number
+    let animationFrameId: number
+    let time = 0
 
-const draw = () => {
-  if (!ctx) return
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+    const animate = () => {
+      time += 0.01
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
-  for (const star of stars) {
-    ctx.beginPath()
-    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2)
-    ctx.fillStyle = `rgba(255, 255, 255, ${star.brightness * opacity})`
-    ctx.fill()
+      // Get current opacity and scroll values
+      const currentOpacity = typeof opacity.get === "function" ? opacity.get() : 1
+      const currentScroll = typeof scrollProgress.get === "function" ? scrollProgress.get() : 0
 
-    star.x += star.speed * (mousePosition.x - 0.5)
-    star.y += star.speed * (mousePosition.y - 0.5)
+      // Draw stars with depth-based parallax and twinkling
+      stars.forEach((star) => {
+        const twinkle = Math.sin(time * star.twinkleSpeed * 100) * 0.2 + 0.8
 
-    if (star.x < 0) star.x = canvas.width
-    if (star.y < 0) star.y = canvas.height
-    if (star.x > canvas.width) star.x = 0
-    if (star.y > canvas.height) star.y = 0
-  }
+        // Apply mouse movement parallax based on star depth
+        const parallaxX = mousePosition.x * (star.depth * 2)
+        const parallaxY = mousePosition.y * (star.depth * 2)
 
-  animationFrameId = requestAnimationFrame(draw)
-}
+        // Apply scroll-based parallax - NEW
+        const scrollParallaxY = currentScroll * (star.depth * 50)
 
-draw()
+        const x = star.x + parallaxX
+        const y = star.y + parallaxY - scrollParallaxY
 
-return () => cancelAnimationFrame(animationFrameId)
+        // Create a subtle glow effect for brighter stars
+        if (star.size > 1.2) {
+          const glow = ctx.createRadialGradient(x, y, 0, x, y, star.size * 3)
+          glow.addColorStop(0, `rgba(255, 255, 255, ${star.brightness * twinkle * currentOpacity * 0.5})`)
+          glow.addColorStop(1, "rgba(255, 255, 255, 0)")
+
+          ctx.beginPath()
+          ctx.fillStyle = glow
+          ctx.arc(x, y, star.size * 3, 0, Math.PI * 2)
+          ctx.fill()
+        }
+
+        // Draw the star
+        ctx.fillStyle = `rgba(255, 255, 255, ${star.brightness * twinkle * currentOpacity})`
+        ctx.beginPath()
+        ctx.arc(x, y, star.size, 0, Math.PI * 2)
+        ctx.fill()
+      })
+
+      animationFrameId = requestAnimationFrame(animate)
+    }
+
+    animate()
 
     return () => {
       window.removeEventListener("resize", resizeCanvas)
       cancelAnimationFrame(animationFrameId)
     }
-  }, [mousePosition, opacity])
+  }, [mousePosition, opacity, scrollProgress])
 
-  return <canvas ref={canvasRef} className="absolute inset-0 z-10 pointer-events-none" style={{ opacity: 1 }} />
+  return <canvas ref={canvasRef} className="absolute inset-0 z-10 pointer-events-none" />
 }
 
 // Cloud Layer Component
 function CloudLayer({
   mousePosition,
   opacity,
+  scrollProgress,
 }: {
   mousePosition: { x: number; y: number }
   opacity: any
+  scrollProgress: any
 }) {
   // Generate cloud positions
   const cloudPositions = [
-    { left: "10%", width: 180, height: 90, top: "15%", delay: 0, speed: 15 },
-    { left: "30%", width: 220, height: 110, top: "25%", delay: 0.1, speed: 12 },
-    { left: "60%", width: 200, height: 100, top: "20%", delay: 0.2, speed: 10 },
-    { left: "85%", width: 160, height: 80, top: "30%", delay: 0.3, speed: 8 },
-    { left: "45%", width: 240, height: 120, top: "10%", delay: 0.4, speed: 5 },
+    { left: "10%", width: 180, height: 90, top: "15%", delay: 0, speed: 15, floatDelay: 0 },
+    { left: "30%", width: 220, height: 110, top: "25%", delay: 0.1, speed: 12, floatDelay: 0.5 },
+    { left: "60%", width: 200, height: 100, top: "20%", delay: 0.2, speed: 10, floatDelay: 1 },
+    { left: "85%", width: 160, height: 80, top: "30%", delay: 0.3, speed: 8, floatDelay: 1.5 },
+    { left: "45%", width: 240, height: 120, top: "10%", delay: 0.4, speed: 5, floatDelay: 2 },
   ]
+
+  // Create scroll-based Y positions for each cloud
+  const cloudYPositions = useTransform(
+    scrollProgress,
+    [0, 1],
+    cloudPositions.map((_, index) => [0, -100 - index * 20]),
+  )
 
   return (
     <motion.div
@@ -412,30 +523,36 @@ function CloudLayer({
         willChange: "opacity",
       }}
     >
-      {cloudPositions.map((cloud, index) => (
-        <motion.div
-          key={index}
-          className="absolute"
-          style={{
-            left: cloud.left,
-            top: cloud.top,
-            width: `${cloud.width}px`,
-            height: `${cloud.height}px`,
-          }}
-          animate={{
-            x: mousePosition.x * cloud.speed,
-            y: mousePosition.y * cloud.speed,
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 40,
-            damping: 20,
-            delay: cloud.delay,
-          }}
-        >
-          <Cloud width={cloud.width} height={cloud.height} />
-        </motion.div>
-      ))}
+      {cloudPositions.map((cloud, index) => {
+        return (
+          <motion.div
+            key={index}
+            className="absolute"
+            style={{
+              left: cloud.left,
+              top: cloud.top,
+              y: cloudYPositions[index], // Apply scroll-based movement
+              width: `${cloud.width}px`,
+              height: `${cloud.height}px`,
+              animation: `float 8s ease-in-out ${cloud.floatDelay}s infinite`,
+              transformStyle: "preserve-3d", // Enable 3D transformations
+            }}
+            animate={{
+              x: mousePosition.x * cloud.speed,
+              rotateY: mousePosition.x * 5, // Add rotation for 3D effect
+              z: 50 + index * 10, // Add z-depth for 3D effect
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 40,
+              damping: 20,
+              delay: cloud.delay,
+            }}
+          >
+            <Cloud width={cloud.width} height={cloud.height} />
+          </motion.div>
+        )
+      })}
     </motion.div>
   )
 }
