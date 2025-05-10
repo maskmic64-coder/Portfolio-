@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { Code, Server, Database } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
+import ContactForm from "./contact-form"
 
 export default function ParallaxView() {
   const ref = useRef(null)
@@ -785,85 +786,10 @@ export default function ParallaxView() {
                 </div>
 
                 {/* Contact Form */}
-                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
-                  <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
-
-                  <form className="space-y-4">
-                    <div>
-                      <label
-                        htmlFor="name"
-                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
-                      >
-                        Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="Your name"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
-                      >
-                        Email
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="your.email@example.com"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
-                      >
-                        Subject
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        placeholder="What is this regarding?"
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
-                      >
-                        Message
-                      </label>
-                      <textarea
-                        id="message"
-                        rows={4}
-                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-                        placeholder="Your message here..."
-                        required
-                      ></textarea>
-                    </div>
-
-                    <motion.button
-                      type="submit"
-                      className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-md hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      Send Message
-                    </motion.button>
-                  </form>
-                </div>
+                <ContactForm />
               </div>
+
+              
             </motion.div>
           </div>
         </section>
