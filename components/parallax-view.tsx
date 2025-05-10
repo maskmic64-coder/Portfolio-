@@ -1,23 +1,63 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef, useState, useEffect } from "react"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { Code, Server, Database } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
 
 export default function ParallaxView() {
   const ref = useRef(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const [isMounted, setIsMounted] = useState(false)
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
   })
 
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"])
-  const mountainFarY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-  const mountainMiddleY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const mountainCloseY = useTransform(scrollYProgress, [0, 1], ["0%", "70%"])
+  // Smoother scroll progress with spring physics
+  const smoothScrollProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  })
+
+  // Enhanced parallax transformations
+  const backgroundY = useTransform(smoothScrollProgress, [0, 1], ["0%", "100%"])
+  const textY = useTransform(smoothScrollProgress, [0, 1], ["0%", "200%"])
+  const cloudsFarY = useTransform(smoothScrollProgress, [0, 1], ["0%", "15%"])
+  const cloudsMiddleY = useTransform(smoothScrollProgress, [0, 1], ["0%", "30%"])
+  const cloudsCloseY = useTransform(smoothScrollProgress, [0, 1], ["0%", "45%"])
+  const riverY = useTransform(smoothScrollProgress, [0, 1], ["0%", "60%"])
+  const mountainFarY = useTransform(smoothScrollProgress, [0, 1], ["0%", "30%"])
+  const mountainMiddleY = useTransform(smoothScrollProgress, [0, 1], ["0%", "50%"])
+  const mountainCloseY = useTransform(smoothScrollProgress, [0, 1], ["0%", "70%"])
+  const sunMoonY = useTransform(smoothScrollProgress, [0, 1], ["15%", "60%"])
+  const sunMoonX = useTransform(smoothScrollProgress, [0, 1], ["75%", "50%"])
+  const sunMoonScale = useTransform(smoothScrollProgress, [0, 1], [1, 1.5])
+  const sunMoonRotate = useTransform(smoothScrollProgress, [0, 1], [0, 45])
+
+  // Mouse parallax effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = e.clientX / window.innerWidth - 0.5
+      const y = e.clientY / window.innerHeight - 0.5
+      setMousePosition({ x, y })
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
+
+  // Handle client-side rendering
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  if (!isMounted) {
+    return null
+  }
 
   const glitchStyles = `
     @keyframes glitch {
@@ -58,6 +98,150 @@ export default function ParallaxView() {
         </div>
 
         <ImmersiveParallax />
+
+        {/* Enhanced Parallax Elements */}
+        <div className="relative h-[50vh] overflow-hidden bg-gradient-to-b from-sky-300 to-sky-500 dark:from-indigo-900 dark:to-slate-900">
+          {/* Sun/Moon */}
+          <motion.div
+            className="absolute z-20 w-24 h-24 rounded-full bg-yellow-400 dark:bg-slate-200 shadow-lg"
+            style={{
+              top: sunMoonY,
+              left: sunMoonX,
+              scale: sunMoonScale,
+              rotate: sunMoonRotate,
+              boxShadow: "0 0 60px 30px rgba(251, 191, 36, 0.4)",
+              filter: "blur(0.5px)",
+            }}
+            animate={{
+              x: mousePosition.x * 20,
+              y: mousePosition.y * 20,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 50,
+              damping: 20,
+            }}
+          />
+
+          {/* Clouds Far */}
+          <motion.div className="absolute inset-x-0 top-[10%] z-10" style={{ y: cloudsFarY }}>
+            <div className="relative">
+              <motion.div
+                className="absolute left-[10%] w-40 h-20 bg-white dark:bg-white/70 rounded-full opacity-70"
+                animate={{ x: mousePosition.x * -10 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+              <motion.div
+                className="absolute left-[30%] w-48 h-24 bg-white dark:bg-white/70 rounded-full opacity-80"
+                animate={{ x: mousePosition.x * -15 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+              <motion.div
+                className="absolute left-[60%] w-44 h-22 bg-white dark:bg-white/70 rounded-full opacity-75"
+                animate={{ x: mousePosition.x * -12 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Clouds Middle */}
+          <motion.div className="absolute inset-x-0 top-[20%] z-20" style={{ y: cloudsMiddleY }}>
+            <div className="relative">
+              <motion.div
+                className="absolute left-[20%] w-52 h-26 bg-white dark:bg-white/80 rounded-full opacity-85"
+                animate={{ x: mousePosition.x * -20 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+              <motion.div
+                className="absolute left-[50%] w-56 h-28 bg-white dark:bg-white/80 rounded-full opacity-90"
+                animate={{ x: mousePosition.x * -25 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+              <motion.div
+                className="absolute left-[80%] w-48 h-24 bg-white dark:bg-white/80 rounded-full opacity-85"
+                animate={{ x: mousePosition.x * -22 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Clouds Close */}
+          <motion.div className="absolute inset-x-0 top-[30%] z-30" style={{ y: cloudsCloseY }}>
+            <div className="relative">
+              <motion.div
+                className="absolute left-[5%] w-64 h-32 bg-white dark:bg-white/90 rounded-full"
+                animate={{ x: mousePosition.x * -30 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+              <motion.div
+                className="absolute left-[40%] w-72 h-36 bg-white dark:bg-white/90 rounded-full"
+                animate={{ x: mousePosition.x * -35 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+              <motion.div
+                className="absolute left-[75%] w-60 h-30 bg-white dark:bg-white/90 rounded-full"
+                animate={{ x: mousePosition.x * -32 }}
+                transition={{ type: "spring", stiffness: 40, damping: 15 }}
+              />
+            </div>
+          </motion.div>
+
+          {/* River */}
+          <motion.div
+            className="absolute bottom-0 left-0 right-0 h-[20%] bg-blue-400 dark:bg-blue-800 z-40"
+            style={{ y: riverY }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 dark:from-blue-900 dark:via-blue-800 dark:to-blue-900 opacity-80">
+              <motion.div
+                className="absolute inset-0"
+                animate={{
+                  backgroundPosition: ["0% 0%", "100% 100%"],
+                }}
+                transition={{
+                  duration: 10,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+                style={{
+                  backgroundImage:
+                    "url(\"data:image/svg+xml,%3Csvg width='100' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 20, 50 10 T 100 10' stroke='rgba(255,255,255,0.3)' fill='none' strokeWidth='2'/%3E%3C/svg%3E\")",
+                  backgroundSize: "100px 20px",
+                }}
+              />
+            </div>
+          </motion.div>
+
+          {/* Mountains */}
+          <motion.div className="absolute bottom-0 left-0 right-0 h-[40%] z-50" style={{ y: mountainFarY }}>
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path
+                fill="rgb(79, 70, 229)"
+                fillOpacity="0.7"
+                d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
+          </motion.div>
+
+          <motion.div className="absolute bottom-0 left-0 right-0 h-[45%] z-60" style={{ y: mountainMiddleY }}>
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path
+                fill="rgb(67, 56, 202)"
+                fillOpacity="0.8"
+                d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
+          </motion.div>
+
+          <motion.div className="absolute bottom-0 left-0 right-0 h-[50%] z-70" style={{ y: mountainCloseY }}>
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path
+                fill="rgb(55, 48, 163)"
+                fillOpacity="0.9"
+                d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,176C672,160,768,128,864,128C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+              ></path>
+            </svg>
+          </motion.div>
+        </div>
 
         {/* About Section */}
         <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
@@ -422,6 +606,262 @@ export default function ParallaxView() {
                     <span className="font-medium text-lg">GeeksforGeeks</span>
                     <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
                   </motion.a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Get In Touch</h2>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Contact Info */}
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+                  <h3 className="text-2xl font-bold mb-6 text-center">Contact Information</h3>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 flex items-center justify-center bg-blue-100 dark:bg-blue-900/30 rounded-full mr-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 text-blue-600 dark:text-blue-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">Email</p>
+                        <a
+                          href="mailto:mehtahet619@gmail.com"
+                          className="text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                        >
+                          mehtahet619@gmail.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 flex items-center justify-center bg-purple-100 dark:bg-purple-900/30 rounded-full mr-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 text-purple-600 dark:text-purple-400"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">LinkedIn</p>
+                        <a
+                          href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                        >
+                          linkedin.com/in/het-mehta
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center">
+                      <div className="w-12 h-12 flex items-center justify-center bg-slate-100 dark:bg-slate-700 rounded-full mr-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 text-slate-700 dark:text-slate-300"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                          />
+                        </svg>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">GitHub</p>
+                        <a
+                          href="https://github.com/mehtahet619"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-lg font-medium hover:text-slate-700 dark:hover:text-slate-300 transition-colors"
+                        >
+                          github.com/mehtahet619
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex justify-center space-x-4">
+                    <motion.a
+                      href="https://www.linkedin.com/in/het-mehta-5b9a47236/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      aria-label="LinkedIn Profile"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                      </svg>
+                    </motion.a>
+
+                    <motion.a
+                      href="https://github.com/mehtahet619"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 flex items-center justify-center bg-slate-800 text-white rounded-full hover:bg-slate-900 transition-colors"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      aria-label="GitHub Profile"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                      >
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                      </svg>
+                    </motion.a>
+
+                    <motion.a
+                      href="mailto:mehtahet619@gmail.com"
+                      className="w-12 h-12 flex items-center justify-center bg-red-600 text-white rounded-full hover:bg-red-700 transition-colors"
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.9 }}
+                      aria-label="Email Contact"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </motion.a>
+                  </div>
+                </div>
+
+                {/* Contact Form */}
+                <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg">
+                  <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
+
+                  <form className="space-y-4">
+                    <div>
+                      <label
+                        htmlFor="name"
+                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
+                      >
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Your name"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
+                      >
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="your.email@example.com"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
+                      >
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        id="subject"
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="What is this regarding?"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1"
+                      >
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        rows={4}
+                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+                        placeholder="Your message here..."
+                        required
+                      ></textarea>
+                    </div>
+
+                    <motion.button
+                      type="submit"
+                      className="w-full py-3 px-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-md hover:from-blue-700 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Send Message
+                    </motion.button>
+                  </form>
                 </div>
               </div>
             </motion.div>

@@ -60,6 +60,7 @@ export default function ImmersiveParallax() {
           "0 0 80px 40px rgba(251, 191, 36, 0.8)",
         ],
   )
+  const celestialRotation = useTransform(smoothScrollProgress, [0, 1], [0, 360])
 
   // Star opacity and scale (only visible in dark mode)
   const starsOpacity = useTransform(smoothScrollProgress, [0, 0.5, 1], [0.3, 0.6, 1])
@@ -150,6 +151,7 @@ export default function ImmersiveParallax() {
           backgroundColor: isDarkMode ? "#f1f5f9" : "#fbbf24",
           boxShadow: celestialGlow,
           transform: "translate(-50%, -50%)",
+          rotate: celestialRotation,
           willChange: "transform, background-color, box-shadow, top, left, width, height",
         }}
         animate={{
@@ -179,7 +181,6 @@ export default function ImmersiveParallax() {
             />
           </>
         )}
-
       </motion.div>
 
       {/* Clouds (only visible in light mode) */}
@@ -450,10 +451,11 @@ function StarField({
         const parallaxX = mousePosition.x * (star.depth * 2)
         const parallaxY = mousePosition.y * (star.depth * 2)
 
-        // Apply scroll-based parallax - NEW
-        const scrollParallaxY = currentScroll * (star.depth * 50)
+        // Apply scroll-based parallax - ENHANCED
+        const scrollParallaxY = currentScroll * (star.depth * 80)
+        const scrollParallaxX = currentScroll * (star.depth * 20) * (star.x > window.innerWidth / 2 ? 1 : -1)
 
-        const x = star.x + parallaxX
+        const x = star.x + parallaxX + scrollParallaxX
         const y = star.y + parallaxY - scrollParallaxY
 
         // Create a subtle glow effect for brighter stars

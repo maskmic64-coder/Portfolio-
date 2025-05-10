@@ -17,6 +17,11 @@ export default function TerminalView() {
   const terminalRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
+  const [historyIndex, setHistoryIndex] = useState(-1)
+  const [inputHistory, setInputHistory] = useState<string[]>([])
+  const [tempInput, setTempInput] = useState("")
+  const availableCommands = ["help", "whoami", "projects", "skills", "achievements", "competitive", "contact", "clear"]
+
   // Initial welcome message
   useEffect(() => {
     const initialOutput = [
@@ -73,8 +78,67 @@ export default function TerminalView() {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       e.preventDefault()
-      processCommand(input)
-      setInput("")
+      if (input.trim()) {
+        // Add command to history
+        setInputHistory((prev) => [...prev, input])
+        setHistoryIndex(-1)
+        processCommand(input)
+        setInput("")
+      }
+    } else if (e.key === "Tab") {
+      e.preventDefault()
+      // Command completion
+      const currentInput = input.toLowerCase().trim()
+      if (currentInput) {
+        const matchingCommands = availableCommands.filter((cmd) => cmd.startsWith(currentInput))
+        if (matchingCommands.length === 1) {
+          setInput(matchingCommands[0])
+        } else if (matchingCommands.length > 1) {
+          // Show available completions
+          const completionsOutput = {
+            command: input,
+            output: (
+              <div>
+                <p className="text-yellow-400">Available completions:</p>
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {matchingCommands.map((cmd, index) => (
+                    <span key={index} className="text-green-400">
+                      {cmd}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ),
+          }
+          setCommandHistory((prev) => [...prev, completionsOutput])
+        }
+      }
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault()
+      // Navigate command history (up)
+      if (inputHistory.length > 0) {
+        if (historyIndex === -1) {
+          // Save current input before navigating history
+          setTempInput(input)
+          setHistoryIndex(inputHistory.length - 1)
+          setInput(inputHistory[inputHistory.length - 1])
+        } else if (historyIndex > 0) {
+          setHistoryIndex(historyIndex - 1)
+          setInput(inputHistory[historyIndex - 1])
+        }
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault()
+      // Navigate command history (down)
+      if (historyIndex !== -1) {
+        if (historyIndex === inputHistory.length - 1) {
+          setHistoryIndex(-1)
+          setInput(tempInput)
+        } else {
+          setHistoryIndex(historyIndex + 1)
+          setInput(inputHistory[historyIndex + 1])
+        }
+      }
     }
   }
 
@@ -101,7 +165,7 @@ export default function TerminalView() {
                 <span className="text-green-400">achievements</span> - View my achievements
               </li>
               <li>
-                <span className="text-green-400">Competitive Coding</span> - View my CP Skills Type competitive
+                <span className="text-green-400">competitive</span> - View my CP Skills
               </li>
               <li>
                 <span className="text-green-400">contact</span> - Get my contact information
@@ -113,6 +177,10 @@ export default function TerminalView() {
                 <span className="text-green-400">help</span> - Show this help message
               </li>
             </ul>
+            <p className="mt-2 text-blue-400">
+              Pro tip: Use <span className="text-yellow-400">Tab</span> for command completion and{" "}
+              <span className="text-yellow-400">↑/↓</span> arrows to navigate command history
+            </p>
           </div>
         )
         break
