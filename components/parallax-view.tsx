@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { Code, Server, Database } from "lucide-react"
+import { Code, Server, Database, Download } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
 import ContactForm from "./contact-form"
@@ -38,6 +38,17 @@ export default function ParallaxView() {
   const sunMoonX = useTransform(smoothScrollProgress, [0, 1], ["75%", "50%"])
   const sunMoonScale = useTransform(smoothScrollProgress, [0, 1], [1, 1.5])
   const sunMoonRotate = useTransform(smoothScrollProgress, [0, 1], [0, 45])
+
+  // Handle resume download
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement("a")
+    link.href = "/resume.pdf" // Path to your resume file
+    link.download = "Het_Mehta_Resume.pdf" // Name for the downloaded file
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   // Mouse parallax effect
   useEffect(() => {
@@ -94,8 +105,20 @@ export default function ParallaxView() {
         {glitchStyles}
       </style>
       <div ref={ref} className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white">
-        <div className="absolute top-4 left-4 z-50">
-          <ThemeToggle />
+        {/* Top Navigation Bar with Resume Button */}
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm py-3 px-4 flex justify-between items-center shadow-sm">
+          <div className="flex items-center">
+            <ThemeToggle />
+          </div>
+          <motion.button
+            onClick={handleDownloadResume}
+            className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-md hover:from-blue-700 hover:to-purple-700 transition-all"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Download className="h-4 w-4" />
+            <span>Resume</span>
+          </motion.button>
         </div>
 
         <ImmersiveParallax />
@@ -245,7 +268,7 @@ export default function ParallaxView() {
         </div>
 
         {/* About Section */}
-        <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
+        <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800 mt-16">
           <div className="max-w-5xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -788,8 +811,6 @@ export default function ParallaxView() {
                 {/* Contact Form */}
                 <ContactForm />
               </div>
-
-              
             </motion.div>
           </div>
         </section>

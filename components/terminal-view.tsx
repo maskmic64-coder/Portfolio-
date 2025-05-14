@@ -20,7 +20,17 @@ export default function TerminalView() {
   const [historyIndex, setHistoryIndex] = useState(-1)
   const [inputHistory, setInputHistory] = useState<string[]>([])
   const [tempInput, setTempInput] = useState("")
-  const availableCommands = ["help", "whoami", "projects", "skills", "achievements", "competitive", "contact", "clear"]
+  const availableCommands = [
+    "help",
+    "whoami",
+    "projects",
+    "skills",
+    "achievements",
+    "competitive",
+    "contact",
+    "clear",
+    "resume",
+  ]
 
   // Initial welcome message
   useEffect(() => {
@@ -142,6 +152,17 @@ export default function TerminalView() {
     }
   }
 
+  // Handle resume download
+  const handleDownloadResume = () => {
+    // Create a link element
+    const link = document.createElement("a")
+    link.href = "/resume.pdf" // Path to your resume file
+    link.download = "Het_Mehta_Resume.pdf" // Name for the downloaded file
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   const processCommand = (cmd: string) => {
     const command = cmd.trim().toLowerCase()
     let output: React.ReactNode
@@ -169,6 +190,9 @@ export default function TerminalView() {
               </li>
               <li>
                 <span className="text-green-400">contact</span> - Get my contact information
+              </li>
+              <li>
+                <span className="text-green-400">resume</span> - Download my resume
               </li>
               <li>
                 <span className="text-green-400">clear</span> - Clear the terminal
@@ -384,6 +408,30 @@ export default function TerminalView() {
                 </a>
               </p>
             </div>
+          </div>
+        )
+        break
+
+      case "resume":
+        // Trigger resume download
+        setTimeout(() => {
+          handleDownloadResume()
+        }, 500)
+
+        output = (
+          <div>
+            <p className="text-green-500 mb-2">
+              <span className="animate-pulse">⬇️</span> Downloading resume...
+            </p>
+            <p>
+              If the download doesn't start automatically, click{" "}
+              <button
+                onClick={handleDownloadResume}
+                className="text-blue-400 underline cursor-pointer hover:text-blue-500"
+              >
+                here
+              </button>
+            </p>
           </div>
         )
         break
