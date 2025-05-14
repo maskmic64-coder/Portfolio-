@@ -106,165 +106,23 @@ export default function ParallaxView() {
       </style>
       <div ref={ref} className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white">
         {/* Top Navigation Bar with Resume Button */}
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm py-3 px-4 flex justify-between items-center shadow-sm">
-          <div className="flex items-center">
-            <ThemeToggle />
-          </div>
+        {/* Remove this code: */}
+
+        <ImmersiveParallax />
+        <div className="absolute top-4 left-4 z-50">
+          <ThemeToggle />
+        </div>
+        {/* Add this code after the ThemeToggle div and before the ImmersiveParallax component */}
+        <div className="absolute top-4 right-4 z-50">
           <motion.button
             onClick={handleDownloadResume}
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-md hover:from-blue-700 hover:to-purple-700 transition-all"
+            className="flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-md hover:from-blue-700 hover:to-purple-700 transition-all shadow-md"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Download className="h-4 w-4" />
             <span>Resume</span>
           </motion.button>
-        </div>
-
-        <ImmersiveParallax />
-
-        {/* Enhanced Parallax Elements */}
-        <div className="relative h-[50vh] overflow-hidden bg-gradient-to-b from-sky-300 to-sky-500 dark:from-indigo-900 dark:to-slate-900">
-          {/* Sun/Moon */}
-          <motion.div
-            className="absolute z-20 w-24 h-24 rounded-full bg-yellow-400 dark:bg-slate-200 shadow-lg"
-            style={{
-              top: sunMoonY,
-              left: sunMoonX,
-              scale: sunMoonScale,
-              rotate: sunMoonRotate,
-              boxShadow: "0 0 60px 30px rgba(251, 191, 36, 0.4)",
-              filter: "blur(0.5px)",
-            }}
-            animate={{
-              x: mousePosition.x * 20,
-              y: mousePosition.y * 20,
-            }}
-            transition={{
-              type: "spring",
-              stiffness: 50,
-              damping: 20,
-            }}
-          />
-
-          {/* Clouds Far */}
-          <motion.div className="absolute inset-x-0 top-[10%] z-10" style={{ y: cloudsFarY }}>
-            <div className="relative">
-              <motion.div
-                className="absolute left-[10%] w-40 h-20 bg-white dark:bg-white/70 rounded-full opacity-70"
-                animate={{ x: mousePosition.x * -10 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-              <motion.div
-                className="absolute left-[30%] w-48 h-24 bg-white dark:bg-white/70 rounded-full opacity-80"
-                animate={{ x: mousePosition.x * -15 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-              <motion.div
-                className="absolute left-[60%] w-44 h-22 bg-white dark:bg-white/70 rounded-full opacity-75"
-                animate={{ x: mousePosition.x * -12 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-            </div>
-          </motion.div>
-
-          {/* Clouds Middle */}
-          <motion.div className="absolute inset-x-0 top-[20%] z-20" style={{ y: cloudsMiddleY }}>
-            <div className="relative">
-              <motion.div
-                className="absolute left-[20%] w-52 h-26 bg-white dark:bg-white/80 rounded-full opacity-85"
-                animate={{ x: mousePosition.x * -20 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-              <motion.div
-                className="absolute left-[50%] w-56 h-28 bg-white dark:bg-white/80 rounded-full opacity-90"
-                animate={{ x: mousePosition.x * -25 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-              <motion.div
-                className="absolute left-[80%] w-48 h-24 bg-white dark:bg-white/80 rounded-full opacity-85"
-                animate={{ x: mousePosition.x * -22 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-            </div>
-          </motion.div>
-
-          {/* Clouds Close */}
-          <motion.div className="absolute inset-x-0 top-[30%] z-30" style={{ y: cloudsCloseY }}>
-            <div className="relative">
-              <motion.div
-                className="absolute left-[5%] w-64 h-32 bg-white dark:bg-white/90 rounded-full"
-                animate={{ x: mousePosition.x * -30 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-              <motion.div
-                className="absolute left-[40%] w-72 h-36 bg-white dark:bg-white/90 rounded-full"
-                animate={{ x: mousePosition.x * -35 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-              <motion.div
-                className="absolute left-[75%] w-60 h-30 bg-white dark:bg-white/90 rounded-full"
-                animate={{ x: mousePosition.x * -32 }}
-                transition={{ type: "spring", stiffness: 40, damping: 15 }}
-              />
-            </div>
-          </motion.div>
-
-          {/* River */}
-          <motion.div
-            className="absolute bottom-0 left-0 right-0 h-[20%] bg-blue-400 dark:bg-blue-800 z-40"
-            style={{ y: riverY }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-blue-400 to-blue-500 dark:from-blue-900 dark:via-blue-800 dark:to-blue-900 opacity-80">
-              <motion.div
-                className="absolute inset-0"
-                animate={{
-                  backgroundPosition: ["0% 0%", "100% 100%"],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Number.POSITIVE_INFINITY,
-                  repeatType: "reverse",
-                }}
-                style={{
-                  backgroundImage:
-                    "url(\"data:image/svg+xml,%3Csvg width='100' height='20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q 25 20, 50 10 T 100 10' stroke='rgba(255,255,255,0.3)' fill='none' strokeWidth='2'/%3E%3C/svg%3E\")",
-                  backgroundSize: "100px 20px",
-                }}
-              />
-            </div>
-          </motion.div>
-
-          {/* Mountains */}
-          <motion.div className="absolute bottom-0 left-0 right-0 h-[40%] z-50" style={{ y: mountainFarY }}>
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path
-                fill="rgb(79, 70, 229)"
-                fillOpacity="0.7"
-                d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,202.7C672,203,768,181,864,181.3C960,181,1056,203,1152,208C1248,213,1344,203,1392,197.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </svg>
-          </motion.div>
-
-          <motion.div className="absolute bottom-0 left-0 right-0 h-[45%] z-60" style={{ y: mountainMiddleY }}>
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path
-                fill="rgb(67, 56, 202)"
-                fillOpacity="0.8"
-                d="M0,160L48,165.3C96,171,192,181,288,176C384,171,480,149,576,149.3C672,149,768,171,864,176C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </svg>
-          </motion.div>
-
-          <motion.div className="absolute bottom-0 left-0 right-0 h-[50%] z-70" style={{ y: mountainCloseY }}>
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path
-                fill="rgb(55, 48, 163)"
-                fillOpacity="0.9"
-                d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,176C672,160,768,128,864,128C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-              ></path>
-            </svg>
-          </motion.div>
         </div>
 
         {/* About Section */}
