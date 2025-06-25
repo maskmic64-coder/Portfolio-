@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { Code, Server, Database, Download } from "lucide-react"
+import { Code, Server, Database, Download, Briefcase, Calendar, MapPin } from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
 import ContactForm from "./contact-form"
@@ -97,6 +97,42 @@ export default function ParallaxView() {
       animation: glitch 0.2s linear infinite;
       position: relative;
     }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+      50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8); }
+    }
+
+    @keyframes slide-in-left {
+      0% { transform: translateX(-100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slide-in-right {
+      0% { transform: translateX(100px); opacity: 0; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .animate-pulse-glow {
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .animate-slide-in-left {
+      animation: slide-in-left 0.8s ease-out forwards;
+    }
+
+    .animate-slide-in-right {
+      animation: slide-in-right 0.8s ease-out forwards;
+    }
   `
 
   return (
@@ -105,14 +141,10 @@ export default function ParallaxView() {
         {glitchStyles}
       </style>
       <div ref={ref} className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white">
-        {/* Top Navigation Bar with Resume Button */}
-        {/* Remove this code: */}
-
         <ImmersiveParallax />
         <div className="absolute top-4 left-4 z-50">
           <ThemeToggle />
         </div>
-        {/* Add this code after the ThemeToggle div and before the ImmersiveParallax component */}
         <div className="absolute top-4 right-4 z-50">
           <motion.button
             onClick={handleDownloadResume}
@@ -183,7 +215,7 @@ export default function ParallaxView() {
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                      HTML, CSS, JS, Angular, React & Next.js
+                       AngularJS,.NET framework
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
@@ -295,6 +327,331 @@ export default function ParallaxView() {
                     </li>
                   </ul>
                 </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800 overflow-hidden">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold mb-12 text-center"
+                initial={{ scale: 0.8, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                  Professional Experience
+                </span>
+              </motion.h2>
+
+              <div className="relative">
+                {/* Animated Timeline line */}
+                <motion.div
+                  className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500 hidden md:block rounded-full"
+                  initial={{ height: 0 }}
+                  whileInView={{ height: "100%" }}
+                  transition={{ duration: 1.5, delay: 0.5 }}
+                  viewport={{ once: true }}
+                />
+
+                {/* Experience Items */}
+                <div className="space-y-12">
+                  {/* TatvaSoft Experience */}
+                  <motion.div
+                    className="relative flex items-start"
+                    initial={{ opacity: 0, x: -100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ x: 10 }}
+                  >
+                    {/* Animated Timeline dot */}
+                    <motion.div
+                      className="absolute left-6 w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-slate-800 shadow-lg hidden md:flex items-center justify-center animate-pulse-glow"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.8 }}
+                      viewport={{ once: true }}
+                    >
+                      <Briefcase className="h-3 w-3 text-white" />
+                    </motion.div>
+
+                    {/* Content */}
+                    <motion.div
+                      className="md:ml-16 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 w-full border border-blue-100 dark:border-slate-600"
+                      whileHover={{
+                        scale: 1.02,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div className="animate-float">
+                          <motion.h3
+                            className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.4 }}
+                            viewport={{ once: true }}
+                          >
+                            Software Developer Intern
+                          </motion.h3>
+                          <motion.p
+                            className="text-lg font-semibold text-blue-600 dark:text-blue-400 flex items-center gap-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            viewport={{ once: true }}
+                          >
+                            <MapPin className="h-4 w-4" />
+                            TatvaSoft
+                          </motion.p>
+                        </div>
+                        <motion.div
+                          className="mt-2 md:mt-0"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.6, delay: 0.6 }}
+                          viewport={{ once: true }}
+                        >
+                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full text-sm font-medium shadow-md">
+                            <Calendar className="h-4 w-4" />
+                            May 2025 - June 2025
+                          </span>
+                        </motion.div>
+                      </div>
+
+                      <motion.div
+                        className="space-y-4 text-slate-700 dark:text-slate-300"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.7 }}
+                        viewport={{ once: true }}
+                      >
+                        <p className="leading-relaxed text-lg">
+                          Worked as a Software Developer Intern at TatvaSoft, gaining hands-on experience in .NET and AngularJS
+                          development and contributing to real-world projects using modern web technologies.
+                        </p>
+
+                        <div className="mt-6">
+                          <h4 className="font-semibold text-slate-900 dark:text-white mb-4 text-lg">
+                            Key Responsibilities & Achievements:
+                          </h4>
+                          <ul className="space-y-3">
+                            {[
+                              "Developed and maintained web applications using .NET and AngularJS frameworks",
+                              "Collaborated with senior developers on feature implementation and code optimization",
+                              "Participated in code reviews and followed industry best practices for clean, maintainable code",
+                              "Gained experience with version control systems (Git) and agile development methodologies",
+                              "Worked on database integration and API development for seamless data flow",
+                            ].map((item, index) => (
+                              <motion.li
+                                key={index}
+                                className="flex items-start group"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                                viewport={{ once: true }}
+                              >
+                                <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                                <span className="group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                                  {item}
+                                </span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <motion.div
+                          className="mt-6"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.2 }}
+                          viewport={{ once: true }}
+                        >
+                          <h4 className="font-semibold text-slate-900 dark:text-white mb-3 text-lg">
+                            Technologies Used:
+                          </h4>
+                          <div className="flex flex-wrap gap-3">
+                            {["React.js", ".NET", "AngularJS",  "Git", "REST APIs"].map(
+                              (tech, index) => (
+                                <motion.span
+                                  key={tech}
+                                  className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+                                  initial={{ opacity: 0, scale: 0.8 }}
+                                  whileInView={{ opacity: 1, scale: 1 }}
+                                  transition={{ duration: 0.4, delay: 1.3 + index * 0.1 }}
+                                  viewport={{ once: true }}
+                                  whileHover={{ scale: 1.1, y: -2 }}
+                                >
+                                  {tech}
+                                </motion.span>
+                              ),
+                            )}
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Zidio Experience */}
+                  <motion.div
+                    className="relative flex items-start"
+                    initial={{ opacity: 0, x: 100 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    whileHover={{ x: -10 }}
+                  >
+                    {/* Animated Timeline dot */}
+                    <motion.div
+                      className="absolute left-6 w-6 h-6 bg-gradient-to-r from-green-500 to-teal-500 rounded-full border-4 border-white dark:border-slate-800 shadow-lg hidden md:flex items-center justify-center animate-pulse-glow"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.9 }}
+                      viewport={{ once: true }}
+                      style={{ animationDelay: "1s" }}
+                    >
+                      <svg className="h-3 w-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                      </svg>
+                    </motion.div>
+
+                    {/* Content */}
+                    <motion.div
+                      className="md:ml-16 bg-gradient-to-br from-slate-50 to-green-50 dark:from-slate-700 dark:to-slate-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 w-full border border-green-100 dark:border-slate-600"
+                      whileHover={{
+                        scale: 1.02,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+                      }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                        <div className="animate-float" style={{ animationDelay: "1s" }}>
+                          <motion.h3
+                            className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.5 }}
+                            viewport={{ once: true }}
+                          >
+                            Python Developer Intern
+                          </motion.h3>
+                          <motion.p
+                            className="text-lg font-semibold text-green-600 dark:text-green-400 flex items-center gap-2"
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            viewport={{ once: true }}
+                          >
+                            <MapPin className="h-4 w-4" />
+                            Zidio Development
+                          </motion.p>
+                        </div>
+                        <motion.div
+                          className="mt-2 md:mt-0"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.6, delay: 0.7 }}
+                          viewport={{ once: true }}
+                        >
+                          <span className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full text-sm font-medium shadow-md">
+                            <Calendar className="h-4 w-4" />
+                            May 2025 - June 2025
+                          </span>
+                        </motion.div>
+                      </div>
+
+                      <motion.div
+                        className="space-y-4 text-slate-700 dark:text-slate-300"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        viewport={{ once: true }}
+                      >
+                        <p className="leading-relaxed text-lg">
+                          Worked as a Data Science Intern at Zidio Development, focusing on backend development,
+                          data processing, and machine learning applications using Python ecosystem.
+                        </p>
+
+                        <div className="mt-6">
+                          <h4 className="font-semibold text-slate-900 dark:text-white mb-4 text-lg">
+                            Key Responsibilities & Achievements:
+                          </h4>
+                          <ul className="space-y-3">
+                            {[
+                              "Developed Real time stock market prediction automation scripts for various business processes",
+                              "Worked with data analysis and visualization using pandas, numpy, and matplotlib",
+                              "Built RESTful APIs using Flask and FastAPI frameworks",
+                              "Implemented data processing pipelines and ETL operations",
+                              "Collaborated on machine learning projects using scikit-learn and TensorFlow"
+                          ,
+                            ].map((item, index) => (
+                              <motion.li
+                                key={index}
+                                className="flex items-start group"
+                                initial={{ opacity: 0, x: -20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5, delay: 0.9 + index * 0.1 }}
+                                viewport={{ once: true }}
+                              >
+                                <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-teal-500 rounded-full mt-2 mr-3 flex-shrink-0 group-hover:scale-150 transition-transform duration-300"></div>
+                                <span className="group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors duration-300">
+                                  {item}
+                                </span>
+                              </motion.li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <motion.div
+                          className="mt-6"
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.6, delay: 1.4 }}
+                          viewport={{ once: true }}
+                        >
+                          <h4 className="font-semibold text-slate-900 dark:text-white mb-3 text-lg">
+                            Technologies Used:
+                          </h4>
+                          <div className="flex flex-wrap gap-3">
+                            {[
+                              "Python",
+                              "Flask",
+                              "FastAPI",
+                              "pandas",
+                              "numpy",
+                              "scikit-learn",
+                              "TensorFlow",
+                              "PostgreSQL",
+                            ].map((tech, index) => (
+                              <motion.span
+                                key={tech}
+                                className="px-4 py-2 bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900/30 dark:to-teal-900/30 text-green-800 dark:text-green-300 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4, delay: 1.5 + index * 0.1 }}
+                                viewport={{ once: true }}
+                                whileHover={{ scale: 1.1, y: -2 }}
+                              >
+                                {tech}
+                              </motion.span>
+                            ))}
+                          </div>
+                        </motion.div>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -444,7 +801,7 @@ export default function ParallaxView() {
         {/* CP Profiles Section */}
         <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
           <div className="max-w-5xl mx-auto">
-            <motion.div
+            <motion.div className="shadow-lg text-justify"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -464,11 +821,7 @@ export default function ParallaxView() {
                     className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
                     whileHover={{ y: -5 }}
                   >
-                    <div className="w-16 h-16 flex items-center justify-center bg-orange-100 dark:bg-orange-900/30 rounded-full mb-3">
-                      <svg viewBox="0 0 24 24" className="w-10 h-10 text-orange-500" fill="currentColor">
-                        <path d="M16.102 17.93l-2.697 2.607c-.466.467-1.111.662-1.823.662s-1.357-.195-1.824-.662l-4.332-4.363c-.467-.467-.702-1.15-.702-1.863s.235-1.357.702-1.824l4.319-4.38c.467-.467 1.125-.645 1.837-.645s1.357.195 1.823.662l2.697 2.606c.514.515 1.111.744 1.715.744 1.144 0 2.392-.926 2.392-2.341 0-.639-.244-1.111-.721-1.587l-2.684-2.607c-1.541-1.541-3.67-2.459-5.994-2.459-2.325 0-4.453.918-5.994 2.459l-4.34 4.38c-1.541 1.541-2.459 3.67-2.459 5.994s.918 4.453 2.459 5.994l4.34 4.38c1.541 1.541 3.67 2.459 5.994 2.459s4.453-.918 5.994-2.459l2.684-2.607c.514-.514.722-1.111.722-1.716 0-1.367-1.144-2.342-2.392-2.342-.571 0-1.144.244-1.716.744z" />
-                      </svg>
-                    </div>
+                    
                     <span className="font-medium text-lg">LeetCode</span>
                     <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
                   </motion.a>
@@ -480,11 +833,7 @@ export default function ParallaxView() {
                     className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
                     whileHover={{ y: -5 }}
                   >
-                    <div className="w-16 h-16 flex items-center justify-center bg-green-100 dark:bg-green-900/30 rounded-full mb-3">
-                      <svg viewBox="0 0 24 24" className="w-10 h-10 text-green-600" fill="currentColor">
-                        <path d="M21.45 14.315c-.143.28-.334.532-.565.745a3.299 3.299 0 0 1-1.647.745 3.293 3.293 0 0 1-1.738-.168 3.316 3.316 0 0 1-1.884-1.613 3.332 3.332 0 0 1-.335-1.368 3.318 3.318 0 0 1 2.77-3.264 3.3 3.3 0 0 1 3.484 1.183c.565.745.848 1.683.792 2.622a3.32 3.32 0 0 1-.877 2.118zm-1.939-.112a1.66 1.66 0 0 0 1.475-1.651 1.664 1.664 0 0 0-1.474-1.652 1.66 1.66 0 0 0-1.475 1.652 1.664 1.664 0 0 0 1.474 1.651zm-6.838-6.39a3.332 3.332 0 0 1 1.738.168 3.32 3.32 0 0 1 1.884 1.613c.242.429.363.913.335 1.4a3.316 3.316 0 0 1-2.77 3.231 3.3 3.3 0 0 1-3.484-1.183 3.325 3.325 0 0 1-.792-2.622 3.32 3.32 0 0 1 .877-2.118c.143-.28.334-.532.565-.745a3.3 3.3 0 0 1 1.647-.744zm.464 4.427a1.66 1.66 0 0 0 1.475-1.651 1.664 1.664 0 0 0-1.475-1.652 1.66 1.66 0 0 0-1.474 1.652 1.664 1.664 0 0 0 1.474 1.651zM4.55 14.315a3.299 3.299 0 0 0 2.212 1.49 3.293 3.293 0 0 0 1.738-.168 3.316 3.316 0 0 0 1.884-1.613 3.332 3.332 0 0 0 .335-1.368 3.318 3.318 0 0 0-2.77-3.264 3.3 3.3 0 0 0-3.484 1.183 3.325 3.325 0 0 0-.792 2.622 3.32 3.32 0 0 0 .877 2.118zm1.939-.112a1.66 1.66 0 0 1-1.475-1.651 1.664 1.664 0 0 1 1.475-1.652 1.66 1.66 0 0 1 1.474 1.652 1.664 1.664 0 0 1-1.474 1.651z" />
-                      </svg>
-                    </div>
+                    
                     <span className="font-medium text-lg">GeeksforGeeks</span>
                     <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
                   </motion.a>
@@ -494,7 +843,7 @@ export default function ParallaxView() {
           </div>
         </section>
 
-        {/* Contact Section */}
+        {/* Contact Section with EmailJS Integration */}
         <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -504,6 +853,9 @@ export default function ParallaxView() {
               viewport={{ once: true, margin: "-100px" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Get In Touch</h2>
+              <p className="text-center text-slate-600 dark:text-slate-400 mb-8">
+                Send me a message and I'll get back to you as soon as possible.
+              </p>
 
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Contact Info */}

@@ -26,6 +26,7 @@ export default function TerminalView() {
     "projects",
     "skills",
     "achievements",
+    "experience",
     "competitive",
     "contact",
     "clear",
@@ -186,6 +187,9 @@ export default function TerminalView() {
                 <span className="text-green-400">achievements</span> - View my achievements
               </li>
               <li>
+                <span className="text-green-400">experience</span> - View my work experience
+              </li>
+              <li>
                 <span className="text-green-400">competitive</span> - View my CP Skills
               </li>
               <li>
@@ -250,6 +254,51 @@ export default function TerminalView() {
               <div>
                 <p className="font-bold text-green-400">Ongoing Startups</p>
                 <p>Building a production grade AI Systems.</p>
+              </div>
+            </div>
+          </div>
+        )
+        break
+
+      case "experience":
+        output = (
+          <div>
+            <p className="font-bold text-yellow-400 mb-2">Professional Experience:</p>
+            <div className="ml-4 space-y-6">
+              <div>
+                <p className="font-bold text-green-400">Software Developer Intern - TatvaSoft</p>
+                <p className="text-blue-400">May 2025 - June 2025</p>
+                <div className="ml-2 mt-2 space-y-1">
+                  <p>
+                    • Developed and maintained web applications using React.js, Node.js, and modern JavaScript
+                    frameworks
+                  </p>
+                  <p>• Collaborated with senior developers on feature implementation and code optimization</p>
+                  <p>
+                    • Participated in code reviews and followed industry best practices for clean, maintainable code
+                  </p>
+                  <p>• Gained experience with version control systems (Git) and agile development methodologies</p>
+                  <p>• Worked on database integration and API development for seamless data flow</p>
+                </div>
+                <p className="text-purple-400 mt-2">
+                  Tech Stack: React.js, Node.js, JavaScript, HTML/CSS, Git, REST APIs
+                </p>
+              </div>
+
+              <div>
+                <p className="font-bold text-green-400">Python Developer Intern - Zidio Development</p>
+                <p className="text-blue-400">March 2025 - April 2025</p>
+                <div className="ml-2 mt-2 space-y-1">
+                  <p>• Developed Python-based applications and automation scripts for various business processes</p>
+                  <p>• Worked with data analysis and visualization using pandas, numpy, and matplotlib</p>
+                  <p>• Built RESTful APIs using Flask and FastAPI frameworks</p>
+                  <p>• Implemented data processing pipelines and ETL operations</p>
+                  <p>• Collaborated on machine learning projects using scikit-learn and TensorFlow</p>
+                  <p>• Optimized existing Python codebases for better performance and maintainability</p>
+                </div>
+                <p className="text-purple-400 mt-2">
+                  Tech Stack: Python, Flask, FastAPI, pandas, numpy, scikit-learn, TensorFlow, PostgreSQL
+                </p>
               </div>
             </div>
           </div>
