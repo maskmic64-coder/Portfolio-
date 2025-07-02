@@ -157,7 +157,7 @@ export default function TerminalView() {
   const handleDownloadResume = () => {
     // Create a link element
     const link = document.createElement("a")
-    link.href = "/resume.pdf" // Path to your resume file
+    link.href = "/resume.pdf" // Path to your resume file in public folder
     link.download = "Het_Mehta_Resume.pdf" // Name for the downloaded file
     document.body.appendChild(link)
     link.click()

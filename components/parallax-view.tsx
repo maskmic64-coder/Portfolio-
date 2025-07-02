@@ -43,7 +43,7 @@ export default function ParallaxView() {
   const handleDownloadResume = () => {
     // Create a link element
     const link = document.createElement("a")
-    link.href = "/resume.pdf" // Path to your resume file
+    link.href = "/resume.pdf" // Path to your resume file in public folder
     link.download = "Het_Mehta_Resume.pdf" // Name for the downloaded file
     document.body.appendChild(link)
     link.click()
@@ -215,7 +215,7 @@ export default function ParallaxView() {
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                       AngularJS,.NET framework
+                      AngularJS,.NET framework
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
@@ -438,8 +438,8 @@ export default function ParallaxView() {
                         viewport={{ once: true }}
                       >
                         <p className="leading-relaxed text-lg">
-                          Worked as a Software Developer Intern at TatvaSoft, gaining hands-on experience in .NET and AngularJS
-                          development and contributing to real-world projects using modern web technologies.
+                          Worked as a Software Developer Intern at TatvaSoft, gaining hands-on experience in .NET and
+                          AngularJS development and contributing to real-world projects using modern web technologies.
                         </p>
 
                         <div className="mt-6">
@@ -482,21 +482,19 @@ export default function ParallaxView() {
                             Technologies Used:
                           </h4>
                           <div className="flex flex-wrap gap-3">
-                            {["React.js", ".NET", "AngularJS",  "Git", "REST APIs"].map(
-                              (tech, index) => (
-                                <motion.span
-                                  key={tech}
-                                  className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
-                                  initial={{ opacity: 0, scale: 0.8 }}
-                                  whileInView={{ opacity: 1, scale: 1 }}
-                                  transition={{ duration: 0.4, delay: 1.3 + index * 0.1 }}
-                                  viewport={{ once: true }}
-                                  whileHover={{ scale: 1.1, y: -2 }}
-                                >
-                                  {tech}
-                                </motion.span>
-                              ),
-                            )}
+                            {["React.js", ".NET", "AngularJS", "Git", "REST APIs"].map((tech, index) => (
+                              <motion.span
+                                key={tech}
+                                className="px-4 py-2 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer"
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.4, delay: 1.3 + index * 0.1 }}
+                                viewport={{ once: true }}
+                                whileHover={{ scale: 1.1, y: -2 }}
+                              >
+                                {tech}
+                              </motion.span>
+                            ))}
                           </div>
                         </motion.div>
                       </motion.div>
@@ -579,8 +577,8 @@ export default function ParallaxView() {
                         viewport={{ once: true }}
                       >
                         <p className="leading-relaxed text-lg">
-                          Worked as a Data Science Intern at Zidio Development, focusing on backend development,
-                          data processing, and machine learning applications using Python ecosystem.
+                          Worked as a Data Science Intern at Zidio Development, focusing on backend development, data
+                          processing, and machine learning applications using Python ecosystem.
                         </p>
 
                         <div className="mt-6">
@@ -593,8 +591,7 @@ export default function ParallaxView() {
                               "Worked with data analysis and visualization using pandas, numpy, and matplotlib",
                               "Built RESTful APIs using Flask and FastAPI frameworks",
                               "Implemented data processing pipelines and ETL operations",
-                              "Collaborated on machine learning projects using scikit-learn and TensorFlow"
-                          ,
+                              "Collaborated on machine learning projects using scikit-learn and TensorFlow",
                             ].map((item, index) => (
                               <motion.li
                                 key={index}
@@ -801,7 +798,8 @@ export default function ParallaxView() {
         {/* CP Profiles Section */}
         <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
           <div className="max-w-5xl mx-auto">
-            <motion.div className="shadow-lg text-justify"
+            <motion.div
+              className="shadow-lg text-justify"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
@@ -821,7 +819,6 @@ export default function ParallaxView() {
                     className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
                     whileHover={{ y: -5 }}
                   >
-                    
                     <span className="font-medium text-lg">LeetCode</span>
                     <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
                   </motion.a>
@@ -833,7 +830,6 @@ export default function ParallaxView() {
                     className="flex flex-col items-center p-4 bg-white dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-lg transition-colors shadow"
                     whileHover={{ y: -5 }}
                   >
-                    
                     <span className="font-medium text-lg">GeeksforGeeks</span>
                     <span className="text-sm text-slate-600 dark:text-slate-400">mehtahet619</span>
                   </motion.a>
