@@ -22,8 +22,8 @@ import { Download, Github, Linkedin, Mail, Code, User, Briefcase, FolderOpen, Ta
 // Game State Management
 interface GameState {
   score: number
-  sectionsRevealed: Set<string>
-  currentTarget: string | null
+  /** list of section ids the player has already revealed */
+  sectionsRevealed: string[] // <= plain array, JSON-serialisable
   gameStarted: boolean
   crosshairPosition: { x: number; y: number }
 }
@@ -417,7 +417,7 @@ function ContactTarget({ position, isRevealed, onHit }: any) {
 
 function GameHUD({ gameState, onStartGame, onResetGame }: any) {
   const totalSections = 5
-  const progress = (gameState.sectionsRevealed.size / totalSections) * 100
+  const progress = (gameState.sectionsRevealed.length / totalSections) * 100
 
   return (
     <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-50">
@@ -433,7 +433,7 @@ function GameHUD({ gameState, onStartGame, onResetGame }: any) {
           </div>
           <div className="text-sm">
             <span className="text-blue-400">
-              Progress: {gameState.sectionsRevealed.size}/{totalSections}
+              Progress: {gameState.sectionsRevealed.length}/{totalSections}
             </span>
           </div>
         </div>
@@ -466,7 +466,7 @@ function GameHUD({ gameState, onStartGame, onResetGame }: any) {
         </div>
 
         {/* Victory Message */}
-        {gameState.sectionsRevealed.size === totalSections && (
+        {gameState.sectionsRevealed.length === totalSections && (
           <div className="mt-3 p-3 bg-green-600/20 border border-green-400 rounded text-center">
             <p className="text-green-400 font-bold">🎉 Congratulations!</p>
             <p className="text-sm text-gray-300">You've unlocked all portfolio sections!</p>
@@ -522,15 +522,19 @@ function Scene({ gameState, onHit }: any) {
       </Center>
 
       {/* Target Sections */}
-      <AboutTarget position={[-6, 2, 0]} isRevealed={gameState.sectionsRevealed.has("about")} onHit={onHit} />
-      <SkillsTarget position={[6, 3, 0]} isRevealed={gameState.sectionsRevealed.has("skills")} onHit={onHit} />
+      <AboutTarget position={[-6, 2, 0]} isRevealed={gameState.sectionsRevealed.includes("about")} onHit={onHit} />
+      <SkillsTarget position={[6, 3, 0]} isRevealed={gameState.sectionsRevealed.includes("skills")} onHit={onHit} />
       <ExperienceTarget
         position={[-3, -1, -3]}
-        isRevealed={gameState.sectionsRevealed.has("experience")}
+        isRevealed={gameState.sectionsRevealed.includes("experience")}
         onHit={onHit}
       />
-      <ProjectsTarget position={[4, -2, -2]} isRevealed={gameState.sectionsRevealed.has("projects")} onHit={onHit} />
-      <ContactTarget position={[0, 0, -5]} isRevealed={gameState.sectionsRevealed.has("contact")} onHit={onHit} />
+      <ProjectsTarget
+        position={[4, -2, -2]}
+        isRevealed={gameState.sectionsRevealed.includes("projects")}
+        onHit={onHit}
+      />
+      <ContactTarget position={[0, 0, -5]} isRevealed={gameState.sectionsRevealed.includes("contact")} onHit={onHit} />
     </>
   )
 }
@@ -558,8 +562,7 @@ export default function ShootingGamePortfolio() {
   const [isLoading, setIsLoading] = useState(true)
   const [gameState, setGameState] = useState<GameState>({
     score: 0,
-    sectionsRevealed: new Set(),
-    currentTarget: null,
+    sectionsRevealed: [],
     gameStarted: false,
     crosshairPosition: { x: 0, y: 0 },
   })
@@ -598,7 +601,9 @@ export default function ShootingGamePortfolio() {
     setGameState((prev) => ({
       ...prev,
       score: prev.score + 100,
-      sectionsRevealed: new Set([...prev.sectionsRevealed, sectionId]),
+      sectionsRevealed: prev.sectionsRevealed.includes(sectionId)
+        ? prev.sectionsRevealed
+        : [...prev.sectionsRevealed, sectionId],
     }))
   }, [])
 
@@ -609,8 +614,7 @@ export default function ShootingGamePortfolio() {
   const handleResetGame = () => {
     setGameState({
       score: 0,
-      sectionsRevealed: new Set(),
-      currentTarget: null,
+      sectionsRevealed: [],
       gameStarted: false,
       crosshairPosition: { x: 0, y: 0 },
     })
@@ -674,7 +678,7 @@ export default function ShootingGamePortfolio() {
               <div
                 key={i}
                 className={`w-2 h-2 rounded-full ${
-                  gameState.sectionsRevealed.size > i ? "bg-green-400" : "bg-gray-600"
+                  gameState.sectionsRevealed.length > i ? "bg-green-400" : "bg-gray-600"
                 } animate-pulse`}
                 style={{ animationDelay: `${i * 0.2}s` }}
               />
