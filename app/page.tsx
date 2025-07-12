@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import ViewSelector from "@/components/view-selector"
 import TerminalView from "@/components/terminal-view"
 import ParallaxView from "@/components/parallax-view"
+import ShootingGamePortfolio from "@/components/shooting-game-portfolio"
 import ViewToggle from "@/components/view-toggle"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -36,7 +37,9 @@ export default function Home() {
           <ViewSelector onSelectView={handleViewSelect} />
         ) : (
           <div className="relative">
-            {selectedView === "terminal" ? <TerminalView /> : <ParallaxView />}
+            {selectedView === "terminal" && <TerminalView />}
+            {selectedView === "parallax" && <ParallaxView />}
+            {selectedView === "shooting" && <ShootingGamePortfolio />}
             <div className="fixed top-4 right-4 z-50">
               <ViewToggle currentView={selectedView} onToggle={handleViewSelect} />
             </div>
