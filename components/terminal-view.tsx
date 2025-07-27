@@ -231,10 +231,31 @@ export default function TerminalView() {
             <p className="font-bold text-yellow-400 mb-2">My Achievements:</p>
             <div className="ml-4 space-y-4">
               <div>
-                <p className="font-bold text-green-400">Odoo Hackathon 2025 - 1st Runners Up</p>
+                <p className="font-bold text-green-400">Odoo Hackathon 2025 - Winner 🏆</p>
                 <p>
-                  Won 1st Runner-Up for the Carbon Footprint Tracker project, focusing on reducing industrial carbon
-                  emissions using IoT sensors and AI.
+                  Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing industrial
+                  carbon emissions using IoT sensors and AI.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">Fluxus 2025 - Finalist 🥈</p>
+                <p>
+                  Reached the finals of Fluxus 2025, demonstrating innovative solutions in technology and
+                  entrepreneurship.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">HSBC Hackathon - Finalist 🥈</p>
+                <p>
+                  Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
+                  challenges.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">DOT 5G Hackathon - Finalist (Ongoing) 🚀</p>
+                <p>
+                  Currently competing as a finalist in the DOT 5G Hackathon, working on next-generation 5G applications
+                  and solutions.
                 </p>
               </div>
               <div>
@@ -245,15 +266,17 @@ export default function TerminalView() {
                 </p>
               </div>
               <div>
-                <p className="font-bold text-green-400">Smart India Hackathon 2024</p>
+                <p className="font-bold text-green-400">Building LenGen</p>
                 <p>
-                  Participated in SIH 2024, developing an AI-Driven Research Engine for Commercial Courts with a focus
-                  on NLP and text processing.
+                  <a
+                    href="https://lengen.in/"
+                    className="text-blue-400 underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    lengen.in
+                  </a>
                 </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">Ongoing Startups</p>
-                <p>Building a production grade AI Systems.</p>
               </div>
             </div>
           </div>

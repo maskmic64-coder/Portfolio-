@@ -17,7 +17,7 @@ import {
 import * as THREE from "three"
 import { useTheme } from "next-themes"
 import ThemeToggle from "./theme-toggle"
-import { Download, Github, Linkedin, Mail, Code, User, Briefcase, FolderOpen, Target } from "lucide-react"
+import { Download, Github, Linkedin, Mail, Code, User, Briefcase, FolderOpen, Target, Trophy } from "lucide-react"
 
 // Game State Management
 interface GameState {
@@ -225,6 +225,73 @@ function SkillsTarget({ position, isRevealed, onHit }: any) {
   )
 }
 
+function AchievementsTarget({ position, isRevealed, onHit }: any) {
+  return (
+    <TargetSection
+      position={position}
+      size={1.1}
+      color="#f59e0b"
+      sectionId="achievements"
+      name="Achievements"
+      icon={<Trophy className="w-6 h-6 text-yellow-400" />}
+      isRevealed={isRevealed}
+      onHit={onHit}
+    >
+      <Html
+        center
+        transform
+        occlude
+        position={[3.2, 0, 0]}
+        style={{
+          width: "340px",
+          padding: "20px",
+          background: "rgba(15, 23, 42, 0.95)",
+          borderRadius: "12px",
+          color: "white",
+          fontSize: "14px",
+          border: "2px solid #f59e0b",
+        }}
+      >
+        <div>
+          <h3 className="text-lg font-bold mb-3 text-yellow-400">🎯 Target Hit! Achievements</h3>
+          <div className="space-y-3">
+            <div className="border-l-2 border-yellow-400 pl-3">
+              <h4 className="font-bold text-blue-400">🏆 Odoo Hackathon 2025</h4>
+              <p className="text-gray-300 text-sm">Winner - Carbon Footprint Tracker</p>
+            </div>
+            <div className="border-l-2 border-blue-400 pl-3">
+              <h4 className="font-bold text-blue-400">🥈 Fluxus 2025</h4>
+              <p className="text-gray-300 text-sm">Finalist - Innovation in Technology</p>
+            </div>
+            <div className="border-l-2 border-green-400 pl-3">
+              <h4 className="font-bold text-blue-400">🥈 HSBC Hackathon</h4>
+              <p className="text-gray-300 text-sm">Finalist - Fintech Solutions</p>
+            </div>
+            <div className="border-l-2 border-purple-400 pl-3">
+              <h4 className="font-bold text-blue-400">🚀 DOT 5G Hackathon</h4>
+              <p className="text-gray-300 text-sm">Finalist (Ongoing) - 5G Applications</p>
+            </div>
+            <div className="border-l-2 border-emerald-400 pl-3">
+              <h4 className="font-bold text-blue-400">🚀 Building LenGen</h4>
+              <p className="text-gray-300 text-sm">
+                <a
+                  href="https://lengen.in/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:underline"
+                >
+                  lengen.in
+                </a>
+              </p>
+            </div>
+          </div>
+          <div className="mt-3 text-green-400 text-sm">✅ Section Unlocked!</div>
+        </div>
+      </Html>
+    </TargetSection>
+  )
+}
+
 function ExperienceTarget({ position, isRevealed, onHit }: any) {
   return (
     <TargetSection
@@ -341,10 +408,10 @@ function ContactTarget({ position, isRevealed, onHit }: any) {
     <TargetSection
       position={position}
       size={0.9}
-      color="#f59e0b"
+      color="#06b6d4"
       sectionId="contact"
       name="Contact"
-      icon={<Mail className="w-6 h-6 text-yellow-400" />}
+      icon={<Mail className="w-6 h-6 text-cyan-400" />}
       isRevealed={isRevealed}
       onHit={onHit}
     >
@@ -361,11 +428,11 @@ function ContactTarget({ position, isRevealed, onHit }: any) {
           color: "white",
           fontSize: "14px",
           textAlign: "center",
-          border: "2px solid #f59e0b",
+          border: "2px solid #06b6d4",
         }}
       >
         <div>
-          <h3 className="text-lg font-bold mb-4 text-yellow-400">🎯 Target Hit! Get In Touch</h3>
+          <h3 className="text-lg font-bold mb-4 text-cyan-400">🎯 Target Hit! Get In Touch</h3>
 
           <div className="space-y-3 mb-4">
             <div>
@@ -416,7 +483,7 @@ function ContactTarget({ position, isRevealed, onHit }: any) {
 }
 
 function GameHUD({ gameState, onStartGame, onResetGame }: any) {
-  const totalSections = 5
+  const totalSections = 6 // Updated to 6 sections
   const progress = (gameState.sectionsRevealed.length / totalSections) * 100
 
   return (
@@ -524,6 +591,11 @@ function Scene({ gameState, onHit }: any) {
       {/* Target Sections */}
       <AboutTarget position={[-6, 2, 0]} isRevealed={gameState.sectionsRevealed.includes("about")} onHit={onHit} />
       <SkillsTarget position={[6, 3, 0]} isRevealed={gameState.sectionsRevealed.includes("skills")} onHit={onHit} />
+      <AchievementsTarget
+        position={[0, 4, -2]}
+        isRevealed={gameState.sectionsRevealed.includes("achievements")}
+        onHit={onHit}
+      />
       <ExperienceTarget
         position={[-3, -1, -3]}
         isRevealed={gameState.sectionsRevealed.includes("experience")}
@@ -640,7 +712,7 @@ export default function ShootingGamePortfolio() {
         <ul className="text-sm space-y-1">
           <li>• Click targets to reveal sections</li>
           <li>• Each hit scores 100 points</li>
-          <li>• Unlock all 5 sections to win</li>
+          <li>• Unlock all 6 sections to win</li>
           <li>• Drag to rotate view</li>
           <li>• Scroll to zoom in/out</li>
         </ul>
@@ -674,7 +746,7 @@ export default function ShootingGamePortfolio() {
         <div className="bg-black/90 text-white px-6 py-3 rounded-full flex items-center space-x-4">
           <span className="text-sm">🎮 Interactive Portfolio Shooting Game</span>
           <div className="flex space-x-2">
-            {Array.from({ length: 5 }).map((_, i) => (
+            {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
                 className={`w-2 h-2 rounded-full ${

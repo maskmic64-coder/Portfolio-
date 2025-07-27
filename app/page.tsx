@@ -1,10 +1,15 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
+
+const ThreePortfolio = dynamic(() => import("@/components/three-portfolio"), { ssr: false })
+const SolarPortfolio = dynamic(() => import("@/components/solar-system-portfolio"), { ssr: false })
+const ShootingPortfolio = dynamic(() => import("@/components/shooting-game-portfolio"), { ssr: false })
+
 import ViewSelector from "@/components/view-selector"
 import TerminalView from "@/components/terminal-view"
 import ParallaxView from "@/components/parallax-view"
-import ShootingGamePortfolio from "@/components/shooting-game-portfolio"
 import ViewToggle from "@/components/view-toggle"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -39,7 +44,9 @@ export default function Home() {
           <div className="relative">
             {selectedView === "terminal" && <TerminalView />}
             {selectedView === "parallax" && <ParallaxView />}
-            {selectedView === "shooting" && <ShootingGamePortfolio />}
+            {selectedView === "three" && <ThreePortfolio />}
+            {selectedView === "solar" && <SolarPortfolio />}
+            {selectedView === "shooting" && <ShootingPortfolio />}
             <div className="fixed top-4 right-4 z-50">
               <ViewToggle currentView={selectedView} onToggle={handleViewSelect} />
             </div>
