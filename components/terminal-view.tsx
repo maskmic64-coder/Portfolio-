@@ -194,7 +194,7 @@ export default function TerminalView() {
                 <span className="text-green-400">competitive</span> - View my CP Skills
               </li>
               <li>
-                <span className="text-green-400">startup</span> - View my startup venture
+                <span className="text-green-400">startup</span> - View my startup ventures
               </li>
               <li>
                 <span className="text-green-400">contact</span> - Get my contact information
@@ -478,8 +478,8 @@ export default function TerminalView() {
       case "startup":
         output = (
           <div>
-            <p className="font-bold text-yellow-400 mb-2">My Startup Venture:</p>
-            <div className="ml-4 space-y-4">
+            <p className="font-bold text-yellow-400 mb-2">My Startup Ventures:</p>
+            <div className="ml-4 space-y-6">
               <div>
                 <p className="font-bold text-green-400">LenGen - Carbon Neutrality Solutions 🌱</p>
                 <p className="mb-2">
@@ -509,6 +509,38 @@ export default function TerminalView() {
                 </ul>
                 <p className="mt-2">
                   <span className="text-green-400">Status:</span> Currently in development and testing phase
+                </p>
+              </div>
+
+              <div>
+                <p className="font-bold text-green-400">CornvAi - AI Sales Automation Platform 🤖</p>
+                <p className="mb-2">
+                  Developing CornvAi, an AI-powered sales automation platform designed specifically for SMBs. Our
+                  platform automates lead generation, outreach campaigns, and deal tracking to help small businesses
+                  scale their sales operations efficiently.
+                </p>
+                <p className="mb-2">
+                  <span className="text-blue-400">Tagline:</span> "Automate Your Sales. Accelerate Your Growth."
+                </p>
+                <p className="mb-2">
+                  <span className="text-purple-400">Core Features:</span>
+                </p>
+                <ul className="ml-4 space-y-1">
+                  <li>• AI Outreach Engine - Personalized email & WhatsApp automation</li>
+                  <li>• Smart Lead Generation - LinkedIn and Google Maps scraping</li>
+                  <li>• CRM Automation - Automatic deal tracking and updates</li>
+                  <li>• Sales Insights Dashboard - Pipeline visualization and forecasting</li>
+                </ul>
+                <p className="mb-2">
+                  <span className="text-cyan-400">How It Works:</span>
+                </p>
+                <ul className="ml-4 space-y-1">
+                  <li>1. Connect Your Accounts (Email, WhatsApp, CRM)</li>
+                  <li>2. Launch AI-Generated Campaigns</li>
+                  <li>3. Track & Close with AI Insights</li>
+                </ul>
+                <p className="mt-2">
+                  <span className="text-green-400">Status:</span> Early development phase, seeking early access users
                 </p>
               </div>
             </div>

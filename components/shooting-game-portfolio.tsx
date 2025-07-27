@@ -4,7 +4,6 @@ import { useRef, useEffect, useState, Suspense, useCallback } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import {
   OrbitControls,
-  Text,
   Environment,
   Float,
   Html,
@@ -13,11 +12,12 @@ import {
   Center,
   MeshDistortMaterial,
   Sparkles,
+  Text,
 } from "@react-three/drei"
 import * as THREE from "three"
 import { useTheme } from "next-themes"
 import ThemeToggle from "./theme-toggle"
-import { Download, Github, Linkedin, Mail, Code, User, Briefcase, FolderOpen, Target, Trophy } from "lucide-react"
+import { Download, Github, Linkedin, Mail, Code, User, Briefcase, FolderOpen, Target, Trophy, Bot } from "lucide-react"
 
 // Game State Management
 interface GameState {
@@ -469,15 +469,15 @@ function ContactTarget({ position, isRevealed, onHit }: any) {
   )
 }
 
-function LenGenTarget({ position, isRevealed, onHit }: any) {
+function StartupsTarget({ position, isRevealed, onHit }: any) {
   return (
     <TargetSection
       position={position}
       size={1.0}
       color="#10b981"
-      sectionId="lengen"
-      name="LenGen Startup"
-      icon={<span className="text-2xl">🌱</span>}
+      sectionId="startups"
+      name="My Startups"
+      icon={<Bot className="w-6 h-6 text-emerald-400" />}
       isRevealed={isRevealed}
       onHit={onHit}
     >
@@ -487,7 +487,7 @@ function LenGenTarget({ position, isRevealed, onHit }: any) {
         occlude
         position={[3, 0, 0]}
         style={{
-          width: "320px",
+          width: "360px",
           padding: "20px",
           background: "rgba(15, 23, 42, 0.95)",
           borderRadius: "12px",
@@ -497,29 +497,28 @@ function LenGenTarget({ position, isRevealed, onHit }: any) {
         }}
       >
         <div>
-          <h3 className="text-lg font-bold mb-3 text-green-400">🎯 Target Hit! My Startup Venture</h3>
-          <div className="space-y-3">
+          <h3 className="text-lg font-bold mb-3 text-green-400">🎯 Target Hit! My Startup Ventures</h3>
+          <div className="space-y-4">
             <div className="border-l-2 border-green-400 pl-3">
               <h4 className="font-bold text-blue-400">🌱 LenGen</h4>
               <p className="text-gray-300 text-sm">Carbon Neutrality Solutions for Red Zone Industries</p>
-            </div>
-            <div className="text-sm text-gray-300">
-              <p className="mb-2">Building a comprehensive platform for:</p>
-              <ul className="space-y-1 ml-2">
-                <li>• Real-time emission monitoring</li>
-                <li>• AI-powered reduction strategies</li>
-                <li>• Automated compliance reporting</li>
-              </ul>
-            </div>
-            <div className="text-center mt-3">
+              <p className="text-gray-400 text-xs mt-1">Real-time emission monitoring & AI analytics</p>
               <a
                 href="https://lengen.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-sm transition-colors"
+                className="text-green-400 text-xs hover:underline"
               >
-                🌐 Visit LenGen
+                🌐 lengen.in
               </a>
+            </div>
+            <div className="border-l-2 border-blue-400 pl-3">
+              <h4 className="font-bold text-blue-400">🤖 CornvAi</h4>
+              <p className="text-gray-300 text-sm">AI Sales Automation Platform for SMBs</p>
+              <p className="text-gray-400 text-xs mt-1">"Automate Your Sales. Accelerate Your Growth."</p>
+              <div className="text-xs text-gray-400 mt-1">
+                • AI Outreach Engine • Smart Lead Generation • CRM Automation
+              </div>
             </div>
           </div>
           <div className="mt-3 text-green-400 text-sm">✅ Section Unlocked!</div>
@@ -654,7 +653,11 @@ function Scene({ gameState, onHit }: any) {
         onHit={onHit}
       />
       <ContactTarget position={[0, 0, -5]} isRevealed={gameState.sectionsRevealed.includes("contact")} onHit={onHit} />
-      <LenGenTarget position={[-2, -3, -6]} isRevealed={gameState.sectionsRevealed.includes("lengen")} onHit={onHit} />
+      <StartupsTarget
+        position={[-2, -3, -6]}
+        isRevealed={gameState.sectionsRevealed.includes("startups")}
+        onHit={onHit}
+      />
     </>
   )
 }

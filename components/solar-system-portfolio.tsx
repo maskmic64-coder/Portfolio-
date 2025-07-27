@@ -4,7 +4,7 @@ import { useRef, useEffect, useState, Suspense } from "react"
 import { Canvas, useFrame, useThree } from "@react-three/fiber"
 import {
   OrbitControls,
-  Text,
+  Text as DreiText,
   Environment,
   Float,
   Html,
@@ -91,9 +91,9 @@ function Sun() {
       </Float>
 
       <Center position={[0, 2.5, 0]}>
-        <Text fontSize={0.4} color="#ffffff" anchorX="center" anchorY="middle">
+        <DreiText fontSize={0.4} color="#ffffff" anchorX="center" anchorY="middle">
           Full Stack Developer & AI/ML Engineer
-        </Text>
+        </DreiText>
       </Center>
     </group>
   )

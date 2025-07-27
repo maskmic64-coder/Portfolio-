@@ -2,7 +2,19 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { Code, Server, Database, Download, Briefcase, Calendar, MapPin } from "lucide-react"
+import {
+  Code,
+  Server,
+  Database,
+  Download,
+  Briefcase,
+  Calendar,
+  MapPin,
+  Bot,
+  Users,
+  BarChart3,
+  MessageSquare,
+} from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
 import ContactForm from "./contact-form"
@@ -955,110 +967,166 @@ export default function ParallaxView() {
         </section>
 
         {/* Startup Section */}
-        <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/10 dark:to-green-900/10">
-          <div className="max-w-5xl mx-auto">
+        <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-emerald-50 to-blue-50 dark:from-emerald-900/10 dark:to-blue-900/10">
+          <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🚀 My Startup Venture</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🚀 My Startup Ventures</h2>
 
-              <motion.div
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border-l-4 border-emerald-500 max-w-4xl mx-auto"
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mr-6">
-                    <span className="text-3xl">🌱</span>
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* LenGen */}
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border-l-4 border-emerald-500"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mr-6">
+                      <span className="text-3xl">🌱</span>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400">LenGen</h3>
+                      <p className="text-lg text-gray-600 dark:text-gray-400">Carbon Neutrality Solutions</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400">LenGen</h3>
-                    <p className="text-lg text-gray-600 dark:text-gray-400">
-                      Carbon Neutrality Solutions for Red Zone Industries
-                    </p>
-                  </div>
-                </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">🎯 Mission</h4>
-                    <p className="text-slate-700 dark:text-slate-300 mb-4">
+                  <div className="space-y-4">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Building a comprehensive platform that helps red zone industries achieve carbon neutrality through
                       advanced monitoring, intelligent reduction strategies, and automated compliance management.
                     </p>
 
-                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">🔧 Key Features</h4>
-                    <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                      <li className="flex items-start">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        Real-time emission monitoring with IoT sensors
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        AI-powered predictive analytics for optimization
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        Automated compliance reporting
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                        Industry-specific carbon footprint solutions
-                      </li>
-                    </ul>
-                  </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-3">🔧 Key Features</h4>
+                      <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                        <li className="flex items-start">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          Real-time emission monitoring with IoT sensors
+                        </li>
+                        <li className="flex items-start">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          AI-powered predictive analytics for optimization
+                        </li>
+                        <li className="flex items-start">
+                          <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          Automated compliance reporting
+                        </li>
+                      </ul>
+                    </div>
 
-                  <div>
-                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">📊 Impact Goals</h4>
-                    <div className="space-y-4">
-                      <div className="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg">
-                        <h5 className="font-semibold text-emerald-700 dark:text-emerald-300">Setup</h5>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
-                          Easy integration with existing industrial systems
-                        </p>
-                      </div>
-                      <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                        <h5 className="font-semibold text-blue-700 dark:text-blue-300">Monitor</h5>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
-                          Real-time tracking of carbon emissions
-                        </p>
-                      </div>
-                      <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
-                        <h5 className="font-semibold text-orange-700 dark:text-orange-300">Reduce</h5>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
-                          AI-driven strategies for emission reduction
-                        </p>
-                      </div>
-                      <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
-                        <h5 className="font-semibold text-purple-700 dark:text-purple-300">Save from Penalty</h5>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">
-                          Automated compliance and penalty avoidance
-                        </p>
-                      </div>
+                    <div className="text-center pt-4">
+                      <motion.a
+                        href="https://lengen.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-6 py-3 rounded-lg hover:from-emerald-700 hover:to-green-700 transition-all shadow-md text-lg font-medium"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <span className="text-xl">🌐</span>
+                        Visit LenGen
+                      </motion.a>
+                      <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                        <span className="font-medium text-emerald-600 dark:text-emerald-400">Status:</span> Development
+                        & Testing Phase
+                      </p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
 
-                <div className="mt-8 text-center">
-                  <motion.a
-                    href="https://lengen.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-6 py-3 rounded-lg hover:from-emerald-700 hover:to-green-700 transition-all shadow-md text-lg font-medium"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <span className="text-xl">🌐</span>
-                    Visit LenGen
-                  </motion.a>
-                  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
-                    <span className="font-medium text-emerald-600 dark:text-emerald-400">Status:</span> Currently in
-                    development and testing phase
-                  </p>
-                </div>
-              </motion.div>
+                {/* CornvAi */}
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border-l-4 border-blue-500"
+                >
+                  <div className="flex items-center mb-6">
+                    <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mr-6">
+                      <Bot className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">CornvAi</h3>
+                      <p className="text-lg text-gray-600 dark:text-gray-400">AI Sales Automation Platform</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                      <p className="text-blue-800 dark:text-blue-300 font-semibold text-center">
+                        "Automate Your Sales. Accelerate Your Growth."
+                      </p>
+                    </div>
+
+                    <p className="text-slate-700 dark:text-slate-300">
+                      Developing an AI-powered sales automation platform designed specifically for SMBs. Our platform
+                      automates lead generation, outreach campaigns, and deal tracking.
+                    </p>
+
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-3">🤖 Core Features</h4>
+                      <div className="grid grid-cols-2 gap-3">
+                        <div className="flex items-center space-x-2">
+                          <MessageSquare className="w-4 h-4 text-blue-500" />
+                          <span className="text-sm text-slate-700 dark:text-slate-300">AI Outreach Engine</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Users className="w-4 h-4 text-green-500" />
+                          <span className="text-sm text-slate-700 dark:text-slate-300">Smart Lead Generation</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <Database className="w-4 h-4 text-purple-500" />
+                          <span className="text-sm text-slate-700 dark:text-slate-300">CRM Automation</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <BarChart3 className="w-4 h-4 text-orange-500" />
+                          <span className="text-sm text-slate-700 dark:text-slate-300">Sales Insights</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-3">📈 How It Works</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            1
+                          </div>
+                          <span className="text-sm text-slate-700 dark:text-slate-300">Connect Your Accounts</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            2
+                          </div>
+                          <span className="text-sm text-slate-700 dark:text-slate-300">Launch AI Campaigns</span>
+                        </div>
+                        <div className="flex items-center space-x-3">
+                          <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                            3
+                          </div>
+                          <span className="text-sm text-slate-700 dark:text-slate-300">Track & Close Deals</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="text-center pt-4">
+                      <motion.button
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-md text-lg font-medium"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Bot className="w-5 h-5" />
+                        Get Early Access
+                      </motion.button>
+                      <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                        <span className="font-medium text-blue-600 dark:text-blue-400">Status:</span> Early Development
+                        Phase
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
