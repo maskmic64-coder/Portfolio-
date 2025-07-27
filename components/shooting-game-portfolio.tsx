@@ -271,19 +271,6 @@ function AchievementsTarget({ position, isRevealed, onHit }: any) {
               <h4 className="font-bold text-blue-400">🚀 DOT 5G Hackathon</h4>
               <p className="text-gray-300 text-sm">Finalist (Ongoing) - 5G Applications</p>
             </div>
-            <div className="border-l-2 border-emerald-400 pl-3">
-              <h4 className="font-bold text-blue-400">🚀 Building LenGen</h4>
-              <p className="text-gray-300 text-sm">
-                <a
-                  href="https://lengen.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-400 hover:underline"
-                >
-                  lengen.in
-                </a>
-              </p>
-            </div>
           </div>
           <div className="mt-3 text-green-400 text-sm">✅ Section Unlocked!</div>
         </div>
@@ -482,8 +469,68 @@ function ContactTarget({ position, isRevealed, onHit }: any) {
   )
 }
 
+function LenGenTarget({ position, isRevealed, onHit }: any) {
+  return (
+    <TargetSection
+      position={position}
+      size={1.0}
+      color="#10b981"
+      sectionId="lengen"
+      name="LenGen Startup"
+      icon={<span className="text-2xl">🌱</span>}
+      isRevealed={isRevealed}
+      onHit={onHit}
+    >
+      <Html
+        center
+        transform
+        occlude
+        position={[3, 0, 0]}
+        style={{
+          width: "320px",
+          padding: "20px",
+          background: "rgba(15, 23, 42, 0.95)",
+          borderRadius: "12px",
+          color: "white",
+          fontSize: "14px",
+          border: "2px solid #10b981",
+        }}
+      >
+        <div>
+          <h3 className="text-lg font-bold mb-3 text-green-400">🎯 Target Hit! My Startup Venture</h3>
+          <div className="space-y-3">
+            <div className="border-l-2 border-green-400 pl-3">
+              <h4 className="font-bold text-blue-400">🌱 LenGen</h4>
+              <p className="text-gray-300 text-sm">Carbon Neutrality Solutions for Red Zone Industries</p>
+            </div>
+            <div className="text-sm text-gray-300">
+              <p className="mb-2">Building a comprehensive platform for:</p>
+              <ul className="space-y-1 ml-2">
+                <li>• Real-time emission monitoring</li>
+                <li>• AI-powered reduction strategies</li>
+                <li>• Automated compliance reporting</li>
+              </ul>
+            </div>
+            <div className="text-center mt-3">
+              <a
+                href="https://lengen.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-green-600 hover:bg-green-700 px-3 py-1 rounded text-sm transition-colors"
+              >
+                🌐 Visit LenGen
+              </a>
+            </div>
+          </div>
+          <div className="mt-3 text-green-400 text-sm">✅ Section Unlocked!</div>
+        </div>
+      </Html>
+    </TargetSection>
+  )
+}
+
 function GameHUD({ gameState, onStartGame, onResetGame }: any) {
-  const totalSections = 6 // Updated to 6 sections
+  const totalSections = 7 // Updated to 7 sections
   const progress = (gameState.sectionsRevealed.length / totalSections) * 100
 
   return (
@@ -607,6 +654,7 @@ function Scene({ gameState, onHit }: any) {
         onHit={onHit}
       />
       <ContactTarget position={[0, 0, -5]} isRevealed={gameState.sectionsRevealed.includes("contact")} onHit={onHit} />
+      <LenGenTarget position={[-2, -3, -6]} isRevealed={gameState.sectionsRevealed.includes("lengen")} onHit={onHit} />
     </>
   )
 }
@@ -712,7 +760,7 @@ export default function ShootingGamePortfolio() {
         <ul className="text-sm space-y-1">
           <li>• Click targets to reveal sections</li>
           <li>• Each hit scores 100 points</li>
-          <li>• Unlock all 6 sections to win</li>
+          <li>• Unlock all 7 sections to win</li>
           <li>• Drag to rotate view</li>
           <li>• Scroll to zoom in/out</li>
         </ul>
@@ -746,7 +794,7 @@ export default function ShootingGamePortfolio() {
         <div className="bg-black/90 text-white px-6 py-3 rounded-full flex items-center space-x-4">
           <span className="text-sm">🎮 Interactive Portfolio Shooting Game</span>
           <div className="flex space-x-2">
-            {Array.from({ length: 6 }).map((_, i) => (
+            {Array.from({ length: 7 }).map((_, i) => (
               <div
                 key={i}
                 className={`w-2 h-2 rounded-full ${

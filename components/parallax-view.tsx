@@ -303,35 +303,6 @@ export default function ParallaxView() {
                     Autonomous Navigation System for Martian Terrain.
                   </p>
                 </motion.div>
-
-                {/* Achievement 6 */}
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-emerald-500"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-2xl">🚀</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400">Building LenGen</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Ongoing Startup</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 dark:text-slate-300">
-                    Currently building{" "}
-                    <a
-                      href="https://lengen.in/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-emerald-600 dark:text-emerald-400 hover:underline font-medium"
-                    >
-                      LenGen
-                    </a>
-                    , a carbon neutrality solution for red zone industries focused on monitoring, reducing, and managing
-                    industrial emissions.
-                  </p>
-                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -979,6 +950,115 @@ export default function ParallaxView() {
                   </motion.a>
                 </div>
               </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Startup Section */}
+        <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/10 dark:to-green-900/10">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🚀 My Startup Venture</h2>
+
+              <motion.div
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-lg border-l-4 border-emerald-500 max-w-4xl mx-auto"
+              >
+                <div className="flex items-center mb-6">
+                  <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mr-6">
+                    <span className="text-3xl">🌱</span>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400">LenGen</h3>
+                    <p className="text-lg text-gray-600 dark:text-gray-400">
+                      Carbon Neutrality Solutions for Red Zone Industries
+                    </p>
+                  </div>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">🎯 Mission</h4>
+                    <p className="text-slate-700 dark:text-slate-300 mb-4">
+                      Building a comprehensive platform that helps red zone industries achieve carbon neutrality through
+                      advanced monitoring, intelligent reduction strategies, and automated compliance management.
+                    </p>
+
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">🔧 Key Features</h4>
+                    <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        Real-time emission monitoring with IoT sensors
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        AI-powered predictive analytics for optimization
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        Automated compliance reporting
+                      </li>
+                      <li className="flex items-start">
+                        <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                        Industry-specific carbon footprint solutions
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-4">📊 Impact Goals</h4>
+                    <div className="space-y-4">
+                      <div className="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-lg">
+                        <h5 className="font-semibold text-emerald-700 dark:text-emerald-300">Setup</h5>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                          Easy integration with existing industrial systems
+                        </p>
+                      </div>
+                      <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
+                        <h5 className="font-semibold text-blue-700 dark:text-blue-300">Monitor</h5>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                          Real-time tracking of carbon emissions
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 dark:bg-orange-900/20 p-4 rounded-lg">
+                        <h5 className="font-semibold text-orange-700 dark:text-orange-300">Reduce</h5>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                          AI-driven strategies for emission reduction
+                        </p>
+                      </div>
+                      <div className="bg-purple-50 dark:bg-purple-900/20 p-4 rounded-lg">
+                        <h5 className="font-semibold text-purple-700 dark:text-purple-300">Save from Penalty</h5>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">
+                          Automated compliance and penalty avoidance
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 text-center">
+                  <motion.a
+                    href="https://lengen.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-green-600 text-white px-6 py-3 rounded-lg hover:from-emerald-700 hover:to-green-700 transition-all shadow-md text-lg font-medium"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="text-xl">🌐</span>
+                    Visit LenGen
+                  </motion.a>
+                  <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                    <span className="font-medium text-emerald-600 dark:text-emerald-400">Status:</span> Currently in
+                    development and testing phase
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>

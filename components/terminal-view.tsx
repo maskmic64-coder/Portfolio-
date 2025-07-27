@@ -28,6 +28,7 @@ export default function TerminalView() {
     "achievements",
     "experience",
     "competitive",
+    "startup",
     "contact",
     "clear",
     "resume",
@@ -193,6 +194,9 @@ export default function TerminalView() {
                 <span className="text-green-400">competitive</span> - View my CP Skills
               </li>
               <li>
+                <span className="text-green-400">startup</span> - View my startup venture
+              </li>
+              <li>
                 <span className="text-green-400">contact</span> - Get my contact information
               </li>
               <li>
@@ -263,19 +267,6 @@ export default function TerminalView() {
                 <p>
                   Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
                   Autonomous Navigation System for Martian Terrain.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">Building LenGen</p>
-                <p>
-                  <a
-                    href="https://lengen.in/"
-                    className="text-blue-400 underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    lengen.in
-                  </a>
                 </p>
               </div>
             </div>
@@ -479,6 +470,47 @@ export default function TerminalView() {
                   leetcode.com/u/mehtahet619
                 </a>
               </p>
+            </div>
+          </div>
+        )
+        break
+
+      case "startup":
+        output = (
+          <div>
+            <p className="font-bold text-yellow-400 mb-2">My Startup Venture:</p>
+            <div className="ml-4 space-y-4">
+              <div>
+                <p className="font-bold text-green-400">LenGen - Carbon Neutrality Solutions 🌱</p>
+                <p className="mb-2">
+                  Building LenGen, a comprehensive carbon neutrality platform for red zone industries. Our solution
+                  helps industries monitor, reduce, and manage their carbon emissions through advanced IoT sensors,
+                  AI-powered analytics, and automated reporting systems.
+                </p>
+                <p className="mb-2">
+                  <span className="text-blue-400">Website:</span>{" "}
+                  <a
+                    href="https://lengen.in/"
+                    className="text-blue-400 underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    lengen.in
+                  </a>
+                </p>
+                <p className="mb-2">
+                  <span className="text-purple-400">Key Features:</span>
+                </p>
+                <ul className="ml-4 space-y-1">
+                  <li>• Real-time emission monitoring with IoT integration</li>
+                  <li>• AI-powered predictive analytics for emission reduction</li>
+                  <li>• Automated compliance reporting and penalty management</li>
+                  <li>• Industry-specific carbon footprint optimization</li>
+                </ul>
+                <p className="mt-2">
+                  <span className="text-green-400">Status:</span> Currently in development and testing phase
+                </p>
+              </div>
             </div>
           </div>
         )
