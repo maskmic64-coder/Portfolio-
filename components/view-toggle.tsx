@@ -1,6 +1,6 @@
 "use client"
 
-import { Terminal, MountainIcon as Mountains, Target } from "lucide-react"
+import { Terminal, MountainIcon as Mountains } from 'lucide-react'
 import { motion } from "framer-motion"
 
 interface ViewToggleProps {
@@ -14,8 +14,6 @@ export default function ViewToggle({ currentView, onToggle }: ViewToggleProps) {
       case "terminal":
         return "parallax"
       case "parallax":
-        return "shooting"
-      case "shooting":
         return "terminal"
       default:
         return "terminal"
@@ -28,8 +26,6 @@ export default function ViewToggle({ currentView, onToggle }: ViewToggleProps) {
         return <Terminal className="h-5 w-5 text-emerald-500" />
       case "parallax":
         return <Mountains className="h-5 w-5 text-purple-500" />
-      case "shooting":
-        return <Target className="h-5 w-5 text-red-500" />
       default:
         return <Terminal className="h-5 w-5 text-emerald-500" />
     }

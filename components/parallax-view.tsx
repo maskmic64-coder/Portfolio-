@@ -2,19 +2,7 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import {
-  Code,
-  Server,
-  Database,
-  Download,
-  Briefcase,
-  Calendar,
-  MapPin,
-  Bot,
-  Users,
-  BarChart3,
-  MessageSquare,
-} from "lucide-react"
+import { Code, Server, Database, Download, Briefcase, Calendar, MapPin, Bot, Users, BarChart3, MessageSquare } from 'lucide-react'
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
 import ContactForm from "./contact-form"
@@ -313,6 +301,27 @@ export default function ParallaxView() {
                   <p className="text-slate-700 dark:text-slate-300">
                     Shortlisted in the top 170 teams among 1,600 colleges for the ISRO IRoC-U challenge, creating an
                     Autonomous Navigation System for Martian Terrain.
+                  </p>
+                </motion.div>
+
+                {/* Achievement 6 - Tech Speaker */}
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-indigo-500"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-2xl">🎤</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-indigo-600 dark:text-indigo-400">Tech Speaker</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Conference & Meetup Speaker</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development, 
+                    and emerging technologies. Delivered talks on carbon footprint tracking, network security, and 
+                    sustainable tech solutions.
                   </p>
                 </motion.div>
               </div>

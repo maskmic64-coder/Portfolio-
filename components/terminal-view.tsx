@@ -269,6 +269,14 @@ export default function TerminalView() {
                   Autonomous Navigation System for Martian Terrain.
                 </p>
               </div>
+              <div>
+                <p className="font-bold text-green-400">Tech Speaker 🎤</p>
+                <p>
+                  Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development, 
+                  and emerging technologies. Delivered talks on carbon footprint tracking, network security, and 
+                  sustainable tech solutions.
+                </p>
+              </div>
             </div>
           </div>
         )

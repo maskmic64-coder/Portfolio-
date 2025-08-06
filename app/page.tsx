@@ -5,7 +5,6 @@ import dynamic from "next/dynamic"
 
 const ThreePortfolio = dynamic(() => import("@/components/three-portfolio"), { ssr: false })
 const SolarPortfolio = dynamic(() => import("@/components/solar-system-portfolio"), { ssr: false })
-const ShootingPortfolio = dynamic(() => import("@/components/shooting-game-portfolio"), { ssr: false })
 
 import ViewSelector from "@/components/view-selector"
 import TerminalView from "@/components/terminal-view"
@@ -20,7 +19,7 @@ export default function Home() {
   useEffect(() => {
     // Check localStorage for saved view preference
     const savedView = localStorage.getItem("portfolioView")
-    if (savedView) {
+    if (savedView && (savedView === "terminal" || savedView === "parallax")) {
       setSelectedView(savedView)
     }
     setIsLoading(false)
@@ -46,7 +45,6 @@ export default function Home() {
             {selectedView === "parallax" && <ParallaxView />}
             {selectedView === "three" && <ThreePortfolio />}
             {selectedView === "solar" && <SolarPortfolio />}
-            {selectedView === "shooting" && <ShootingPortfolio />}
             <div className="fixed top-4 right-4 z-50">
               <ViewToggle currentView={selectedView} onToggle={handleViewSelect} />
             </div>
