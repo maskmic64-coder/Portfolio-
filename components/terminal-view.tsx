@@ -242,13 +242,6 @@ export default function TerminalView() {
                 </p>
               </div>
               <div>
-                <p className="font-bold text-green-400">Fluxus 2025 - Finalist 🥈</p>
-                <p>
-                  Reached the finals of Fluxus 2025, demonstrating innovative solutions in technology and
-                  entrepreneurship.
-                </p>
-              </div>
-              <div>
                 <p className="font-bold text-green-400">HSBC Hackathon - Finalist 🥈</p>
                 <p>
                   Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
@@ -272,9 +265,30 @@ export default function TerminalView() {
               <div>
                 <p className="font-bold text-green-400">Tech Speaker 🎤</p>
                 <p>
-                  Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development, 
-                  and emerging technologies. Delivered talks on carbon footprint tracking, network security, and 
+                  Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development,
+                  and emerging technologies. Delivered talks on carbon footprint tracking, network security, and
                   sustainable tech solutions.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">IIT Indore Hackathon - 4th Position 🥉</p>
+                <p>
+                  Secured 4th position in the prestigious IIT Indore Hackathon, competing against top teams from across
+                  India. Developed innovative solutions showcasing technical excellence and problem-solving skills.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">GirlScript Summer of Code - Contributor 👩‍💻</p>
+                <p>
+                  Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.
+                  Contributed to multiple projects, mentored newcomers, and helped build inclusive tech communities.
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-green-400">Open Source India Connect - Contributor 🌐</p>
+                <p>
+                  Contributing member of Open Source India Connect, promoting open-source culture and collaboration.
+                  Participated in community initiatives, code contributions, and knowledge sharing sessions.
                 </p>
               </div>
             </div>

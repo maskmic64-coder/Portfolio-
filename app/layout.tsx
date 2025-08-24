@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: ["portfolio", "developer", "full stack", "AI", "ML", "cybersecurity", "Het Mehta"],
   authors: [{ name: "Het Mehta" }],
   creator: "Het Mehta",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

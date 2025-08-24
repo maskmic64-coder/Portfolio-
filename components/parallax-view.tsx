@@ -2,7 +2,19 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
-import { Code, Server, Database, Download, Briefcase, Calendar, MapPin, Bot, Users, BarChart3, MessageSquare } from 'lucide-react'
+import {
+  Code,
+  Server,
+  Database,
+  Download,
+  Briefcase,
+  Calendar,
+  MapPin,
+  Bot,
+  Users,
+  BarChart3,
+  MessageSquare,
+} from "lucide-react"
 import ThemeToggle from "./theme-toggle"
 import ImmersiveParallax from "./immersive-parallax"
 import ContactForm from "./contact-form"
@@ -203,7 +215,7 @@ export default function ParallaxView() {
               viewport={{ once: true, margin: "-100px" }}
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🏆 Achievements</h2>
-              <div className="grid md:grid-cols-2 gap-8">
+              <div className="grid md:grid-cols-3 gap-8">
                 {/* Achievement 1 */}
                 <motion.div
                   whileHover={{ y: -10, scale: 1.02 }}
@@ -221,26 +233,6 @@ export default function ParallaxView() {
                   <p className="text-slate-700 dark:text-slate-300">
                     Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing
                     industrial carbon emissions using IoT sensors and AI.
-                  </p>
-                </motion.div>
-
-                {/* Achievement 2 */}
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-blue-500"
-                >
-                  <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mr-4">
-                      <span className="text-2xl">🥈</span>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">Fluxus 2025</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">Finalist</p>
-                    </div>
-                  </div>
-                  <p className="text-slate-700 dark:text-slate-300">
-                    Reached the finals of Fluxus 2025, demonstrating innovative solutions in technology and
-                    entrepreneurship.
                   </p>
                 </motion.div>
 
@@ -319,9 +311,70 @@ export default function ParallaxView() {
                     </div>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300">
-                    Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development, 
-                    and emerging technologies. Delivered talks on carbon footprint tracking, network security, and 
+                    Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development,
+                    and emerging technologies. Delivered talks on carbon footprint tracking, network security, and
                     sustainable tech solutions.
+                  </p>
+                </motion.div>
+
+                {/* Achievement 7 - IIT Indore Hackathon */}
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-orange-500"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-2xl">🥉</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-orange-600 dark:text-orange-400">IIT Indore Hackathon</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">4th Position</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Secured 4th position in the prestigious IIT Indore Hackathon, competing against top teams from
+                    across India. Developed innovative solutions showcasing technical excellence and problem-solving
+                    skills.
+                  </p>
+                </motion.div>
+
+                {/* Achievement 8 - GirlScript Summer of Code */}
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-pink-500"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-2xl">👩‍💻</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-pink-600 dark:text-pink-400">GirlScript Summer of Code</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Contributor</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.
+                    Contributed to multiple projects, mentored newcomers, and helped build inclusive tech communities.
+                  </p>
+                </motion.div>
+
+                {/* Achievement 9 - Open Source India Connect */}
+                <motion.div
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-teal-500"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mr-4">
+                      <span className="text-2xl">🌐</span>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-teal-600 dark:text-teal-400">Open Source India Connect</h3>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">Contributor</p>
+                    </div>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300">
+                    Contributing member of Open Source India Connect, promoting open-source culture and collaboration.
+                    Participated in community initiatives, code contributions, and knowledge sharing sessions.
                   </p>
                 </motion.div>
               </div>
