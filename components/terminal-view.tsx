@@ -235,61 +235,77 @@ export default function TerminalView() {
             <p className="font-bold text-yellow-400 mb-2">My Achievements:</p>
             <div className="ml-4 space-y-4">
               <div>
-                <p className="font-bold text-green-400">Odoo Hackathon 2025 - Winner 🏆</p>
-                <p>
-                  Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing industrial
-                  carbon emissions using IoT sensors and AI.
-                </p>
+                <p className="font-bold text-green-400">🏆 Hackathons & Competitions</p>
+                <div className="ml-4 space-y-2">
+                  <div>
+                    <p className="font-bold text-blue-400">Odoo Hackathon 2025 - Winner 🏆</p>
+                    <p>
+                      Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing
+                      industrial carbon emissions using IoT sensors and AI.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">HSBC Hackathon - Finalist 🥈</p>
+                    <p>
+                      Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
+                      challenges.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">DOT 5G Hackathon - Finalist (Ongoing) 🚀</p>
+                    <p>
+                      Currently competing as a finalist in the DOT 5G Hackathon, working on next-generation 5G
+                      applications and solutions.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">IIT Indore Hackathon - 4th Position 🥉</p>
+                    <p>
+                      Secured 4th position in the prestigious IIT Indore Hackathon, competing against top teams from
+                      across India. Developed innovative solutions showcasing technical excellence and problem-solving
+                      skills.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">ISRO Robotics Challenge 2025 - Shortlisted</p>
+                    <p>
+                      Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
+                      Autonomous Navigation System for Martian Terrain.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div>
-                <p className="font-bold text-green-400">HSBC Hackathon - Finalist 🥈</p>
-                <p>
-                  Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
-                  challenges.
-                </p>
+                <p className="font-bold text-green-400">🌐 Open Source Contributions</p>
+                <div className="ml-4 space-y-2">
+                  <div>
+                    <p className="font-bold text-blue-400">GirlScript Summer of Code - Contributor 👩‍💻</p>
+                    <p>
+                      Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.
+                      Contributed to multiple projects, mentored newcomers, and helped build inclusive tech communities.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">Open Source India Connect - Contributor 🌐</p>
+                    <p>
+                      Contributing member of Open Source India Connect, promoting open-source culture and collaboration.
+                      Participated in community initiatives, code contributions, and knowledge sharing sessions.
+                    </p>
+                  </div>
+                </div>
               </div>
               <div>
-                <p className="font-bold text-green-400">DOT 5G Hackathon - Finalist (Ongoing) 🚀</p>
-                <p>
-                  Currently competing as a finalist in the DOT 5G Hackathon, working on next-generation 5G applications
-                  and solutions.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">ISRO Robotics Challenge 2025 - Shortlisted</p>
-                <p>
-                  Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
-                  Autonomous Navigation System for Martian Terrain.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">Tech Speaker 🎤</p>
-                <p>
-                  Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack development,
-                  and emerging technologies. Delivered talks on carbon footprint tracking, network security, and
-                  sustainable tech solutions.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">IIT Indore Hackathon - 4th Position 🥉</p>
-                <p>
-                  Secured 4th position in the prestigious IIT Indore Hackathon, competing against top teams from across
-                  India. Developed innovative solutions showcasing technical excellence and problem-solving skills.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">GirlScript Summer of Code - Contributor 👩‍💻</p>
-                <p>
-                  Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.
-                  Contributed to multiple projects, mentored newcomers, and helped build inclusive tech communities.
-                </p>
-              </div>
-              <div>
-                <p className="font-bold text-green-400">Open Source India Connect - Contributor 🌐</p>
-                <p>
-                  Contributing member of Open Source India Connect, promoting open-source culture and collaboration.
-                  Participated in community initiatives, code contributions, and knowledge sharing sessions.
-                </p>
+                <p className="font-bold text-green-400">🎤 Speaking & Community</p>
+                <div className="ml-4 space-y-2">
+                  <div>
+                    <p className="font-bold text-blue-400">Tech Speaker 🎤</p>
+                    <p>
+                      Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack
+                      development, and emerging technologies. Delivered talks on carbon footprint tracking, network
+                      security, and sustainable tech solutions.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
