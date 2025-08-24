@@ -9,7 +9,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emailjs/browser": "latest",
+    "@emailjs/browser": "^4.4.1",
     "@emotion/is-prop-valid": "latest",
     "@next/font": "^14.0.0",
     "@react-three/drei": "latest",

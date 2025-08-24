@@ -1,20 +1,18 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
-import emailjs from "@emailjs/browser"
 
 export default function ContactForm() {
-  const formRef = useRef<HTMLFormElement>(null)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
   })
+  const [result, setResult] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<null | "success" | "error" | "config_needed">(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target
@@ -24,48 +22,37 @@ export default function ContactForm() {
     }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
     setIsSubmitting(true)
-    setSubmitStatus(null)
+    setResult("Sending....")
 
-    // TODO: Replace these with your actual EmailJS credentials
-    const serviceId = "service_5oykdf7" // e.g. "service_xxx"
-    const templateId = "template_y2u0rrn" // e.g. "template_xxx"
-    const publicKey = "ONEwn4u3HcbnjQhzP" // e.g. "user_xxx"
-
-    // Check if EmailJS is properly configured
-    if (serviceId === "service_5oykdf7" || templateId === "template_y2u0rrn" || publicKey === "ONEwn4u3HcbnjQhzP") {
-      console.log("EmailJS not configured. Please update the configuration.")
-      setSubmitStatus("config_needed")
-      setIsSubmitting(false)
-      return
-    }
+    const formDataToSend = new FormData(event.currentTarget)
+    formDataToSend.append("access_key", "3468cf84-2597-4fdb-bcad-462b0ae08c57")
 
     try {
-      if (!formRef.current) {
-        throw new Error("Form reference is not available")
-      }
-
-      // Initialize EmailJS
-      emailjs.init(publicKey)
-
-      // Send email using EmailJS
-      const result = await emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
-
-      console.log("Email sent successfully!", result.text)
-      setSubmitStatus("success")
-
-      // Reset form after successful submission
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend,
       })
+
+      const data = await response.json()
+
+      if (data.success) {
+        setResult("Thank You for contacting ! Het will get back to you shortly")
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+      } else {
+        console.log("Error", data)
+        setResult(data.message)
+      }
     } catch (error) {
-      console.error("Error sending email:", error)
-      setSubmitStatus("error")
+      console.error("Error submitting form:", error)
+      setResult("There was an error sending your message. Please try again.")
     } finally {
       setIsSubmitting(false)
     }
@@ -75,40 +62,23 @@ export default function ContactForm() {
     <div className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg max-w-md mx-auto">
       <h3 className="text-2xl font-bold mb-6 text-center">Send Me a Message</h3>
 
-      {submitStatus === "success" && (
+      {result && (
         <motion.div
-          className="mb-6 p-4 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-md"
+          className={`mb-6 p-4 rounded-md ${
+            result === "Form Submitted Successfully"
+              ? "bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300"
+              : result === "Sending...."
+                ? "bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300"
+                : "bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300"
+          }`}
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          Thank you for your message! Your email has been sent successfully.
+          {result}
         </motion.div>
       )}
 
-      {submitStatus === "error" && (
-        <motion.div
-          className="mb-6 p-4 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 rounded-md"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          There was an error sending your email. Please try again later or contact directly at mehtahet619@gmail.com.
-        </motion.div>
-      )}
-
-      {submitStatus === "config_needed" && (
-        <motion.div
-          className="mb-6 p-4 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-md"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <p className="font-medium">EmailJS configuration needed</p>
-          <p className="mt-1">
-            Please contact me directly at mehtahet619@gmail.com until the contact form is fully configured.
-          </p>
-        </motion.div>
-      )}
-
-      <form ref={formRef} className="space-y-4" onSubmit={handleSubmit}>
+      <form className="space-y-4" onSubmit={onSubmit}>
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
             Name
@@ -116,7 +86,7 @@ export default function ContactForm() {
           <input
             type="text"
             id="name"
-            name="from_name" // EmailJS template parameter
+            name="name"
             value={formData.name}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -132,7 +102,7 @@ export default function ContactForm() {
           <input
             type="email"
             id="email"
-            name="from_email" // EmailJS template parameter
+            name="email"
             value={formData.email}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -148,7 +118,7 @@ export default function ContactForm() {
           <input
             type="text"
             id="subject"
-            name="subject" // EmailJS template parameter
+            name="subject"
             value={formData.subject}
             onChange={handleChange}
             className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -163,7 +133,7 @@ export default function ContactForm() {
           </label>
           <textarea
             id="message"
-            name="message" // EmailJS template parameter
+            name="message"
             rows={4}
             value={formData.message}
             onChange={handleChange}
@@ -172,9 +142,6 @@ export default function ContactForm() {
             required
           ></textarea>
         </div>
-
-        {/* Hidden field for recipient email */}
-        <input type="hidden" name="to_email" value="mehtahet619@gmail.com" />
 
         <motion.button
           type="submit"
