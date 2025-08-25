@@ -156,13 +156,8 @@ export default function TerminalView() {
 
   // Handle resume download
   const handleDownloadResume = () => {
-    // Create a link element
-    const link = document.createElement("a")
-    link.href = "/resume.pdf" // Path to your resume file in public folder
-    link.download = "Het_Mehta_Resume.pdf" // Name for the downloaded file
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // Open Google Drive resume link in new tab
+    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
   }
 
   const processCommand = (cmd: string) => {
@@ -361,26 +356,62 @@ export default function TerminalView() {
         output = (
           <div>
             <p className="font-bold text-yellow-400 mb-2">My Projects:</p>
-            <div className="ml-4 space-y-4">
+            <div className="ml-4 space-y-6">
               <div>
-                <p className="font-bold text-green-400">Carbon Footprint Tracker (Odoo 1st Runners up)</p>
-                <p>
-                  Developed an AI-powered system to monitor and reduce industrial emissions in red-zone sectors.
-                  Achieved a 20% emission reduction via real-time IoT sensor integration and predictive modeling.
+                <p className="font-bold text-green-400">1. Carbon Footprint Tracker (Odoo 1st Runner-up) 🏆</p>
+                <p className="mb-2">
+                  Developed AI system to track and reduce emissions in red-zone industries. Achieved 20% reduction using
+                  IoT sensors and CNN-LSTM (95.4% accuracy). Deployed with full CI/CD for real-time updates.
+                </p>
+                <p className="text-blue-400 mb-2">
+                  <span className="text-purple-400">Tech Stack:</span> Python, TensorFlow, Flask, React.js, Node.js,
+                  Supabase, IoT
+                </p>
+                <p className="text-cyan-400">
+                  Link:{" "}
+                  <a
+                    href="https://github.com/mehtahet619"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
                 </p>
               </div>
+
               <div>
-                <p className="font-bold text-green-400">Network Intrusion Detection System (NIDS)</p>
-                <p>
-                  Built an AI-enhanced NIDS for real-time detection of anomalous and signature-based threats. Designed a
-                  CNN-LSTM-based time-series module to catch evolving attack patterns.
+                <p className="font-bold text-green-400">2. Network Intrusion Detection System (NIDS) 🛡️</p>
+                <p className="mb-2">
+                  Built real-time NIDS using CNN-LSTM, Random Forest, and XGBoost. Integrated Snort for signature-based
+                  detection and real-time alerts. Included admin dashboard and active threat prevention.
+                </p>
+                <p className="text-blue-400">
+                  <span className="text-purple-400">Tech Stack:</span> Python, Flask, Scikit-learn, Snort, Wireshark,
+                  ELK Stack, XGBoost
                 </p>
               </div>
+
               <div>
-                <p className="font-bold text-green-400">AI-Driven Research Engine for Commercial Courts</p>
-                <p>
-                  Created an NLP-based legal research assistant using LegalBERT and T5 for smart document search.
-                  Boosted legal research speed and decision-making accuracy by 15%.
+                <p className="font-bold text-green-400">3. AI Legal Research Engine for Commercial Courts ⚖️</p>
+                <p className="mb-2">
+                  Created multilingual NLP-based assistant (LegalBERT, T5); used OCR for document extraction
+                  (Tesseract). Improved legal research speed and decision accuracy by 15%.
+                </p>
+                <p className="text-blue-400 mb-2">
+                  <span className="text-purple-400">Tech Stack:</span> Python, Django, React.js, T5, LegalBERT,
+                  Elasticsearch, XGBoost
+                </p>
+                <p className="text-cyan-400">
+                  Link:{" "}
+                  <a
+                    href="https://github.com/mehtahet619"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
                 </p>
               </div>
             </div>
@@ -587,7 +618,7 @@ export default function TerminalView() {
         break
 
       case "resume":
-        // Trigger resume download
+        // Trigger resume opening
         setTimeout(() => {
           handleDownloadResume()
         }, 500)
@@ -595,10 +626,10 @@ export default function TerminalView() {
         output = (
           <div>
             <p className="text-green-500 mb-2">
-              <span className="animate-pulse">⬇️</span> Downloading resume...
+              <span className="animate-pulse">🔗</span> Opening resume...
             </p>
             <p>
-              If the download doesn't start automatically, click{" "}
+              If the resume doesn't open automatically, click{" "}
               <button
                 onClick={handleDownloadResume}
                 className="text-blue-400 underline cursor-pointer hover:text-blue-500"

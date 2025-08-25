@@ -26,12 +26,8 @@ export default function ParallaxView() {
 
   // Handle resume download
   const handleDownloadResume = () => {
-    const link = document.createElement("a")
-    link.href = "/resume.pdf"
-    link.download = "Het_Mehta_Resume.pdf"
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    // Open Google Drive resume link in new tab
+    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
   }
 
   // Mouse parallax effect
@@ -340,6 +336,248 @@ export default function ParallaxView() {
                 </div>
               </div>
               {/* END OF 3 SECTIONS */}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Professional Experience</h2>
+              <div className="space-y-8">
+                <motion.div whileHover={{ y: -5 }} className="bg-slate-50 dark:bg-slate-700 p-8 rounded-lg shadow-lg">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400">Software Developer Intern</h3>
+                      <p className="text-lg text-green-600 dark:text-green-400 font-semibold">TatvaSoft</p>
+                    </div>
+                    <p className="text-slate-600 dark:text-slate-400 font-medium">May 2025 - Jun 2025</p>
+                  </div>
+                  <ul className="space-y-2 text-slate-700 dark:text-slate-300">
+                    <li>• Reduced API response time by 40% using async Node.js and optimized DB queries</li>
+                    <li>• Achieved 95%+ test coverage, cutting bugs by 30% via CI/CD pipelines</li>
+                    <li>• Boosted frontend load speed by 2.3× with React code-splitting</li>
+                    <li>• Handled 1M+ data points/day from 5,000+ IoT devices using AWS Lambda</li>
+                  </ul>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="py-20 px-4 md:px-8 bg-slate-100 dark:bg-slate-900">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Featured Projects</h2>
+              <div className="grid md:grid-cols-1 gap-8">
+                {/* Carbon Footprint Tracker */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border-l-4 border-green-500"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h3 className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">
+                        1. Carbon Footprint Tracker 🏆
+                      </h3>
+                      <p className="text-sm text-yellow-600 dark:text-yellow-400 font-semibold mb-3">
+                        Odoo 1st Runner-up
+                      </p>
+                    </div>
+                    <a
+                      href="https://github.com/mehtahet619"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 underline text-sm"
+                    >
+                      GitHub →
+                    </a>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Developed AI system to track and reduce emissions in red-zone industries. Achieved 20% reduction
+                    using IoT sensors and CNN-LSTM (95.4% accuracy). Deployed with full CI/CD for real-time updates.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Python", "TensorFlow", "Flask", "React.js", "Node.js", "Supabase", "IoT"].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* NIDS */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border-l-4 border-blue-500"
+                >
+                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+                    2. Network Intrusion Detection System (NIDS) 🛡️
+                  </h3>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Built real-time NIDS using CNN-LSTM, Random Forest, and XGBoost. Integrated Snort for
+                    signature-based detection and real-time alerts. Included admin dashboard and active threat
+                    prevention.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Python", "Flask", "Scikit-learn", "Snort", "Wireshark", "ELK Stack", "XGBoost"].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+
+                {/* Legal AI */}
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border-l-4 border-purple-500"
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-4">
+                      3. AI Legal Research Engine for Commercial Courts ⚖️
+                    </h3>
+                    <a
+                      href="https://github.com/mehtahet619"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 underline text-sm"
+                    >
+                      GitHub →
+                    </a>
+                  </div>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Created multilingual NLP-based assistant (LegalBERT, T5); used OCR for document extraction
+                    (Tesseract). Improved legal research speed and decision accuracy by 15%.
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {["Python", "Django", "React.js", "T5", "LegalBERT", "Elasticsearch", "XGBoost"].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* CP Profiles Section */}
+        <section className="py-20 px-4 md:px-8 bg-white dark:bg-slate-800">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Competitive Programming</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <motion.div whileHover={{ y: -10 }} className="bg-slate-50 dark:bg-slate-700 p-8 rounded-lg shadow-lg">
+                  <h3 className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-4">LeetCode</h3>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Solved 340+ questions and still going strong! Focused on algorithms, data structures, and
+                    problem-solving patterns.
+                  </p>
+                  <a
+                    href="https://leetcode.com/u/mehtahet619/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 underline"
+                  >
+                    View Profile →
+                  </a>
+                </motion.div>
+
+                <motion.div whileHover={{ y: -10 }} className="bg-slate-50 dark:bg-slate-700 p-8 rounded-lg shadow-lg">
+                  <h3 className="text-2xl font-bold text-green-600 dark:text-green-400 mb-4">GeeksforGeeks</h3>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Solved 130+ problems across various topics including dynamic programming, graphs, and system design.
+                  </p>
+                  <a
+                    href="https://www.geeksforgeeks.org/user/mehtahet619/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 underline"
+                  >
+                    View Profile →
+                  </a>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Startup Section */}
+        <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/10 dark:to-blue-900/10">
+          <div className="max-w-5xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Startup Ventures</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border-l-4 border-green-500"
+                >
+                  <h3 className="text-2xl font-bold text-green-600 dark:text-green-400 mb-4">LenGen 🌱</h3>
+                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-4">Carbon Neutrality Solutions</p>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Building a comprehensive carbon neutrality platform for red zone industries. Our solution helps
+                    industries monitor, reduce, and manage their carbon emissions through advanced IoT sensors,
+                    AI-powered analytics, and automated reporting systems.
+                  </p>
+                  <a
+                    href="https://lengen.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 underline"
+                  >
+                    Visit Website →
+                  </a>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border-l-4 border-blue-500"
+                >
+                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">CornvAi 🤖</h3>
+                  <p className="text-lg text-slate-600 dark:text-slate-400 mb-4">AI Sales Automation Platform</p>
+                  <p className="text-slate-700 dark:text-slate-300 mb-4">
+                    Developing an AI-powered sales automation platform designed specifically for SMBs. Our platform
+                    automates lead generation, outreach campaigns, and deal tracking to help small businesses scale
+                    their sales operations efficiently.
+                  </p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 italic">
+                    "Automate Your Sales. Accelerate Your Growth."
+                  </p>
+                </motion.div>
+              </div>
             </motion.div>
           </div>
         </section>
