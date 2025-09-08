@@ -233,7 +233,7 @@ export default function ParallaxView() {
 
                      <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
-                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-red-500"
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500"
                     >
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
