@@ -228,6 +228,31 @@ export default function ParallaxView() {
                         Autonomous Navigation System for Martian Terrain.
                       </p>
                     </motion.div>
+
+
+
+                     <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-red-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🚀</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-red-600 dark:text-red-400">NUV ACM 2025</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner  - First Prize</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Real-time Campus Monitoring & Threat Prediction and Reduction System
+                        Predicts assaults, thefts, fires, intrusions, before they happen.
+Maps campus hotspots where risks are highest.
+
+Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
+
+                      </p>
+                    </motion.div>
                   </div>
                 </div>
 
