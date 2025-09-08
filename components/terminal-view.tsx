@@ -268,6 +268,13 @@ export default function TerminalView() {
                       Autonomous Navigation System for Martian Terrain.
                     </p>
                   </div>
+                  <div>
+                    <p className="font-bold text-blue-400">NUV ACM - 2025 -Winner </p>
+                    <p>
+                      Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
+                      Autonomous Navigation System for Martian Terrain.
+                    </p>
+                  </div>
                 </div>
               </div>
               <div>
