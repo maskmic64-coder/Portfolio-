@@ -246,13 +246,7 @@ export default function TerminalView() {
                       challenges.
                     </p>
                   </div>
-                  <div>
-                    <p className="font-bold text-blue-400">DOT 5G Hackathon - Finalist (Ongoing) 🚀</p>
-                    <p>
-                      Currently competing as a finalist in the DOT 5G Hackathon, working on next-generation 5G
-                      applications and solutions.
-                    </p>
-                  </div>
+                 
                   <div>
                     <p className="font-bold text-blue-400">IIT Indore Hackathon - 4th Position 🥉</p>
                     <p>

@@ -167,48 +167,7 @@ export default function ParallaxView() {
                       </p>
                     </motion.div>
 
-                    {/* DOT 5G Hackathon */}
-                    <motion.div
-                      whileHover={{ y: -10, scale: 1.02 }}
-                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500"
-                    >
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mr-4">
-                          <span className="text-2xl">🚀</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold text-purple-600 dark:text-purple-400">DOT 5G Hackathon</h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Finalist (Ongoing)</p>
-                        </div>
-                      </div>
-                      <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Currently competing as a finalist in the DOT 5G Hackathon, working on next-generation 5G
-                        applications and solutions.
-                      </p>
-                    </motion.div>
-
-                    {/* IIT Indore Hackathon */}
-                    <motion.div
-                      whileHover={{ y: -10, scale: 1.02 }}
-                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-orange-500"
-                    >
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mr-4">
-                          <span className="text-2xl">🥉</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold text-orange-600 dark:text-orange-400">
-                            IIT Indore Hackathon
-                          </h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">4th Position</p>
-                        </div>
-                      </div>
-                      <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Secured 4th position in the prestigious IIT Indore Hackathon, competing against top teams from
-                        across India.
-                      </p>
-                    </motion.div>
-
+                    
                     {/* ISRO Robotics Challenge */}
                     <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
