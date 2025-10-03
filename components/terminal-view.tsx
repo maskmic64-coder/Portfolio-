@@ -217,10 +217,17 @@ export default function TerminalView() {
           <div>
             <p className="font-bold text-xl text-purple-400 mb-2">Het Mehta</p>
             <p className="mb-2">
-              A passionate Full-stack Developer and AI/ML Engineer creating beautiful and interactive web experiences
-              and ML Engineering.
+              Software Engineer skilled in C++, Java, and Python with a strong foundation in data structures and
+              algorithms (645+ problems solved).
             </p>
-            <p>With 3+ years of experience in web development and Machine Learning.</p>
+            <p className="mb-2">
+              Experienced in building scalable systems, developing AI/ML and NLP solutions, and working with distributed
+              architectures and cloud technologies.
+            </p>
+            <p>
+              <span className="text-green-400">Education:</span> B.Tech, Computer Science – G.C.E.T (2022 – 2026) |
+              CGPA: 8.59
+            </p>
           </div>
         )
         break
@@ -233,40 +240,23 @@ export default function TerminalView() {
                 <p className="font-bold text-green-400">🏆 Hackathons & Competitions</p>
                 <div className="ml-4 space-y-2">
                   <div>
-                    <p className="font-bold text-blue-400">Odoo Hackathon 2025 - Winner 🏆</p>
+                    <p className="font-bold text-blue-400">ISRO IRoC-U 2025 - Selected (Top 170/1600+) 🚀</p>
                     <p>
-                      Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing
-                      industrial carbon emissions using IoT sensors and AI.
+                      Selected among top 170 teams out of 1600+ colleges for building Martian Terrain Navigation System
+                      (Fully-funded).
                     </p>
                   </div>
                   <div>
-                    <p className="font-bold text-blue-400">HSBC Hackathon - Finalist 🥈</p>
-                    <p>
-                      Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
-                      challenges.
-                    </p>
-                  </div>
-                 
-                  <div>
-                    <p className="font-bold text-blue-400">IIT Indore Hackathon - 4th Position 🥉</p>
-                    <p>
-                      Secured 4th position in the prestigious IIT Indore Hackathon, competing against top teams from
-                      across India. Developed innovative solutions showcasing technical excellence and problem-solving
-                      skills.
-                    </p>
+                    <p className="font-bold text-blue-400">Odoo Hackathon 2025 - 1st Runners-Up 🏆</p>
+                    <p>Built Carbon Footprint Tracker reducing emissions by 20%.</p>
                   </div>
                   <div>
-                    <p className="font-bold text-blue-400">ISRO Robotics Challenge 2025 - Shortlisted</p>
-                    <p>
-                      Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
-                      Autonomous Navigation System for Martian Terrain.
-                    </p>
+                    <p className="font-bold text-blue-400">NUV ACM 2025 - Winner 🥇</p>
+                    <p>Built Real-time Campus Monitoring & Threat Prediction and Reduction System.</p>
                   </div>
                   <div>
-                    <p className="font-bold text-blue-400">NUV ACM - 2025 -Winner </p>
-                    <p>
-                      Real-time Campus Monitoring & Threat Prediction and Reduction System Predicts assaults, thefts, fires, intrusions, before they happen. Maps campus hotspots where risks are highest. Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
-                    </p>
+                    <p className="font-bold text-blue-400">IIT Indore Hackathon - Fluxus Finalist 🥉</p>
+                    <p>Reached finals at prestigious IIT Indore Hackathon.</p>
                   </div>
                 </div>
               </div>
@@ -274,31 +264,29 @@ export default function TerminalView() {
                 <p className="font-bold text-green-400">🌐 Open Source Contributions</p>
                 <div className="ml-4 space-y-2">
                   <div>
-                    <p className="font-bold text-blue-400">GirlScript Summer of Code - Contributor 👩‍💻</p>
-                    <p>
-                      Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.
-                      Contributed to multiple projects, mentored newcomers, and helped build inclusive tech communities.
-                    </p>
+                    <p className="font-bold text-blue-400">GirlScript Summer of Code (GssoC) 2025 👩‍💻</p>
+                    <p>Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.</p>
                   </div>
                   <div>
-                    <p className="font-bold text-blue-400">Open Source India Connect - Contributor 🌐</p>
-                    <p>
-                      Contributing member of Open Source India Connect, promoting open-source culture and collaboration.
-                      Participated in community initiatives, code contributions, and knowledge sharing sessions.
-                    </p>
+                    <p className="font-bold text-blue-400">Open Source India Connect (OSCI) 2025 🌐</p>
+                    <p>Contributing member promoting open-source culture and collaboration.</p>
                   </div>
                 </div>
               </div>
               <div>
-                <p className="font-bold text-green-400">🎤 Speaking & Community</p>
+                <p className="font-bold text-green-400">🎤 Speaking & Leadership</p>
                 <div className="ml-4 space-y-2">
                   <div>
                     <p className="font-bold text-blue-400">Tech Speaker 🎤</p>
-                    <p>
-                      Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack
-                      development, and emerging technologies. Delivered talks on carbon footprint tracking, network
-                      security, and sustainable tech solutions.
-                    </p>
+                    <p>Delivered technical seminars on GitHub, Competitive Programming (CP), and Hackathon strategy.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">CSI Core Team - Technical Head 👨‍💻</p>
+                    <p>Leading technical initiatives at Computer Society of India (CSI) Core Team.</p>
+                  </div>
+                  <div>
+                    <p className="font-bold text-blue-400">GeeksforGeeks Campus Ambassador 📚</p>
+                    <p>Representing GeeksforGeeks on campus, organizing coding events and workshops.</p>
                   </div>
                 </div>
               </div>
@@ -316,35 +304,13 @@ export default function TerminalView() {
                 <p className="font-bold text-green-400">Software Developer Intern - TatvaSoft</p>
                 <p className="text-blue-400">May 2025 - June 2025</p>
                 <div className="ml-2 mt-2 space-y-1">
-                  <p>
-                    • Developed and maintained web applications using React.js, Node.js, and modern JavaScript
-                    frameworks
-                  </p>
-                  <p>• Collaborated with senior developers on feature implementation and code optimization</p>
-                  <p>
-                    • Participated in code reviews and followed industry best practices for clean, maintainable code
-                  </p>
-                  <p>• Gained experience with version control systems (Git) and agile development methodologies</p>
-                  <p>• Worked on database integration and API development for seamless data flow</p>
+                  <p>• Optimized APIs with async Node.js, reducing response time by 40%</p>
+                  <p>• Achieved 95%+ test coverage and faster CI/CD deployment</p>
+                  <p>• Boosted frontend speed 2.3× with React.js optimizations</p>
+                  <p>• Processed 1M+ IoT data points/day using AWS Lambda</p>
                 </div>
                 <p className="text-purple-400 mt-2">
-                  Tech Stack: React.js, Node.js, JavaScript, HTML/CSS, Git, REST APIs
-                </p>
-              </div>
-
-              <div>
-                <p className="font-bold text-green-400">Python Developer Intern - Zidio Development</p>
-                <p className="text-blue-400">March 2025 - April 2025</p>
-                <div className="ml-2 mt-2 space-y-1">
-                  <p>• Developed Python-based applications and automation scripts for various business processes</p>
-                  <p>• Worked with data analysis and visualization using pandas, numpy, and matplotlib</p>
-                  <p>• Built RESTful APIs using Flask and FastAPI frameworks</p>
-                  <p>• Implemented data processing pipelines and ETL operations</p>
-                  <p>• Collaborated on machine learning projects using scikit-learn and TensorFlow</p>
-                  <p>• Optimized existing Python codebases for better performance and maintainability</p>
-                </div>
-                <p className="text-purple-400 mt-2">
-                  Tech Stack: Python, Flask, FastAPI, pandas, numpy, scikit-learn, TensorFlow, PostgreSQL
+                  Skills: C++, Java, Python, Node.js, React.js, AWS, Distributed Systems, Problem-Solving
                 </p>
               </div>
             </div>
@@ -360,12 +326,13 @@ export default function TerminalView() {
               <div>
                 <p className="font-bold text-green-400">1. Carbon Footprint Tracker (Odoo 1st Runner-up) 🏆</p>
                 <p className="mb-2">
-                  Developed AI system to track and reduce emissions in red-zone industries. Achieved 20% reduction using
-                  IoT sensors and CNN-LSTM (95.4% accuracy). Deployed with full CI/CD for real-time updates.
+                  Built a full-stack platform to track and reduce emissions in red-zone industries. Enabled real-time
+                  IoT data ingestion (1M+ points/day) with Flask + Node.js + Supabase. Deployed with CI/CD pipelines;
+                  achieved 20% reduction through optimized data-driven insights.
                 </p>
                 <p className="text-blue-400 mb-2">
-                  <span className="text-purple-400">Tech Stack:</span> Python, TensorFlow, Flask, React.js, Node.js,
-                  Supabase, IoT
+                  <span className="text-purple-400">Tech Stack:</span> Python, Flask, React.js, Node.js, Supabase, IoT,
+                  CI/CD
                 </p>
                 <p className="text-cyan-400">
                   Link:{" "}
@@ -383,24 +350,36 @@ export default function TerminalView() {
               <div>
                 <p className="font-bold text-green-400">2. Network Intrusion Detection System (NIDS) 🛡️</p>
                 <p className="mb-2">
-                  Built real-time NIDS using CNN-LSTM, Random Forest, and XGBoost. Integrated Snort for signature-based
-                  detection and real-time alerts. Included admin dashboard and active threat prevention.
+                  Developed a real-time monitoring system with Snort for packet analysis and ELK dashboards. Optimized
+                  Flask APIs and containerized services for scalable, low-latency threat detection. Integrated ML models
+                  (CNN-LSTM, Random Forest, XGBoost) for improved accuracy.
                 </p>
-                <p className="text-blue-400">
+                <p className="text-blue-400 mb-2">
                   <span className="text-purple-400">Tech Stack:</span> Python, Flask, Scikit-learn, Snort, Wireshark,
-                  ELK Stack, XGBoost
+                  ELK Stack, Docker
+                </p>
+                <p className="text-cyan-400">
+                  Link:{" "}
+                  <a
+                    href="https://github.com/mehtahet619"
+                    className="underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GitHub
+                  </a>
                 </p>
               </div>
 
               <div>
-                <p className="font-bold text-green-400">3. AI Legal Research Engine for Commercial Courts ⚖️</p>
+                <p className="font-bold text-green-400">3. AI Legal Research Engine ⚖️</p>
                 <p className="mb-2">
-                  Created multilingual NLP-based assistant (LegalBERT, T5); used OCR for document extraction
-                  (Tesseract). Improved legal research speed and decision accuracy by 15%.
+                  Built an NLP assistant using LegalBERT and T5 to automatically extract legal information and assist in
+                  decision-making. Improved legal research efficiency by 15%.
                 </p>
                 <p className="text-blue-400 mb-2">
-                  <span className="text-purple-400">Tech Stack:</span> Python, Django, React.js, T5, LegalBERT,
-                  Elasticsearch, XGBoost
+                  <span className="text-purple-400">Tech Stack:</span> Python, Django, React.js, LegalBERT, T5,
+                  Elasticsearch, NLP
                 </p>
                 <p className="text-cyan-400">
                   Link:{" "}
@@ -423,38 +402,62 @@ export default function TerminalView() {
         output = (
           <div>
             <p className="font-bold text-yellow-400 mb-2">Technical Skills:</p>
-            <div className="ml-4">
-              <p>
-                <span className="text-green-400">Frontend:</span> React, Next.js, TypeScript, Tailwind CSS, HTML, CSS,
-                JavaScript
-              </p>
-              <p>
-                <span className="text-green-400">Backend:</span> Node.js, Express, Python, Django, Flask
-              </p>
-              <p>
-                <span className="text-green-400">Database:</span> MongoDB, PostgreSQL, Firebase, MySQL
-              </p>
-              <p>
-                <span className="text-green-400">DevOps:</span> Docker, AWS, CI/CD, Git, Jenkins
-              </p>
-              <p>
-                <span className="text-green-400">Machine Learning:</span> Scikit-learn, TensorFlow, Keras, XGBoost,
-                Random Forest, LSTM, CNN, NLP, BERT
-              </p>
-              <p>
-                <span className="text-green-400">Data Engineering:</span> Pandas, NumPy, PySpark, ETL, Data
-                Preprocessing
-              </p>
-              <p>
-                <span className="text-green-400">Cloud & AI Services:</span> Google Cloud, Azure, OpenAI API, GPT,
-                Google Gemini
-              </p>
-              <p>
-                <span className="text-green-400">Version Control:</span> Git, GitHub, GitLab
-              </p>
-              <p>
-                <span className="text-green-400">Others:</span> Docker, Agile/Scrum, RESTful APIs, GraphQL, Jira, Trello
-              </p>
+            <div className="ml-4 space-y-2">
+              <div>
+                <p className="text-green-400 font-semibold">Programming & Software Development:</p>
+                <p>
+                  Python, Java, C, C++, C#, .NET, JavaScript, HTML, CSS, ReactJS, NodeJS, ExpressJS, Django, Shell
+                  Scripting, SDLC, Agile
+                </p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Data Structures & Algorithms:</p>
+                <p>
+                  645+ problems solved (421 on LeetCode). Strong in Arrays, Strings, Linked Lists, Stacks, Queues,
+                  Trees, Graphs, Hashing, Dynamic Programming, and Recursion. Proficient in OOP, Debugging
+                </p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">AI & Machine Learning:</p>
+                <p>
+                  NLP, Scikit-learn, TensorFlow, Keras, Pandas, NumPy, Hugging Face Transformers, LangChain, Gemini API,
+                  Vector Databases (Pinecone, FAISS, ChromaDB), Retrieval-Augmented Generation (RAG)
+                </p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Web & API Technologies:</p>
+                <p>HTTP, REST APIs, AJAX, Secure API Development</p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Databases:</p>
+                <p>SQL, NoSQL, Oracle, Teradata, MongoDB, PostgreSQL, Supabase</p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Testing & Code Quality:</p>
+                <p>Unit Testing, Integration Testing, Performance Testing, API Testing (Postman)</p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">System Design & Architecture:</p>
+                <p>
+                  ATOM Principles (Scalability, Simplicity, Modularity, Flexibility), System Documentation, Unix, Linux,
+                  Distributed Systems, Scalable Design
+                </p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Cloud & Deployment:</p>
+                <p>Flask, FastAPI, Docker, CI/CD (Jenkins, GitHub Actions), AWS (EC2, S3), Kubernetes (Basic)</p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Security & Payments:</p>
+                <p>
+                  TCP/IP, Authentication & Authorization, Encryption, OWASP Top 10, Transaction Integrity, Fraud
+                  Detection, PCI-DSS Awareness
+                </p>
+              </div>
+              <div>
+                <p className="text-green-400 font-semibold">Tools & Utilities:</p>
+                <p>Git, Postman, Systemd, Cron Jobs</p>
+              </div>
             </div>
           </div>
         )
@@ -463,12 +466,13 @@ export default function TerminalView() {
       case "competitive":
         output = (
           <div>
-            <p className="font-bold text-yellow-400 mb-2">My CP:</p>
+            <p className="font-bold text-yellow-400 mb-2">My Competitive Programming:</p>
             <div className="ml-4 space-y-4">
               <div>
-                <p className="font-bold text-green-400">LeetCode</p>
+                <p className="font-bold text-green-400">LeetCode - 421+ Problems Solved</p>
                 <p>
-                  Solved 340+ questions and still going:&nbsp;
+                  Part of 645+ problems solved across platforms. Strong focus on DSA, algorithms, and problem-solving
+                  patterns:&nbsp;
                   <a
                     href="https://leetcode.com/u/mehtahet619/"
                     className="text-blue-400 underline"
@@ -480,17 +484,10 @@ export default function TerminalView() {
                 </p>
               </div>
               <div>
-                <p className="font-bold text-green-400">GeeksforGeeks</p>
+                <p className="font-bold text-green-400">Overall: 645+ Problems</p>
                 <p>
-                  Solved 130+ problems:&nbsp;
-                  <a
-                    href="https://www.geeksforgeeks.org/user/mehtahet619/"
-                    className="text-blue-400 underline"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    geeksforgeeks.org/user/mehtahet619
-                  </a>
+                  Strong proficiency in Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs, Hashing, Dynamic
+                  Programming, and Recursion. Skilled in OOP and Debugging.
                 </p>
               </div>
             </div>

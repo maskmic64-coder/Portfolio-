@@ -92,14 +92,17 @@ export default function ParallaxView() {
                 </div>
                 <div>
                   <p className="text-lg mb-4">
-                    I'm a passionate Full Stack Developer and AIML Engineer with 3+ years of experience building web
-                    applications that solve real-world problems.
+                    I'm a Software Engineer skilled in C++, Java, and Python with a strong foundation in data structures
+                    and algorithms (645+ problems solved).
                   </p>
                   <p className="text-lg mb-4">
-                    My journey in tech began with a curiosity about how websites work and models work, which led me to
-                    dive deep into both fullstack and AIML technologies.
+                    Experienced in building scalable systems, developing AI/ML and NLP solutions, and working with
+                    distributed architectures and cloud technologies.
                   </p>
-                  <p className="text-lg">When I'm not coding, you can find me sleeping, eating, or writing poetry.</p>
+                  <p className="text-lg">
+                    <span className="font-semibold">Education:</span> B.Tech, Computer Science – G.C.E.T (2022 – 2026) |
+                    CGPA: 8.59
+                  </p>
                 </div>
               </div>
             </motion.div>
@@ -125,6 +128,26 @@ export default function ParallaxView() {
                     🏆 Hackathons & Competitions
                   </h3>
                   <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* ISRO IRoC-U */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-red-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🚀</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-red-600 dark:text-red-400">ISRO IRoC-U 2025</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Top 170/1600+</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Selected among top 170 teams out of 1600+ colleges for building Martian Terrain Navigation
+                        System (Fully-funded).
+                      </p>
+                    </motion.div>
+
                     {/* Odoo Hackathon */}
                     <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
@@ -138,78 +161,51 @@ export default function ParallaxView() {
                           <h4 className="text-lg font-bold text-yellow-600 dark:text-yellow-400">
                             Odoo Hackathon 2025
                           </h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">1st Runners-Up</p>
                         </div>
                       </div>
                       <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing
-                        industrial carbon emissions using IoT sensors and AI.
+                        Built Carbon Footprint Tracker reducing emissions by 20%.
                       </p>
                     </motion.div>
 
-                    {/* HSBC Hackathon */}
+                    {/* NUV ACM */}
                     <motion.div
-                      whileHover={{ y: -10, scale: 1.02 }}
-                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-green-500"
-                    >
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mr-4">
-                          <span className="text-2xl">🥈</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold text-green-600 dark:text-green-400">HSBC Hackathon</h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Finalist</p>
-                        </div>
-                      </div>
-                      <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
-                        challenges.
-                      </p>
-                    </motion.div>
-
-                    
-                    {/* ISRO Robotics Challenge */}
-                    <motion.div
-                      whileHover={{ y: -10, scale: 1.02 }}
-                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-red-500"
-                    >
-                      <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
-                          <span className="text-2xl">🚀</span>
-                        </div>
-                        <div>
-                          <h4 className="text-lg font-bold text-red-600 dark:text-red-400">ISRO Robotics Challenge</h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Shortlisted</p>
-                        </div>
-                      </div>
-                      <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Shortlisted in the top 170 teams among 1,600 colleges for the ISRO IRoC-U challenge, creating an
-                        Autonomous Navigation System for Martian Terrain.
-                      </p>
-                    </motion.div>
-
-
-
-                     <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
                       className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500"
                     >
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
-                          <span className="text-2xl">🚀</span>
+                        <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🥇</span>
                         </div>
                         <div>
-                          <h4 className="text-lg font-bold text-red-600 dark:text-red-400">NUV ACM 2025</h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner  - First Prize</p>
+                          <h4 className="text-lg font-bold text-purple-600 dark:text-purple-400">NUV ACM 2025</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner</p>
                         </div>
                       </div>
                       <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Real-time Campus Monitoring & Threat Prediction and Reduction System
-                        Predicts assaults, thefts, fires, intrusions, before they happen.
-Maps campus hotspots where risks are highest.
+                        Built Real-time Campus Monitoring & Threat Prediction and Reduction System.
+                      </p>
+                    </motion.div>
 
-Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
-
+                    {/* IIT Indore */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-orange-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🥉</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-orange-600 dark:text-orange-400">
+                            IIT Indore Hackathon
+                          </h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Fluxus Finalist</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Reached finals at prestigious IIT Indore Hackathon, competing against top teams.
                       </p>
                     </motion.div>
                   </div>
@@ -290,9 +286,8 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                         </div>
                       </div>
                       <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack
-                        development, and emerging technologies. Delivered talks on carbon footprint tracking, network
-                        security, and sustainable tech solutions.
+                        Delivered technical seminars on GitHub, Competitive Programming (CP), and Hackathon strategy at
+                        tech conferences and meetups.
                       </p>
                     </motion.div>
 
@@ -311,9 +306,30 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                         </div>
                       </div>
                       <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Serving as Technical Head of the Computer Society of India (CSI) Core Team, leading technical
-                        initiatives, organizing workshops, and mentoring students in emerging technologies. Responsible
-                        for coordinating tech events and fostering innovation within the student community.
+                        Leading technical initiatives at Computer Society of India (CSI) Core Team, organizing workshops
+                        and mentoring students in emerging technologies.
+                      </p>
+                    </motion.div>
+
+                    {/* GeeksforGeeks Campus Ambassador */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-green-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">📚</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-green-600 dark:text-green-400">
+                            GeeksforGeeks Campus Ambassador
+                          </h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Campus Representative</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Representing GeeksforGeeks on campus, organizing coding events and workshops to promote
+                        competitive programming and problem-solving.
                       </p>
                     </motion.div>
                   </div>
@@ -344,11 +360,14 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                     <p className="text-slate-600 dark:text-slate-400 font-medium">May 2025 - Jun 2025</p>
                   </div>
                   <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                    <li>• Reduced API response time by 40% using async Node.js and optimized DB queries</li>
-                    <li>• Achieved 95%+ test coverage, cutting bugs by 30% via CI/CD pipelines</li>
-                    <li>• Boosted frontend load speed by 2.3× with React code-splitting</li>
-                    <li>• Handled 1M+ data points/day from 5,000+ IoT devices using AWS Lambda</li>
+                    <li>• Optimized APIs with async Node.js, reducing response time by 40%</li>
+                    <li>• Achieved 95%+ test coverage and faster CI/CD deployment</li>
+                    <li>• Boosted frontend speed 2.3× with React.js optimizations</li>
+                    <li>• Processed 1M+ IoT data points/day using AWS Lambda</li>
                   </ul>
+                  <p className="text-purple-400 mt-3 font-medium">
+                    Skills: C++, Java, Python, Node.js, React.js, AWS, Distributed Systems, Problem-Solving
+                  </p>
                 </motion.div>
               </div>
             </motion.div>
@@ -377,7 +396,7 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                         1. Carbon Footprint Tracker 🏆
                       </h3>
                       <p className="text-sm text-yellow-600 dark:text-yellow-400 font-semibold mb-3">
-                        Odoo 1st Runner-up
+                        Odoo 1st Runners-Up
                       </p>
                     </div>
                     <a
@@ -390,11 +409,12 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                     </a>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300 mb-4">
-                    Developed AI system to track and reduce emissions in red-zone industries. Achieved 20% reduction
-                    using IoT sensors and CNN-LSTM (95.4% accuracy). Deployed with full CI/CD for real-time updates.
+                    Built a full-stack platform to track and reduce emissions in red-zone industries. Enabled real-time
+                    IoT data ingestion (1M+ points/day) with Flask + Node.js + Supabase. Deployed with CI/CD pipelines;
+                    achieved 20% reduction through optimized data-driven insights.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Python", "TensorFlow", "Flask", "React.js", "Node.js", "Supabase", "IoT"].map((tech) => (
+                    {["Python", "Flask", "React.js", "Node.js", "Supabase", "IoT", "CI/CD"].map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm"
@@ -410,16 +430,26 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                   whileHover={{ y: -10 }}
                   className="bg-white dark:bg-slate-800 p-8 rounded-lg shadow-lg border-l-4 border-blue-500"
                 >
-                  <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
-                    2. Network Intrusion Detection System (NIDS) 🛡️
-                  </h3>
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-4">
+                      2. Network Intrusion Detection System (NIDS) 🛡️
+                    </h3>
+                    <a
+                      href="https://github.com/mehtahet619"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-500 hover:text-blue-600 underline text-sm"
+                    >
+                      GitHub →
+                    </a>
+                  </div>
                   <p className="text-slate-700 dark:text-slate-300 mb-4">
-                    Built real-time NIDS using CNN-LSTM, Random Forest, and XGBoost. Integrated Snort for
-                    signature-based detection and real-time alerts. Included admin dashboard and active threat
-                    prevention.
+                    Developed a real-time monitoring system with Snort for packet analysis and ELK dashboards. Optimized
+                    Flask APIs and containerized services for scalable, low-latency threat detection. Integrated ML
+                    models (CNN-LSTM, Random Forest, XGBoost) for improved accuracy.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Python", "Flask", "Scikit-learn", "Snort", "Wireshark", "ELK Stack", "XGBoost"].map((tech) => (
+                    {["Python", "Flask", "Scikit-learn", "Snort", "Wireshark", "ELK Stack", "Docker"].map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm"
@@ -437,7 +467,7 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                 >
                   <div className="flex items-start justify-between mb-4">
                     <h3 className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-4">
-                      3. AI Legal Research Engine for Commercial Courts ⚖️
+                      3. AI Legal Research Engine ⚖️
                     </h3>
                     <a
                       href="https://github.com/mehtahet619"
@@ -449,11 +479,11 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                     </a>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300 mb-4">
-                    Created multilingual NLP-based assistant (LegalBERT, T5); used OCR for document extraction
-                    (Tesseract). Improved legal research speed and decision accuracy by 15%.
+                    Built an NLP assistant using LegalBERT and T5 to automatically extract legal information and assist
+                    in decision-making. Improved legal research efficiency by 15%.
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {["Python", "Django", "React.js", "T5", "LegalBERT", "Elasticsearch", "XGBoost"].map((tech) => (
+                    {["Python", "Django", "React.js", "LegalBERT", "T5", "Elasticsearch", "NLP"].map((tech) => (
                       <span
                         key={tech}
                         className="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm"
@@ -480,28 +510,16 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Competitive Programming</h2>
               <div className="grid md:grid-cols-2 gap-8">
                 <motion.div whileHover={{ y: -10 }} className="bg-slate-50 dark:bg-slate-700 p-8 rounded-lg shadow-lg">
-                  <h3 className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-4">LeetCode</h3>
+                  <h3 className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-4">
+                    LeetCode - 421+ Problems
+                  </h3>
                   <p className="text-slate-700 dark:text-slate-300 mb-4">
-                    Solved 340+ questions and still going strong! Focused on algorithms, data structures, and
-                    problem-solving patterns.
+                    Part of 645+ problems solved across platforms! Focused on Data Structures, Algorithms, and
+                    problem-solving patterns including Arrays, Strings, Linked Lists, Stacks, Queues, Trees, Graphs,
+                    Hashing, Dynamic Programming, and Recursion.
                   </p>
                   <a
                     href="https://leetcode.com/u/mehtahet619/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-600 underline"
-                  >
-                    View Profile →
-                  </a>
-                </motion.div>
-
-                <motion.div whileHover={{ y: -10 }} className="bg-slate-50 dark:bg-slate-700 p-8 rounded-lg shadow-lg">
-                  <h3 className="text-2xl font-bold text-green-600 dark:text-green-400 mb-4">GeeksforGeeks</h3>
-                  <p className="text-slate-700 dark:text-slate-300 mb-4">
-                    Solved 130+ problems across various topics including dynamic programming, graphs, and system design.
-                  </p>
-                  <a
-                    href="https://www.geeksforgeeks.org/user/mehtahet619/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 hover:text-blue-600 underline"
@@ -584,7 +602,7 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                       <Code className="h-8 w-8 text-purple-600 dark:text-purple-400" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-center">Frontend</h3>
+                  <h3 className="text-xl font-bold mb-4 text-center">Frontend & Languages</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
@@ -592,15 +610,15 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                      TypeScript
+                      JavaScript, TypeScript
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                      Tailwind CSS
+                      HTML, CSS, Tailwind
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-purple-500 rounded-full mr-2" />
-                      Framer Motion
+                      C++, Java, Python
                     </li>
                   </ul>
                 </motion.div>
@@ -680,7 +698,7 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                       </svg>
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold mb-4 text-center">AI/ML</h3>
+                  <h3 className="text-xl font-bold mb-4 text-center">AI/ML & NLP</h3>
                   <ul className="space-y-2">
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
@@ -688,15 +706,15 @@ Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, pri
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
-                      Scikit-learn
+                      NLP, LangChain, RAG
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
-                      Computer Vision
+                      Vector DBs, Gemini API
                     </li>
                     <li className="flex items-center">
                       <div className="w-2 h-2 bg-pink-500 rounded-full mr-2" />
-                      NLP & LLMs
+                      Hugging Face, BERT
                     </li>
                   </ul>
                 </motion.div>
