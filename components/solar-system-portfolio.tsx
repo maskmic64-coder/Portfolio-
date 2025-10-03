@@ -485,7 +485,7 @@ function ProjectMoon({ orbitRadius, orbitSpeed, size, color, name, description, 
 function ContactPlanet({ orbitRadius, orbitSpeed }: any) {
   const handleDownloadResume = () => {
     // Open Google Drive resume link in new tab
-    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
+    window.open("https://drive.google.com/file/d/12ofoAnD9Wi8eEaNRyFjFtc4eCKLSPe1W/view?usp=sharing", "_blank")
   }
 
   return (
