@@ -34,15 +34,6 @@ export default function ContactInfo() {
               mehtahet619@gmail.com
             </a>
           </div>
-          <div>
-            <p className="text-sm text-slate-500 dark:text-slate-400">LinkedIn</p>
-            <a
-              href="mailto:mehtahet619@gmail.com"
-              className="text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              https://www.linkedin.com/in/het-mehta-5b9a47236/
-            </a>
-          </div>
         </div>
 
         <div className="flex items-center">

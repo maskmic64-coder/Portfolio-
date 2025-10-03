@@ -24,10 +24,10 @@ importers:
         specifier: ^8.15.11
         version: 8.15.11(845d69136e813366c80ede383c4df8b5)
       class-variance-authority:
-        specifier: 0.7.1
+        specifier: ^0.7.1
         version: 0.7.1
       clsx:
-        specifier: 2.1.1
+        specifier: ^2.1.1
         version: 2.1.1
       expo:
         specifier: latest
@@ -63,10 +63,10 @@ importers:
         specifier: latest
         version: 0.81.4(@babel/core@7.28.0)(@react-native/metro-config@0.81.0(@babel/core@7.28.0))(@types/react@18.0.0)(react@18.0.0)
       tailwind-merge:
-        specifier: 3.3.1
-        version: 3.3.1
+        specifier: ^2.5.5
+        version: 2.5.5
       tailwindcss-animate:
-        specifier: 1.0.7
+        specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.17)
       three:
         specifier: ^0.158.0
@@ -3865,8 +3865,8 @@ packages:
     peerDependencies:
       react: '>=17.0'
 
-  tailwind-merge@3.3.1:
-    resolution: {integrity: sha512-gBXpgUm/3rp1lMZZrM/w7D8GKqshif0zAymAhbCyIt8KMe+0v9DQ7cdYLR4FHH/cKpdTXb+A/tKKU3eolfsI+g==}
+  tailwind-merge@2.5.5:
+    resolution: {integrity: sha512-0LXunzzAZzo0tEPxV3I297ffKZPlKDrjj7NXphC8V5ak9yHC5zRmxnOe2m/Rd/7ivsOMJe3JZ2JVocoDdQTRBA==}
 
   tailwindcss-animate@1.0.7:
     resolution: {integrity: sha512-bl6mpH3T7I3UFxuvDEXLxy/VuFxBk5bbzplh7tXI68mwMokNYd1t9qPBHlnyTwfa4JGC4zP516I1hYYtQ/vspA==}
@@ -4313,7 +4313,7 @@ snapshots:
 
   '@babel/helper-annotate-as-pure@7.27.3':
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.4
 
   '@babel/helper-compilation-targets@7.27.2':
     dependencies:
@@ -4783,7 +4783,7 @@ snapshots:
       '@babel/helper-module-imports': 7.27.1
       '@babel/helper-plugin-utils': 7.27.1
       '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.0)
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.4
     transitivePeerDependencies:
       - supports-color
 
@@ -8874,7 +8874,7 @@ snapshots:
     dependencies:
       react: 18.0.0
 
-  tailwind-merge@3.3.1: {}
+  tailwind-merge@2.5.5: {}
 
   tailwindcss-animate@1.0.7(tailwindcss@3.4.17):
     dependencies:

@@ -27,7 +27,7 @@ export default function ParallaxView() {
   // Handle resume download
   const handleDownloadResume = () => {
     // Open Google Drive resume link in new tab
-    window.open("https://drive.google.com/file/d/12ofoAnD9Wi8eEaNRyFjFtc4eCKLSPe1W/view?usp=sharing", "_blank")
+    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
   }
 
   // Mouse parallax effect
@@ -167,6 +167,7 @@ export default function ParallaxView() {
                       </p>
                     </motion.div>
 
+                    
                     {/* ISRO Robotics Challenge */}
                     <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
@@ -187,7 +188,9 @@ export default function ParallaxView() {
                       </p>
                     </motion.div>
 
-                    <motion.div
+
+
+                     <motion.div
                       whileHover={{ y: -10, scale: 1.02 }}
                       className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500"
                     >
@@ -197,13 +200,16 @@ export default function ParallaxView() {
                         </div>
                         <div>
                           <h4 className="text-lg font-bold text-red-600 dark:text-red-400">NUV ACM 2025</h4>
-                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner - First Prize</p>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner  - First Prize</p>
                         </div>
                       </div>
                       <p className="text-slate-700 dark:text-slate-300 text-sm">
-                        Real-time Campus Monitoring & Threat Prediction and Reduction System Predicts assaults, thefts,
-                        fires, intrusions, before they happen. Maps campus hotspots where risks are highest.
-                        Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
+                        Real-time Campus Monitoring & Threat Prediction and Reduction System
+                        Predicts assaults, thefts, fires, intrusions, before they happen.
+Maps campus hotspots where risks are highest.
+
+Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
+
                       </p>
                     </motion.div>
                   </div>

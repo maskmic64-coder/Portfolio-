@@ -157,7 +157,7 @@ export default function TerminalView() {
   // Handle resume download
   const handleDownloadResume = () => {
     // Open Google Drive resume link in new tab
-    window.open("https://drive.google.com/file/d/12ofoAnD9Wi8eEaNRyFjFtc4eCKLSPe1W/view?usp=sharing", "_blank")
+    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
   }
 
   const processCommand = (cmd: string) => {
@@ -246,7 +246,7 @@ export default function TerminalView() {
                       challenges.
                     </p>
                   </div>
-
+                 
                   <div>
                     <p className="font-bold text-blue-400">IIT Indore Hackathon - 4th Position 🥉</p>
                     <p>
@@ -265,9 +265,7 @@ export default function TerminalView() {
                   <div>
                     <p className="font-bold text-blue-400">NUV ACM - 2025 -Winner </p>
                     <p>
-                      Real-time Campus Monitoring & Threat Prediction and Reduction System Predicts assaults, thefts,
-                      fires, intrusions, before they happen. Maps campus hotspots where risks are highest.
-                      Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
+                      Real-time Campus Monitoring & Threat Prediction and Reduction System Predicts assaults, thefts, fires, intrusions, before they happen. Maps campus hotspots where risks are highest. Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
                     </p>
                   </div>
                 </div>
