@@ -27,7 +27,7 @@ export default function ParallaxView() {
   // Handle resume download
   const handleDownloadResume = () => {
     // Open Google Drive resume link in new tab
-    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
+    window.open("https://drive.google.com/file/d/12ofoAnD9Wi8eEaNRyFjFtc4eCKLSPe1W/view?usp=drive_link", "_blank")
   }
 
   // Mouse parallax effect
