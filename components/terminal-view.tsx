@@ -246,7 +246,13 @@ export default function TerminalView() {
                       challenges.
                     </p>
                   </div>
-                 
+                  <div>
+                    <p className="font-bold text-blue-400">DOT 5G Hackathon - Finalist (Ongoing) 🚀</p>
+                    <p>
+                      Currently competing as a finalist in the DOT 5G Hackathon, working on next-generation 5G
+                      applications and solutions.
+                    </p>
+                  </div>
                   <div>
                     <p className="font-bold text-blue-400">IIT Indore Hackathon - 4th Position 🥉</p>
                     <p>
@@ -260,12 +266,6 @@ export default function TerminalView() {
                     <p>
                       Shortlisted in the top 170 teams among 1,600 colleges, for the ISRO IRoC-U challenge, creating an
                       Autonomous Navigation System for Martian Terrain.
-                    </p>
-                  </div>
-                  <div>
-                    <p className="font-bold text-blue-400">NUV ACM - 2025 -Winner </p>
-                    <p>
-                      Real-time Campus Monitoring & Threat Prediction and Reduction System Predicts assaults, thefts, fires, intrusions, before they happen. Maps campus hotspots where risks are highest. Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
                     </p>
                   </div>
                 </div>
