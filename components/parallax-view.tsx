@@ -27,7 +27,7 @@ export default function ParallaxView() {
   // Handle resume download
   const handleDownloadResume = () => {
     // Open Google Drive resume link in new tab
-    window.open("https://drive.google.com/file/d/12ofoAnD9Wi8eEaNRyFjFtc4eCKLSPe1W/view?usp=drive_link", "_blank")
+    window.open("https://drive.google.com/file/d/1r0apoij6kKZgTzyvbKkziH7c_N02644q/view?usp=drivesdk", "_blank")
   }
 
   // Mouse parallax effect
@@ -106,7 +106,7 @@ export default function ParallaxView() {
           </div>
         </section>
 
-        {/* Achievements Section */}
+        {/* 🏆 ACHIEVEMENTS SECTION WITH 3 SUBSECTIONS */}
         <section className="py-20 px-4 md:px-8 bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/10 dark:to-orange-900/10">
           <div className="max-w-5xl mx-auto">
             <motion.div
@@ -117,62 +117,209 @@ export default function ParallaxView() {
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">🏆 Achievements</h2>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {/* Achievement Cards */}
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
-                >
-                  <div className="text-4xl mb-4">🏆</div>
-                  <h4 className="text-lg font-bold mb-2">Odoo Hackathon 2025</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Winner</p>
-                </motion.div>
+              {/* HERE ARE THE 3 SECTIONS YOU WANT: */}
+              <div className="space-y-12">
+                {/* 🏆 SECTION 1: Hackathons & Competitions */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-6 text-center text-blue-600 dark:text-blue-400">
+                    🏆 Hackathons & Competitions
+                  </h3>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {/* Odoo Hackathon */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-yellow-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🏆</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-yellow-600 dark:text-yellow-400">
+                            Odoo Hackathon 2025
+                          </h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Won the Odoo Hackathon 2025 for the Carbon Footprint Tracker project, focusing on reducing
+                        industrial carbon emissions using IoT sensors and AI.
+                      </p>
+                    </motion.div>
 
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
-                >
-                  <div className="text-4xl mb-4">🥈</div>
-                  <h4 className="text-lg font-bold mb-2">HSBC Hackathon</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Finalist</p>
-                </motion.div>
+                    {/* HSBC Hackathon */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-green-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🥈</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-green-600 dark:text-green-400">HSBC Hackathon</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Finalist</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Selected as a finalist in the HSBC Hackathon, developing fintech solutions for modern banking
+                        challenges.
+                      </p>
+                    </motion.div>
 
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
-                >
-                  <div className="text-4xl mb-4">🥉</div>
-                  <h4 className="text-lg font-bold mb-2">IIT Indore Hackathon</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">4th Position</p>
-                </motion.div>
+                    
+                    {/* ISRO Robotics Challenge */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-red-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🚀</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-red-600 dark:text-red-400">ISRO Robotics Challenge</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Shortlisted</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Shortlisted in the top 170 teams among 1,600 colleges for the ISRO IRoC-U challenge, creating an
+                        Autonomous Navigation System for Martian Terrain.
+                      </p>
+                    </motion.div>
 
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
-                >
-                  <div className="text-4xl mb-4">🚀</div>
-                  <h4 className="text-lg font-bold mb-2">ISRO Robotics Challenge</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Top 170 Teams</p>
-                </motion.div>
 
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
-                >
-                  <div className="text-4xl mb-4">👩‍💻</div>
-                  <h4 className="text-lg font-bold mb-2">GirlScript Summer of Code</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Contributor</p>
-                </motion.div>
 
-                <motion.div
-                  whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg"
-                >
-                  <div className="text-4xl mb-4">🎤</div>
-                  <h4 className="text-lg font-bold mb-2">Tech Speaker</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Conferences & Meetups</p>
-                </motion.div>
+                     <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🚀</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-red-600 dark:text-red-400">NUV ACM 2025</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Winner  - First Prize</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Real-time Campus Monitoring & Threat Prediction and Reduction System
+                        Predicts assaults, thefts, fires, intrusions, before they happen.
+Maps campus hotspots where risks are highest.
+
+Human-in-the-loop Agentic AI → real-time SMS + calls to police, ambulance, principal instantly.
+
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* 🌐 SECTION 2: Open Source Contributions */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-6 text-center text-green-600 dark:text-green-400">
+                    🌐 Open Source Contributions
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    {/* GirlScript Summer of Code */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-pink-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-pink-100 dark:bg-pink-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">👩‍💻</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-pink-600 dark:text-pink-400">
+                            GirlScript Summer of Code
+                          </h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Contributor</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Active contributor in GirlScript Summer of Code, one of India's largest open-source programs.
+                        Contributed to multiple projects, mentored newcomers, and helped build inclusive tech
+                        communities.
+                      </p>
+                    </motion.div>
+
+                    {/* Open Source India Connect */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-teal-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🌐</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-teal-600 dark:text-teal-400">
+                            Open Source India Connect
+                          </h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Contributor</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Contributing member of Open Source India Connect, promoting open-source culture and
+                        collaboration. Participated in community initiatives, code contributions, and knowledge sharing
+                        sessions.
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
+
+                {/* 🎤 SECTION 3: Speaking & Community */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-6 text-center text-indigo-600 dark:text-indigo-400">
+                    🎤 Speaking & Community
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                    {/* Tech Speaker */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-indigo-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">🎤</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-indigo-600 dark:text-indigo-400">Tech Speaker</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Conference & Meetup Speaker</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Regular speaker at tech conferences and meetups, sharing insights on AI/ML, full-stack
+                        development, and emerging technologies. Delivered talks on carbon footprint tracking, network
+                        security, and sustainable tech solutions.
+                      </p>
+                    </motion.div>
+
+                    {/* CSI Core Team */}
+                    <motion.div
+                      whileHover={{ y: -10, scale: 1.02 }}
+                      className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-lg border-l-4 border-purple-500"
+                    >
+                      <div className="flex items-center mb-4">
+                        <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-full flex items-center justify-center mr-4">
+                          <span className="text-2xl">👨‍💻</span>
+                        </div>
+                        <div>
+                          <h4 className="text-lg font-bold text-purple-600 dark:text-purple-400">CSI Core Team</h4>
+                          <p className="text-sm text-gray-600 dark:text-gray-400">Technical Head</p>
+                        </div>
+                      </div>
+                      <p className="text-slate-700 dark:text-slate-300 text-sm">
+                        Serving as Technical Head of the Computer Society of India (CSI) Core Team, leading technical
+                        initiatives, organizing workshops, and mentoring students in emerging technologies. Responsible
+                        for coordinating tech events and fostering innovation within the student community.
+                      </p>
+                    </motion.div>
+                  </div>
+                </div>
               </div>
+              {/* END OF 3 SECTIONS */}
             </motion.div>
           </div>
         </section>
