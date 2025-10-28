@@ -112,22 +112,56 @@ function ProjectCard({ position, title, description, technologies, rotation = [0
           width: "280px",
           height: "350px",
           padding: "20px",
-          background: "rgba(15, 23, 42, 0.95)",
-          borderRadius: "12px",
+          background: "rgba(15, 23, 42, 0.98)",
+          borderRadius: "16px",
           color: "white",
           fontSize: "14px",
           overflow: "hidden",
+          boxShadow: hovered 
+            ? "0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.3)" 
+            : "0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+          transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
         }}
       >
-        <div className="h-full flex flex-col">
-          <h3 className="text-lg font-bold mb-3 text-blue-400">{title}</h3>
-          <p className="text-sm mb-4 flex-1 text-gray-300">{description}</p>
-          <div className="flex flex-wrap gap-1">
-            {technologies.map((tech: string, index: number) => (
-              <span key={index} className="px-2 py-1 bg-blue-600/30 text-blue-300 rounded text-xs">
-                {tech}
-              </span>
-            ))}
+        <div className="h-full relative">
+          {/* Heading - Initially centered, moves to top on hover */}
+          <div 
+            className={`absolute inset-x-0 transition-all duration-500 ease-out ${
+              hovered 
+                ? 'top-0 pt-0' 
+                : 'top-1/2 -translate-y-1/2'
+            }`}
+          >
+            <h3 className={`font-bold text-center transition-all duration-500 ease-out ${
+              hovered 
+                ? 'text-xl text-blue-400 mb-4' 
+                : 'text-2xl text-blue-300'
+            }`}>
+              {title}
+            </h3>
+          </div>
+
+          {/* Description and Technologies - Hidden initially, revealed on hover from bottom */}
+          <div 
+            className={`absolute inset-x-0 bottom-0 transition-all duration-500 ease-out ${
+              hovered 
+                ? 'opacity-100 translate-y-0' 
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <div className="space-y-4">
+              <p className="text-sm text-gray-300 leading-relaxed">{description}</p>
+              <div className="flex flex-wrap gap-2">
+                {technologies.map((tech: string, index: number) => (
+                  <span 
+                    key={index} 
+                    className="px-3 py-1 bg-blue-600/20 text-blue-300 rounded-full text-xs font-medium border border-blue-500/30"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </Html>
